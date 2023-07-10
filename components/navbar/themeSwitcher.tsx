@@ -21,7 +21,9 @@ export const ThemeSwitcher = () => {
 	useEffect(() => {
 		const currentTheme = siteConfig.themes.find(
 			(theme) => theme.value === resolvedTheme
-		)!;
+		);
+
+		if (!currentTheme) return;
 
 		setIcon(<currentTheme.Icon className="w-5 h-5" />);
 	}, [resolvedTheme]);
