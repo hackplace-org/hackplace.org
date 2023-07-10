@@ -12,9 +12,9 @@ import {
 
 export const ThemeSwitcher = () => {
 	const { resolvedTheme, setTheme } = useTheme();
-	const currentTheme = siteConfig.themes.find(
-		(theme) => theme.value === resolvedTheme
-	)!;
+	const currentTheme =
+		siteConfig.themes.find((theme) => theme.value === resolvedTheme) ??
+		siteConfig.themes[1];
 
 	return (
 		<Popover>
