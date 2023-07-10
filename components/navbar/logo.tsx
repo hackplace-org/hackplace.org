@@ -3,23 +3,23 @@
 import Link from "next/link";
 import Image from "next/image";
 
+import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 
 export const Logo = () => {
 	const { resolvedTheme } = useTheme();
 
+	const [logo, setLogo] = useState("/light-logo.svg");
+
+	useEffect(() => {
+		setLogo(
+			resolvedTheme === "dark" ? "/light-logo.svg" : "/dark-logo.svg"
+		);
+	}, [resolvedTheme]);
+
 	return (
 		<Link href="/" className="my-auto">
-			<Image
-				width={105}
-				height={20}
-				src={
-					resolvedTheme === "dark"
-						? "/light-logo.svg"
-						: "/dark-logo.svg"
-				}
-				alt="hack.place() Logo"
-			/>
+			<Image width={105} height={20} src={logo} alt="hack.place() Logo" />
 		</Link>
 	);
 };
