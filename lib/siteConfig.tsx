@@ -80,8 +80,7 @@ export const siteConfig = {
 		{
 			title: "OpenCollective",
 			href: "https://opencollective.com/hack-place",
-			description:
-				"Help support our cause, receive perks in return.",
+			description: "Help support our cause, receive perks in return.",
 			color: "group-hover:text-[#84aef3]",
 			Icon: Banknote,
 		},
