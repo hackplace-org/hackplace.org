@@ -15,13 +15,13 @@ export const Footer = () => {
 			<p className="my-auto">hack.place()</p>
 			<section className="my-auto">
 				{siteConfig.links.map((link) => (
-					<Link key={link.name} href={link.href}>
+					<Link key={link.title} href={link.href}>
 						<Button
 							size="icon"
 							variant="ghost"
-							className={cn(link.color, "transition-colors")}
+							className="transition-colors group"
 						>
-							<link.Icon className="w-5 h-5" />
+							<link.Icon className={cn(link.color, "w-5 h-5")} />
 						</Button>
 					</Link>
 				))}

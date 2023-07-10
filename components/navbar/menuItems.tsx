@@ -2,11 +2,6 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import {
-	forwardRef,
-	type ElementRef,
-	type ComponentPropsWithoutRef,
-} from "react";
 
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/lib/siteConfig";
@@ -20,32 +15,35 @@ import {
 	navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
-const ListItem = forwardRef<ElementRef<"a">, ComponentPropsWithoutRef<"a">>(
-	({ className, title, children, ...props }, ref) => {
-		return (
-			<li>
-				<NavigationMenuLink asChild>
-					<a
-						ref={ref}
+interface ListItemProps {
+	item: (typeof siteConfig.pages | typeof siteConfig.links)[number];
+}
+
+const ListItem = ({ item }: ListItemProps) => {
+	return (
+		<li>
+			<NavigationMenuLink asChild>
+				<a
+					href={item.href}
+					className="group block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+				>
+					<div
 						className={cn(
-							"block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-							className
+							item.color,
+							"flex flex-row gap-x-1 transition-colors text-sm font-medium leading-none"
 						)}
-						{...props}
 					>
-						<div className="text-sm font-medium leading-none">
-							{title}
-						</div>
-						<p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-							{children}
-						</p>
-					</a>
-				</NavigationMenuLink>
-			</li>
-		);
-	}
-);
-ListItem.displayName = "ListItem";
+						<item.Icon className="w-3 h-3 my-auto" />
+						{item.title}
+					</div>
+					<p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+						{item.description}
+					</p>
+				</a>
+			</NavigationMenuLink>
+		</li>
+	);
+};
 
 export const MenuItems = () => {
 	return (
@@ -66,7 +64,7 @@ export const MenuItems = () => {
 											width={500}
 											height={500}
 											alt="hack.place() Logo"
-											className="w-14 h-14"
+											className="w-24 h-24"
 										/>
 
 										<div className="mb-2 mt-4 text-lg font-medium">
@@ -80,13 +78,7 @@ export const MenuItems = () => {
 							</li>
 
 							{siteConfig.pages.slice(1).map((page) => (
-								<ListItem
-									key={page.href}
-									href={page.href}
-									title={page.title}
-								>
-									{page.description}
-								</ListItem>
+								<ListItem key={page.href} item={page} />
 							))}
 						</ul>
 					</NavigationMenuContent>
@@ -97,13 +89,7 @@ export const MenuItems = () => {
 					<NavigationMenuContent>
 						<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
 							{siteConfig.links.map((link) => (
-								<ListItem
-									key={link.href}
-									href={link.href}
-									title={link.name}
-								>
-									{link.description}
-								</ListItem>
+								<ListItem key={link.href} item={link} />
 							))}
 						</ul>
 					</NavigationMenuContent>
