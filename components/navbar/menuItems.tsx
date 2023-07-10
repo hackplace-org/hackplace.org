@@ -14,6 +14,7 @@ import {
 	NavigationMenuTrigger,
 	navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { type NavbarProps } from "@/components/navbar";
 
 interface ListItemProps {
 	item: (typeof siteConfig.pages | typeof siteConfig.links)[number];
@@ -45,9 +46,13 @@ const ListItem = ({ item }: ListItemProps) => {
 	);
 };
 
-export const MenuItems = () => {
+interface MenuItemsProps extends NavbarProps {
+	className?: string;
+}
+
+export const MenuItems = ({ currentTitle, className }: MenuItemsProps) => {
 	return (
-		<NavigationMenu>
+		<NavigationMenu className={className}>
 			<NavigationMenuList>
 				<NavigationMenuItem>
 					<NavigationMenuTrigger>Activities</NavigationMenuTrigger>
