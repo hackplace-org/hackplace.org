@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-	width="249.44882"
-	height="445.98425"
-	viewBox="0 0 65.999999 118"
+	width="250"
+	height="443"
+	viewBox="0 0 66.145832 117.21042"
 	version="1.1"
 	id="svg1613"
 	inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
-	sodipodi:docname="hackplacesvgblue.svg"
+	sodipodi:docname="hackplacelogoblue.svg"
 	xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
 	xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
 	xmlns="http://www.w3.org/2000/svg"
@@ -24,9 +24,9 @@
 		inkscape:deskcolor="#d1d1d1"
 		inkscape:document-units="px"
 		showgrid="false"
-		inkscape:zoom="2.8284271"
-		inkscape:cx="149.90664"
-		inkscape:cy="282.48916"
+		inkscape:zoom="1.4142136"
+		inkscape:cx="159.80613"
+		inkscape:cy="224.85996"
 		inkscape:window-width="1920"
 		inkscape:window-height="1046"
 		inkscape:window-x="-11"
@@ -42,52 +42,52 @@
 		<path
 			id="text121"
 			style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:105.833px;font-family:Satoshi;-inkscape-font-specification:Satoshi;white-space:pre;inline-size:71.3551;fill:#00aaff;fill-opacity:1;stroke-width:0.264583"
-			d="m 0,17.766869 v 72.965553 h 0.0041 l 16.251203,-4.09172 0.04289,0.01085 V 61.734211 c 0,-0.608707 0.0358,-1.197123 0.10542,-1.764233 V 35.430391 h 5.16e-4 V 17.766869 Z m 32.596976,18.355469 c -5.54805,0 -10.545137,1.721584 -13.992428,4.774902 v 13.61364 c 1.841474,-2.272984 4.701906,-3.571875 8.277014,-3.571875 5.60912,0 9.313644,4.339631 9.313644,11.00708 v 24.705469 l 0.04909,-0.0124 16.249137,4.093278 V 58.030045 c 0,-13.864068 -7.302378,-21.907707 -19.896459,-21.907707 z" />
+			d="M 0,17.771207 V 90.73676 h 0.0041 l 16.251203,-4.09172 0.04289,0.01085 V 61.738549 c 0,-0.608707 0.0358,-1.197123 0.10542,-1.764233 V 35.434729 h 5.16e-4 V 17.771207 Z m 32.596976,18.355469 c -5.54805,0 -10.545137,1.721584 -13.992428,4.774902 v 13.61364 c 1.841474,-2.272984 4.701906,-3.571875 8.277014,-3.571875 5.60912,0 9.313644,4.339631 9.313644,11.00708 v 24.705469 l 0.04909,-0.0124 16.249137,4.093278 V 58.034383 c 0,-13.864068 -7.302378,-21.907707 -19.896459,-21.907707 z" />
 		<rect
 			style="fill:#00aaff;fill-opacity:1;stroke-width:0.277122"
 			id="rect753"
 			width="3.1805072"
 			height="32.736172"
 			x="6.5765438"
-			y="80.201324" />
+			y="80.205658" />
 		<rect
 			style="fill:#00aaff;fill-opacity:1;stroke-width:0.151742"
 			id="rect753-8"
 			width="3.1805072"
 			height="9.8151722"
 			x="6.6370754"
-			y="12.654077" />
+			y="12.658414" />
 		<rect
 			style="fill:#00aaff;fill-opacity:1;stroke-width:0.21817"
 			id="rect753-2"
 			width="3.1805072"
 			height="20.289495"
 			x="42.752724"
-			y="79.9011" />
+			y="79.905434" />
 		<rect
 			style="fill:#00aaff;fill-opacity:1;stroke-width:0.166376"
 			id="rect753-2-6"
 			width="3.1805072"
 			height="11.799547"
-			x="97.010574"
+			x="97.014908"
 			y="-54.545464"
 			transform="rotate(89.997872)" />
 		<path
 			id="path821"
 			style="fill:#00aaff;fill-opacity:1;stroke-width:0.264583"
-			d="m 8.2935521,0 a 7.1437497,6.9783854 0 0 0 -7.14375,6.9783858 7.1437497,6.9783854 0 0 0 7.14375,6.9783832 A 7.1437497,6.9783854 0 0 0 15.437301,6.9783858 7.1437497,6.9783854 0 0 0 8.2935521,0 Z m 0.00103,2.0014278 a 5.1559324,4.9905686 0 0 1 5.1562729,4.99091 5.1559324,4.9905686 0 0 1 -5.1562729,4.9903912 5.1559324,4.9905686 0 0 1 -5.155758,-4.9903912 5.1559324,4.9905686 0 0 1 5.155758,-4.99091 z" />
+			d="M 8.2935521,0.00433754 A 7.1437497,6.9783854 0 0 0 1.1498021,6.9827234 7.1437497,6.9783854 0 0 0 8.2935521,13.961107 7.1437497,6.9783854 0 0 0 15.437301,6.9827234 7.1437497,6.9783854 0 0 0 8.2935521,0.00433754 Z m 0.00103,2.00142786 a 5.1559324,4.9905686 0 0 1 5.1562729,4.99091 5.1559324,4.9905686 0 0 1 -5.1562729,4.9903916 5.1559324,4.9905686 0 0 1 -5.155758,-4.9903916 5.1559324,4.9905686 0 0 1 5.155758,-4.99091 z" />
 		<ellipse
 			style="fill:#00aaff;fill-opacity:1;stroke-width:0.264583"
 			id="path821-4"
 			cx="8.0950375"
-			cy="110.16857"
+			cy="110.1729"
 			rx="7.1437497"
 			ry="6.9783854" />
 		<ellipse
 			style="fill:#00aaff;fill-opacity:1;stroke-width:0.264583"
 			id="path821-4-9"
 			cx="58.762749"
-			cy="98.226509"
+			cy="98.230843"
 			rx="7.1437497"
 			ry="6.9783854" />
 	</g>

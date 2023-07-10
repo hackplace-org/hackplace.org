@@ -66,10 +66,10 @@ export const MenuItems = ({ currentTitle, className }: MenuItemsProps) => {
 									>
 										<Image
 											src="/icon.svg"
-											width={500}
-											height={500}
+											width={250}
+											height={443}
 											alt="hack.place() Logo"
-											className="w-24 h-24"
+											className="justify-start h-24 w-14"
 										/>
 
 										<div className="mb-2 mt-4 text-lg font-medium">
