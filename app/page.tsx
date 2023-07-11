@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Navbar } from "@/components/navbar";
 import { Content } from "@/components/content";
 import { Button } from "@/components/ui/button";
-import { ArrowBigRightDash } from "lucide-react";
 
 export default function Home() {
 	return (
@@ -30,12 +29,9 @@ export default function Home() {
 					<Link className="mt-2" href="/workshops">
 						<Button
 							variant="link"
-							className="group hover:no-underline text-2xl py-6 font-bold text-secondary dark:text-secondary-foreground"
+							className="transition-all hover:text-glow hover:no-underline text-2xl py-6 font-bold text-secondary dark:text-secondary-foreground"
 						>
-							<p className="transition-all group-hover:text-glow">
-								Let&apos;s go
-							</p>
-							<ArrowBigRightDash className="ml-2 w-6 h-6" />
+							Let&apos;s go ⮞
 						</Button>
 					</Link>
 				</div>
