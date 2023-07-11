@@ -21,7 +21,7 @@ const Marquee = ({ labels, ...props }: MarqueeProps) => {
 			{labels.map((label) => (
 				<li
 					key={label}
-					className="group relative transition-colors border-dotted hover:border-solid hover:bg-[#00aaff] hover:text-white border my-auto p-4 rounded-md"
+					className="relative transition-colors border-dotted hover:border-solid hover:bg-[#00aaff] hover:text-white border my-auto p-4 rounded-md"
 				>
 					<div className="absolute transition-opacity top-0 left-0 rounded-md w-full h-full bg-[url(/noise.svg)] opacity-0 hover:opacity-25 brightness-100 contrast-150"></div>
 					{label}
@@ -52,7 +52,7 @@ const Channel = ({ gridArea, name, href, description }: ChannelProps) => {
 						<p className="my-auto text-xl">{name}</p>
 					</div>
 
-					<p className="w-1/2 my-auto text-transparent transition-colors group-hover:text-white">
+					<p className="flex items-center w-1/2 h-12 my-auto text-transparent align-middle transition-colors group-hover:text-white">
 						{description}
 					</p>
 				</a>
@@ -81,7 +81,7 @@ export default function Home() {
 
 			<Content
 				as="section"
-				className="flex flex-col justify-between gap-8 py-8 md:flex-row"
+				className="flex flex-col justify-between py-8 gap-y-4 gap-x-8 md:flex-row"
 				border="bottom"
 			>
 				<div
