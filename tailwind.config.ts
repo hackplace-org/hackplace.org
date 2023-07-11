@@ -18,6 +18,7 @@ export default {
 			},
 		},
 		extend: {
+			
 			fontFamily: {
 				sans: ["var(--font-satoshi)", ...fontFamily.sans],
 			},

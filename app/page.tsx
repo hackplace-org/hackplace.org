@@ -16,9 +16,9 @@ export default function Home() {
 			<Content
 				as="main"
 				className="font-sans py-8 h-80 relative flex justify-center items-center"
-				outerClassName="bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-sky-700 via-sky-500 to-sky-800"
+				outerClassName="overflow-x-hidden bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-sky-700 via-sky-500 to-sky-800"
 			>
-				<div className="select-none pointer-events-none absolute inset-0 bg-[url(/noise.svg)] opacity-25 brightness-100 contrast-150"></div>
+				<div className="select-none pointer-events-none absolute w-[200vw] -translate-x-1/4 inset-0 bg-[url(/noise.svg)] opacity-25 brightness-100 contrast-150"></div>
 				<div className="flex flex-col items-center">
 					<h1 className="text-4xl font-bold text-center text-white">
 						Ready to get started?
@@ -29,10 +29,12 @@ export default function Home() {
 
 					<Link className="mt-2" href="/workshops">
 						<Button
-							variant="ghost"
-							className="text-2xl py-6 font-bold text-secondary dark:text-secondary-foreground"
+							variant="link"
+							className="group hover:no-underline text-2xl py-6 font-bold text-secondary dark:text-secondary-foreground"
 						>
-							Let&apos;s go
+							<p className="transition-all group-hover:text-glow">
+								Let&apos;s go
+							</p>
 							<ArrowBigRightDash className="ml-2 w-6 h-6" />
 						</Button>
 					</Link>
