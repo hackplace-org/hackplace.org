@@ -38,7 +38,7 @@ export const Content = <T extends keyof JSX.IntrinsicElements = "div">({
 	return createElement(
 		as ?? "div",
 		{
-			className: cn(content({ border }), outerClassName),
+			className: cn(content({ border }), "border-dashed", outerClassName),
 			...rest,
 		},
 		<div className={cn("mx-auto max-w-7xl px-8", className)}>

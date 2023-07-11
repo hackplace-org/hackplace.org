@@ -4,8 +4,8 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/lib/siteConfig";
 import { Content } from "@/components/content";
+import { Logo } from "@/components/logo";
 
-import { Logo } from "@/components/navbar/logo";
 import { Auth } from "@/components/navbar/auth";
 import { MenuItems } from "@/components/navbar/menuItems";
 import { MenuToggle } from "@/components/navbar/menuToggle";
