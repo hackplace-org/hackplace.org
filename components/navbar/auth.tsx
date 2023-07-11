@@ -17,14 +17,14 @@ export const Auth = () => {
 					<Button
 						size="icon"
 						variant="ghost"
-						className="my-auto flex md:hidden"
+						className="flex my-auto md:hidden"
 					>
 						<UserX className="w-5 h-5" />
 					</Button>
 				</SignOutButton>
 
 				<SignOutButton>
-					<Button className="my-auto hidden md:flex flex-row gap-x-2">
+					<Button className="flex-row hidden my-auto md:flex gap-x-2">
 						<UserX className="w-5 h-5" />
 						Sign out
 					</Button>
@@ -36,14 +36,14 @@ export const Auth = () => {
 					<Button
 						size="icon"
 						variant="ghost"
-						className="my-auto flex md:hidden"
+						className="flex my-auto md:hidden"
 					>
 						<UserPlus className="w-5 h-5" />
 					</Button>
 				</SignInButton>
 
 				<SignInButton>
-					<Button className="my-auto hidden md:flex flex-row gap-x-2">
+					<Button className="flex-row hidden my-auto md:flex gap-x-2">
 						<UserPlus className="w-5 h-5" />
 						Sign in
 					</Button>

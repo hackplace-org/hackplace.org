@@ -31,7 +31,7 @@ export const MenuToggle = ({ menuOpen, setMenuOpen }: MenuToggleProps) => {
 		<Button
 			size="icon"
 			variant="ghost"
-			className="my-auto flex md:hidden"
+			className="flex my-auto md:hidden"
 			onClick={() => setMenuOpen((open) => !open)}
 		>
 			{menuIcon}

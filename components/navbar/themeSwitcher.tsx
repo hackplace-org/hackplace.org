@@ -36,7 +36,7 @@ export const ThemeSwitcher = () => {
 				</Button>
 			</PopoverTrigger>
 
-			<PopoverContent align="end" className="w-30 p-1 flex flex-col">
+			<PopoverContent align="end" className="flex flex-col p-1 w-30">
 				{siteConfig.themes.map((theme) => (
 					<Button
 						variant="ghost"

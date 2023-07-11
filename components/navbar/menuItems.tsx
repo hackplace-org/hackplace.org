@@ -26,7 +26,7 @@ const ListItem = ({ item }: ListItemProps) => {
 			<NavigationMenuLink asChild>
 				<a
 					href={item.href}
-					className="group block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+					className="block p-3 space-y-1 leading-none no-underline transition-colors rounded-md outline-none select-none group hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
 				>
 					<div
 						className={cn(
@@ -37,7 +37,7 @@ const ListItem = ({ item }: ListItemProps) => {
 						<item.Icon className="w-3 h-3 my-auto" />
 						{item.title}
 					</div>
-					<p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+					<p className="text-sm leading-snug line-clamp-2 text-muted-foreground">
 						{item.description}
 					</p>
 				</a>
@@ -61,7 +61,7 @@ export const MenuItems = ({ currentTitle, className }: MenuItemsProps) => {
 							<li className="row-span-3">
 								<NavigationMenuLink asChild>
 									<a
-										className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+										className="flex flex-col justify-end w-full h-full p-6 no-underline rounded-md outline-none select-none bg-gradient-to-b from-muted/50 to-muted focus:shadow-md"
 										href="/"
 									>
 										<Image
@@ -72,7 +72,7 @@ export const MenuItems = ({ currentTitle, className }: MenuItemsProps) => {
 											className="justify-start h-24 w-14"
 										/>
 
-										<div className="mb-2 mt-4 text-lg font-medium">
+										<div className="mt-4 mb-2 text-lg font-medium">
 											hack.place()
 										</div>
 										<p className="text-sm leading-tight text-muted-foreground">

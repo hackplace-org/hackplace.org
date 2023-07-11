@@ -9,21 +9,21 @@ import { Button } from "@/components/ui/button";
 
 export const Footer = () => {
 	return (
-		<Content as="footer" className="py-8 flex flex-col">
-			<div className="flex flex-col md:flex-row justify-between">
+		<Content as="footer" className="flex flex-col py-8">
+			<div className="flex flex-col justify-between md:flex-row">
 				<div className="pb-4 md:pb-0">
 					<Logo />
 				</div>
 
-				<div className="flex flex-col sm:flex-row gap-4">
-					<div className="flex flex-col gap-y-1 text-muted-foreground w-full sm:w-72">
+				<div className="flex flex-col gap-4 sm:flex-row">
+					<div className="flex flex-col w-full gap-y-1 text-muted-foreground sm:w-72">
 						<h4 className="font-bold text-primary">Workshops</h4>
 
 						<p>Build a Custom Weather App Using JavaScript</p>
 						<p>Create a Cookie Clicker Game with React</p>
 					</div>
 
-					<div className="flex flex-col gap-y-1 text-muted-foreground w-full sm:w-72">
+					<div className="flex flex-col w-full gap-y-1 text-muted-foreground sm:w-72">
 						<h4 className="font-bold text-primary">Donate</h4>
 
 						<Link
@@ -42,7 +42,7 @@ export const Footer = () => {
 				</div>
 			</div>
 
-			<div className="pt-4 flex flex-col gap-y-2 sm:gap-y-0 sm:flex-row justify-between">
+			<div className="flex flex-col justify-between pt-4 gap-y-2 sm:gap-y-0 sm:flex-row">
 				<p className="my-auto text-muted-foreground">
 					© 2023 hack.place()™
 				</p>

@@ -20,7 +20,7 @@ export const Navbar = ({ currentTitle }: NavbarProps) => {
 
 	return (
 		<Content as="nav" border="bottom">
-			<div className="h-16 flex flex-row justify-between">
+			<div className="flex flex-row justify-between h-16">
 				<Logo />
 				<MenuItems
 					currentTitle={currentTitle}
