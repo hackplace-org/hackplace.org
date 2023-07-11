@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 export const Footer = () => {
 	return (
 		<Content as="footer" border="top" className="flex flex-col">
-			<div className="py-4 flex flex-col md:flex-row justify-between">
+			<div className="pt-8 flex flex-col md:flex-row justify-between">
 				<div className="pb-4 md:pb-0">
 					<Logo />
 				</div>
@@ -42,7 +42,7 @@ export const Footer = () => {
 				</div>
 			</div>
 
-			<div className="flex flex-col gap-y-2 sm:gap-y-0 sm:flex-row justify-between">
+			<div className="pt-4 flex flex-col gap-y-2 sm:gap-y-0 sm:flex-row justify-between">
 				<p className="my-auto text-muted-foreground">
 					© 2023 hack.place()™
 				</p>

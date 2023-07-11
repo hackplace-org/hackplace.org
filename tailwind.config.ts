@@ -1,3 +1,4 @@
+import { fontFamily } from "tailwindcss/defaultTheme";
 import type { Config } from "tailwindcss";
 
 export default {
@@ -17,6 +18,9 @@ export default {
 			},
 		},
 		extend: {
+			fontFamily: {
+				sans: ["var(--font-satoshi)", ...fontFamily.sans],
+			},
 			colors: {
 				border: "hsl(var(--border))",
 				input: "hsl(var(--input))",

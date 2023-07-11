@@ -13,6 +13,11 @@ const satoshi = localFont({
 	variable: "--font-satoshi",
 });
 
+const manrope = localFont({
+	src: "../fonts/Manrope-Variable.woff2",
+	variable: "--font-manrope",
+});
+
 export const metadata = {
 	title: "hack.place()",
 	description: "hack.place()",
