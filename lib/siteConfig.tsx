@@ -6,6 +6,7 @@ import {
 	Github,
 	Instagram,
 	Linkedin,
+	MessagesSquare,
 	Landmark,
 	Banknote,
 	Sun,
@@ -69,6 +70,13 @@ export const siteConfig = {
 			description: "Connect with our employees and volunteers.",
 			color: "group-hover:text-[#0a66c2]",
 			Icon: Linkedin,
+		},
+		{
+			title: "Discord",
+			href: "https://discord.gg/YTZdFWgR6V",
+			description: "Chat with our community members and staff.",
+			color: "group-hover:text-[#5865f2]",
+			Icon: MessagesSquare,
 		},
 		{
 			title: "Hack Club Bank",
