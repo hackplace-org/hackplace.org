@@ -1,11 +1,12 @@
 import Link from "next/link";
+import { Hash } from "lucide-react";
 import { type ComponentProps } from "react";
 
+import { cn } from "@/lib/utils";
 import { Navbar } from "@/components/navbar";
 import { Content } from "@/components/content";
 import { Discord } from "@/components/discord";
 import { Button } from "@/components/ui/button";
-import { Hash } from "lucide-react";
 
 interface MarqueeProps extends ComponentProps<"ul"> {
 	labels: string[];
@@ -26,6 +27,40 @@ const Marquee = ({ labels, ...props }: MarqueeProps) => {
 				</li>
 			))}
 		</ul>
+	);
+};
+
+interface ChannelProps {
+	gridArea: string;
+	name: string;
+	href: string;
+	description?: string;
+}
+
+const Channel = ({ gridArea, name, href, description }: ChannelProps) => {
+	return (
+		<div
+			className="group flex flex-row gap-x-4 w-full"
+			style={{ gridArea }}
+		>
+			<Link href={href} legacyBehavior>
+				<a
+					className={cn(
+						"w-full transition-all group-hover:text-white group-hover:bg-[#5865f2] rounded-md border flex flex-row gap-x-1 p-4 font-bold",
+						description && "group-hover:w-2/3"
+					)}
+				>
+					<Hash className="w-5 h-5 my-auto" />
+					<p className="text-xl my-auto">{name}</p>
+				</a>
+			</Link>
+
+			{description && (
+				<p className="text-muted-foreground hidden group-hover:flex my-auto">
+					{description}
+				</p>
+			)}
+		</div>
 	);
 };
 
@@ -59,43 +94,33 @@ export default function Home() {
 					}}
 				>
 					<h1
-						className="text-6xl font-bold max-w-1/2 my-auto"
+						className="text-6xl font-bold max-w-1/2"
 						style={{ gridArea: "a" }}
 					>
 						A vibrant community of...
 					</h1>
 
 					<div
-						className="flex overflow-hidden select-none gap-4 group"
+						className="flex overflow-hidden select-none gap-4 pb-6 group"
 						style={{ gridArea: "b" }}
 					>
 						<Marquee labels={labels} />
 						<Marquee labels={labels} aria-hidden />
 					</div>
 
-					<div
-						className="transition-colors hover:text-white hover:bg-[#5865f2] rounded-md border flex flex-row gap-x-1 p-4 font-bold"
-						style={{ gridArea: "c" }}
-					>
-						<Hash className="w-5 h-5 my-auto" />
-						<p className="text-xl my-auto">announcements</p>
-					</div>
-
-					<div
-						className="transition-colors hover:text-white hover:bg-[#5865f2] rounded-md border flex flex-row gap-x-1 p-4 font-bold"
-						style={{ gridArea: "d" }}
-					>
-						<Hash className="w-5 h-5 my-auto" />
-						<p className="text-xl my-auto">support</p>
-					</div>
-
-					<div
-						className="transition-colors hover:text-white hover:bg-[#5865f2] rounded-md border flex flex-row gap-x-1 p-4 font-bold"
-						style={{ gridArea: "e" }}
-					>
-						<Hash className="w-5 h-5 my-auto" />
-						<p className="text-xl my-auto">lounge</p>
-					</div>
+					<Channel gridArea="c" name="announcements" href="/" />
+					<Channel
+						gridArea="d"
+						name="support"
+						href="/"
+						description="Get help with any question you may have"
+					/>
+					<Channel
+						gridArea="e"
+						name="lounge"
+						href="/"
+						description="Socialize with our community and staff"
+					/>
 
 					<div className="md:block hidden" style={{ gridArea: "f" }}>
 						<Discord />
