@@ -15,14 +15,15 @@ interface MarqueeProps extends ComponentProps<"ul"> {
 const Marquee = ({ labels, ...props }: MarqueeProps) => {
 	return (
 		<ul
-			className="text-2xl font-bold animate-marquee shrink-0 flex justify-around min-w-full gap-4"
+			className="flex justify-around min-w-full gap-4 text-2xl font-bold animate-marquee shrink-0"
 			{...props}
 		>
 			{labels.map((label) => (
 				<li
 					key={label}
-					className="transition-colors border-dotted hover:border-solid hover:bg-[#00aaff] hover:text-white border my-auto p-4 rounded-md"
+					className="group relative transition-colors border-dotted hover:border-solid hover:bg-[#00aaff] hover:text-white border my-auto p-4 rounded-md"
 				>
+					<div className="absolute transition-opacity top-0 left-0 rounded-md w-full h-full bg-[url(/noise.svg)] opacity-0 hover:opacity-25 brightness-100 contrast-150"></div>
 					{label}
 				</li>
 			))}
@@ -34,32 +35,28 @@ interface ChannelProps {
 	gridArea: string;
 	name: string;
 	href: string;
-	description?: string;
+	description: string;
 }
 
 const Channel = ({ gridArea, name, href, description }: ChannelProps) => {
 	return (
 		<div
-			className="group flex flex-row gap-x-4 w-full"
+			className="flex flex-row w-full group gap-x-4"
 			style={{ gridArea }}
 		>
 			<Link href={href} legacyBehavior>
-				<a
-					className={cn(
-						"w-full transition-all group-hover:text-white group-hover:bg-[#5865f2] rounded-md border flex flex-row gap-x-1 p-4 font-bold",
-						description && "group-hover:w-2/3"
-					)}
-				>
-					<Hash className="w-5 h-5 my-auto" />
-					<p className="text-xl my-auto">{name}</p>
+				<a className="relative w-full transition-all group-hover:text-white group-hover:bg-[#5865f2] rounded-md border flex flex-row justify-between p-4 font-bold">
+					<div className="absolute transition-opacity top-0 left-0 rounded-md w-full pointer-events-none select-none h-full bg-[url(/noise.svg)] opacity-0 group-hover:opacity-25 brightness-100 contrast-150"></div>
+					<div className="flex flex-row gap-x-1">
+						<Hash className="w-5 h-5 my-auto" />
+						<p className="my-auto text-xl">{name}</p>
+					</div>
+
+					<p className="w-1/2 my-auto text-transparent transition-colors group-hover:text-white">
+						{description}
+					</p>
 				</a>
 			</Link>
-
-			{description && (
-				<p className="text-muted-foreground hidden group-hover:flex my-auto">
-					{description}
-				</p>
-			)}
 		</div>
 	);
 };
@@ -68,8 +65,9 @@ export default function Home() {
 	const labels = [
 		"builders",
 		"developers",
-		"creators",
+		"makers",
 		"designers",
+		"creators",
 		"programmers",
 		"hackers",
 	];
@@ -83,7 +81,7 @@ export default function Home() {
 
 			<Content
 				as="section"
-				className="py-8 flex flex-col md:flex-row gap-8 justify-between"
+				className="flex flex-col justify-between gap-8 py-8 md:flex-row"
 				border="bottom"
 			>
 				<div
@@ -101,14 +99,19 @@ export default function Home() {
 					</h1>
 
 					<div
-						className="flex overflow-hidden select-none gap-4 pb-6 group"
+						className="flex gap-4 overflow-hidden select-none group"
 						style={{ gridArea: "b" }}
 					>
 						<Marquee labels={labels} />
 						<Marquee labels={labels} aria-hidden />
 					</div>
 
-					<Channel gridArea="c" name="announcements" href="/" />
+					<Channel
+						gridArea="c"
+						name="announcements"
+						href="/"
+						description="View important hack.place() announcements"
+					/>
 					<Channel
 						gridArea="d"
 						name="support"
@@ -119,10 +122,10 @@ export default function Home() {
 						gridArea="e"
 						name="lounge"
 						href="/"
-						description="Socialize with our community and staff"
+						description="Socialize with staff and members of our community"
 					/>
 
-					<div className="md:block hidden" style={{ gridArea: "f" }}>
+					<div className="hidden md:block" style={{ gridArea: "f" }}>
 						<Discord />
 					</div>
 				</div>
@@ -135,7 +138,7 @@ export default function Home() {
 			<Content
 				as="section"
 				border="bottom"
-				className="font-sans py-8 relative flex justify-center items-center"
+				className="relative flex items-center justify-center py-8 font-sans"
 				outerClassName="overflow-x-hidden bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-sky-700 via-sky-500 to-sky-800"
 			>
 				<div className="select-none pointer-events-none absolute w-[200vw] -translate-x-1/4 inset-0 bg-[url(/noise.svg)] opacity-25 brightness-100 contrast-150"></div>
@@ -143,7 +146,7 @@ export default function Home() {
 					<h1 className="text-6xl font-bold text-center text-white">
 						Ready to get started?
 					</h1>
-					<h2 className="text-2xl text-secondary dark:text-secondary-foreground my-4 font-thin">
+					<h2 className="my-4 text-2xl font-thin text-secondary dark:text-secondary-foreground">
 						See how our programs can help you{" "}
 						<span className="font-bold">level up.</span>
 					</h2>
@@ -151,7 +154,7 @@ export default function Home() {
 					<Link className="mt-2" href="/workshops">
 						<Button
 							variant="link"
-							className="group transition-all hover:text-glow hover:no-underline text-2xl py-6 font-extrabold text-secondary dark:text-secondary-foreground"
+							className="py-6 text-2xl font-extrabold transition-all group hover:text-glow hover:no-underline text-secondary dark:text-secondary-foreground"
 						>
 							Let&apos;s go{" "}
 							<span className="ml-2 group-hover:animate-[spin_0.75s_cubic-bezier(0,0,0.2,1)_1]">
