@@ -17,14 +17,18 @@ export const Footer = () => {
 
 				<div className="flex flex-col gap-4 sm:flex-row">
 					<div className="flex flex-col w-full gap-y-1 text-muted-foreground sm:w-72">
-						<h4 className="font-bold text-primary">Workshops</h4>
+						<h4 className="border-l-[5px] pl-2 border-[#00aaff] font-bold text-primary">
+							Workshops
+						</h4>
 
 						<p>Build a Custom Weather App Using JavaScript</p>
 						<p>Create a Cookie Clicker Game with React</p>
 					</div>
 
 					<div className="flex flex-col w-full gap-y-1 text-muted-foreground sm:w-72">
-						<h4 className="font-bold text-primary">Donate</h4>
+						<h4 className="border-l-[5px] pl-2 border-[#00aaff] font-bold text-primary">
+							Donate
+						</h4>
 
 						<Link
 							className="hover:text-[#00aaff] transition-colors"

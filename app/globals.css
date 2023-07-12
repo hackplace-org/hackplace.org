@@ -89,4 +89,15 @@
 			0 0 92px #fff,
 			0 0 151px #fff;
 	}
+
+	.text-glow-dark {
+		text-shadow:
+			0 0 7px #00aaff,
+			0 0 10px #00aaff,
+			0 0 21px #00aaff,
+			0 0 42px #00aaff,
+			0 0 82px #00aaff,
+			0 0 92px #00aaff,
+			0 0 151px #00aaff;
+	}
 }
