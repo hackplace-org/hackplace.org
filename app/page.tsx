@@ -1,7 +1,12 @@
 import Link from "next/link";
 import { type ComponentProps } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
-import { Hash, MessagesSquare, type LucideIcon } from "lucide-react";
+import {
+	Hash,
+	MessagesSquare,
+	MousePointerClick,
+	type LucideIcon,
+} from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Navbar } from "@/components/navbar";
@@ -128,7 +133,7 @@ export default function Home() {
 				border="bottom"
 			>
 				<div
-					className="grid gap-y-4 gap-x-0 md:gap-x-8"
+					className="grid gap-y-2 gap-x-0 md:gap-x-8"
 					style={{
 						gridTemplateAreas:
 							"'a f' 'a f' 'b f' 'c f' 'd f' 'e f'",
@@ -142,7 +147,7 @@ export default function Home() {
 					</h1>
 
 					<div
-						className="flex gap-4 overflow-hidden select-none group"
+						className="flex gap-4 my-2 overflow-hidden select-none group"
 						style={{ gridArea: "b" }}
 					>
 						<Marquee labels={labels} />
@@ -189,7 +194,7 @@ export default function Home() {
 			>
 				<div className="select-none pointer-events-none absolute w-full inset-0 bg-[url(/noise.svg)] opacity-25 brightness-100 contrast-150"></div>
 				<div className="flex flex-col py-8 text-primary">
-					<h1 className="border-l-[10px] pl-4 border-[#00aaff] text-6xl font-bold text-center">
+					<h1 className="border-l-[10px] pl-4 border-[#00aaff] text-6xl font-bold">
 						Ready to get started?
 					</h1>
 					<h2 className="my-4 text-2xl font-thin">
@@ -210,6 +215,13 @@ export default function Home() {
 							</span>
 						</Button>
 					</Link>
+				</div>
+
+				<div className="hidden md:block absolute right-0 bottom-0 text-muted -z-10 translate-y-12">
+					<MousePointerClick
+						className="w-[25rem] h-[25rem] rotate-[15deg]"
+						strokeWidth={0.75}
+					/>
 				</div>
 			</Content>
 		</>
