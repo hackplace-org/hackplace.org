@@ -4,4 +4,5 @@
 2. Turbopack is currently broken when using Bun
 3. Dynamic metadata (`app/robots.ts`) is currently not supported in Turbopack
 4. Host the logo URLs in this repository rather than using external URLs
-5. Fix the hover colors for the icon buttons in the footer
+5. Implement PWA support
+6. Use the Grain component for elements in home page Marquee

@@ -1,41 +1,87 @@
-import Link from "next/link";
-import { type ComponentProps } from "react";
+import NextLink from "next/link";
+import type { ComponentProps } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import {
 	Hash,
+	Ruler,
+	Pencil,
+	ImageIcon,
+	UserCircle,
+	GraduationCap,
 	MessagesSquare,
 	MousePointerClick,
 	type LucideIcon,
 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+import { siteConfig } from "@/lib/siteConfig";
+import { Mission } from "@/app/mission";
+
+import { Link } from "@/components/link";
 import { Navbar } from "@/components/navbar";
 import { Content } from "@/components/content";
 import { Discord } from "@/components/discord";
+import { Hover, Grain } from "@/components/utils";
+
 import { Button } from "@/components/ui/button";
+import {
+	Accordion,
+	AccordionContent,
+	AccordionItem,
+	AccordionTrigger,
+} from "@/components/ui/accordion";
+
+interface PersonProps {
+	person: (typeof siteConfig.people)[number];
+}
+
+const Person = ({ person }: PersonProps) => (
+	<div className="flex flex-col w-full group">
+		<UserCircle className="mx-auto w-72 h-72" strokeWidth={0.75} />
+
+		<p className="text-sm font-bold mx-auto group-hover:text-[#00aaff] transition-all">
+			{person.name}
+		</p>
+		<p className="mx-auto text-sm text-muted-foreground">
+			{person.roles.join(", ")}
+		</p>
+
+		<div className="flex flex-row mx-auto mt-2">
+			{person.links.map((link) => (
+				<NextLink key={link.title} href={link.href} target="_blank">
+					<Button
+						size="icon"
+						variant="ghost"
+						className={cn("transition-colors", link.color)}
+					>
+						<link.Icon className="w-5 h-5" />
+					</Button>
+				</NextLink>
+			))}
+		</div>
+	</div>
+);
 
 interface MarqueeProps extends ComponentProps<"ul"> {
 	labels: string[];
 }
 
-const Marquee = ({ labels, ...props }: MarqueeProps) => {
-	return (
-		<ul
-			className="flex justify-around min-w-full gap-4 text-2xl font-bold animate-marquee shrink-0"
-			{...props}
-		>
-			{labels.map((label) => (
-				<li
-					key={label}
-					className="relative transition-colors border-dotted hover:border-solid hover:bg-[#00aaff] hover:text-white border my-auto p-4 rounded-lg"
-				>
-					<div className="absolute transition-opacity top-0 left-0 rounded-lg w-full h-full bg-[url(/noise.svg)] opacity-0 hover:opacity-25 brightness-100 contrast-150"></div>
-					{label}
-				</li>
-			))}
-		</ul>
-	);
-};
+const Marquee = ({ labels, ...props }: MarqueeProps) => (
+	<ul
+		className="flex justify-around min-w-full gap-4 text-2xl font-bold animate-marquee shrink-0"
+		{...props}
+	>
+		{labels.map((label) => (
+			<li
+				key={label}
+				className="relative transition-colors border-dotted hover:border-solid hover:bg-[#00aaff] hover:text-white border my-auto p-4 rounded-lg"
+			>
+				<div className="absolute transition-opacity top-0 left-0 rounded-lg w-full h-full bg-[url(/noise.svg)] opacity-0 hover:opacity-25 brightness-100 contrast-150"></div>
+				{label}
+			</li>
+		))}
+	</ul>
+);
 
 export const channel = cva("rounded-lg", {
 	variants: {
@@ -70,29 +116,31 @@ const Channel = ({
 			className="flex flex-row w-full group gap-x-4"
 			style={{ gridArea }}
 		>
-			<Link href={href} legacyBehavior>
+			<NextLink href={href} passHref legacyBehavior>
 				<a
+					target="_blank"
 					className={cn(
 						"relative w-full transition-all group-hover:text-white group-hover:bg-[#5865f2] border flex flex-row justify-between p-4 font-bold",
 						selection
 					)}
 				>
-					<div
+					<Grain
 						className={cn(
-							"absolute transition-opacity top-0 left-0 w-full pointer-events-none select-none h-full bg-[url(/noise.svg)] opacity-0 group-hover:opacity-25 brightness-100 contrast-150",
+							"z-0 transition-opacity top-0 left-0 h-full opacity-0 group-hover:opacity-25",
 							selection
 						)}
-					></div>
+					/>
+
 					<div className="flex flex-row gap-x-1">
 						<Icon className="w-5 h-5 my-auto" />
 						<p className="my-auto text-xl">{name}</p>
 					</div>
 
-					<p className="flex items-center w-1/2 h-12 my-auto text-transparent align-middle transition-colors group-hover:text-white">
+					<p className="items-center hidden w-1/2 h-12 my-auto text-transparent align-middle transition-colors sm:flex group-hover:text-white">
 						{description}
 					</p>
 				</a>
-			</Link>
+			</NextLink>
 		</div>
 	);
 };
@@ -111,25 +159,82 @@ export default function Home() {
 	return (
 		<>
 			<Navbar currentTitle="Home" />
-			<Content as="main" className="py-8" border="bottom">
-				Hello world
-			</Content>
-
 			<Content
-				as="section"
-				className="py-8"
+				as="main"
+				className="flex flex-col py-16 gap-y-16 md:gap-y-0 md:flex-row"
 				outerClassName="relative"
 				border="bottom"
 			>
-				<div className="select-none pointer-events-none absolute w-full inset-0 bg-[url(/noise.svg)] opacity-25 brightness-100 contrast-150"></div>
-				<h1 className="border-l-[10px] pl-4 border-[#00aaff] text-6xl font-bold">
+				<Grain />
+				<hgroup className="flex flex-col w-full md:w-1/2 gap-y-4">
+					<h1 className="text-6xl font-bold">We learned to code.</h1>
+					<h2 className="border-l-[7px] pl-4 border-[#00aaff] text-4xl font-semibold text-muted-foreground">
+						Now it&apos;s <Hover>your turn.</Hover>
+					</h2>
+
+					<h3 className="my-4 text-xl font-thin mt-">
+						hack.place() fully immerses students throughout Monmouth
+						County in the world of programming through{" "}
+						<Link href="/workshops" text="workshops" />,{" "}
+						<Link href="/hackathons" text="hackathons" />, and{" "}
+						<Link href="/seminars" text="seminars" /> that teach
+						them to use the most current technologies.
+					</h3>
+				</hgroup>
+
+				<div className="w-full md:w-1/2 md:relative">
+					<div className="md:absolute md:translate-x-1/2 translate-x-0 mx-auto md:mx-0 w-1/2 flex h-full rounded-2xl bg-[#00aaff] rotate-6">
+						<ImageIcon className="w-40 h-40 m-auto" />
+					</div>
+				</div>
+			</Content>
+
+			<Mission />
+
+			<Content
+				as="section"
+				className="py-16"
+				outerClassName="relative"
+				border="bottom"
+			>
+				<Grain />
+				<h1 className="w-fit mx-auto text-center p-4 rounded-2xl bg-[#00aaff] text-sky-900 text-6xl font-bold">
 					Our team
 				</h1>
+				<h2 className="w-full mx-auto my-4 text-2xl font-thin text-center md:w-3/4">
+					We are a team of talented high school{" "}
+					<Hover>programmers</Hover> and <Hover>engineers</Hover> that
+					are committed to teaching kids what we know!
+				</h2>
+
+				<div className="flex flex-col w-full mt-4 sm:flex-row">
+					{siteConfig.people.map((person) => (
+						<Person key={person.name} person={person} />
+					))}
+				</div>
+
+				<div className="absolute top-0 right-0 hidden -translate-y-12 md:block text-muted -z-10">
+					<GraduationCap
+						className="w-[25rem] h-[25rem] rotate-[15deg]"
+						strokeWidth={0.75}
+					/>
+				</div>
+
+				<div className="absolute top-0 left-0 hidden -translate-y-12 md:block text-muted -z-10">
+					<Ruler className="w-[25rem] h-[25rem]" strokeWidth={0.75} />
+				</div>
+
+				<div className="absolute bottom-0 hidden -translate-x-1/2 translate-y-[20%] left-1/2 md:block text-muted -z-10">
+					<Pencil
+						className="w-[25rem] h-[25rem]"
+						strokeWidth={0.75}
+					/>
+				</div>
 			</Content>
 
 			<Content
 				as="section"
-				className="flex flex-col justify-between py-8 gap-y-4 gap-x-8 md:flex-row"
+				className="flex flex-col justify-between py-16 gap-y-4 gap-x-8 md:flex-row"
 				border="bottom"
 			>
 				<div
@@ -140,7 +245,7 @@ export default function Home() {
 					}}
 				>
 					<h1
-						className="border-l-[10px] pl-4 border-[#00aaff] text-6xl font-bold max-w-1/2"
+						className="border-l-[10px] pl-4 h-fit border-[#00aaff] text-6xl font-bold max-w-1/2"
 						style={{ gridArea: "a" }}
 					>
 						A vibrant community of...
@@ -189,35 +294,72 @@ export default function Home() {
 			<Content
 				as="section"
 				border="bottom"
-				className="flex py-8 font-sans"
+				className="flex py-16 font-sans"
 				outerClassName="relative"
 			>
-				<div className="select-none pointer-events-none absolute w-full inset-0 bg-[url(/noise.svg)] opacity-25 brightness-100 contrast-150"></div>
-				<div className="flex flex-col py-8 text-primary">
+				<Grain />
+				<div className="flex flex-col w-full text-primary">
 					<h1 className="border-l-[10px] pl-4 border-[#00aaff] text-6xl font-bold">
 						Ready to get started?
 					</h1>
 					<h2 className="my-4 text-2xl font-thin">
 						See how our programs can help you{" "}
-						<span className="font-bold transition-all hover:text-glow">
-							level up.
-						</span>
+						<Hover>level up.</Hover>
 					</h2>
 
-					<Link className="mt-2" href="/workshops">
+					<Accordion type="single" className="w-full" collapsible>
+						<AccordionItem value="item-1">
+							<AccordionTrigger>
+								Who&apos;s running this organization?
+							</AccordionTrigger>
+							<AccordionContent>
+								We are a group of seniors from{" "}
+								<Link
+									href="https://www.hths.mcvsd.org"
+									text="High Technology High School"
+									external
+								/>{" "}
+								(Lincroft, NJ), ranking 1st-2nd nationally among
+								the best STEM high schools (
+								<Link
+									href="https://www.usnews.com/education/best-high-schools/new-jersey/districts/monmouth-county-vocational-school-district/high-technology-high-school-12808"
+									text="U.S. News"
+									external
+								/>
+								). We are passionate about computer science and
+								software engineering, and we want to share our
+								knowledge with our community!
+							</AccordionContent>
+						</AccordionItem>
+
+						<AccordionItem value="item-2">
+							<AccordionTrigger>
+								What are our qualifications?
+							</AccordionTrigger>
+							<AccordionContent>
+								All of our teachers have years of experience in
+								programming and computer science. We have taken
+								related courses at our school, and we have also
+								participated in various hackathons and
+								competitions!
+							</AccordionContent>
+						</AccordionItem>
+					</Accordion>
+
+					<NextLink className="mt-6" href="/workshops">
 						<Button
 							variant="link"
-							className="py-6 pl-0 text-2xl font-extrabold transition-all group hover:text-glow hover:no-underline"
+							className="py-6 pl-0 text-2xl font-extrabold text-black dark:text-white transition-all hover:text-[#00aaff] dark:hover:text-glow group hover:no-underline"
 						>
 							Let&apos;s go{" "}
 							<span className="ml-2 group-hover:animate-[spin_0.75s_cubic-bezier(0,0,0.2,1)_1]">
 								⮞
 							</span>
 						</Button>
-					</Link>
+					</NextLink>
 				</div>
 
-				<div className="hidden md:block absolute right-0 bottom-0 text-muted -z-10 translate-y-12">
+				<div className="absolute top-0 right-0 hidden -translate-y-12 md:block text-muted -z-10">
 					<MousePointerClick
 						className="w-[25rem] h-[25rem] rotate-[15deg]"
 						strokeWidth={0.75}

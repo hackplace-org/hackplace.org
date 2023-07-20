@@ -27,7 +27,12 @@ export default function RootLayout({ children }: PropsWithChildren) {
 	return (
 		<ClerkProvider>
 			<html lang="en" suppressHydrationWarning>
-				<body className={cn(satoshi.variable, "font-sans antialiased")}>
+				<body
+					className={cn(
+						satoshi.variable,
+						"font-sans antialiased selection:bg-[#00aaff] selection:text-sky-900"
+					)}
+				>
 					<ThemeProvider fontVariable={satoshi.variable}>
 						{children}
 						<Footer />

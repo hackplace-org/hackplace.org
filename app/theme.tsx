@@ -15,7 +15,7 @@ export const ThemeProvider = ({
 		<NextThemesProvider
 			enableSystem
 			attribute="class"
-			defaultTheme="system"
+			defaultTheme="dark"
 			enableColorScheme={false}
 		>
 			<style jsx global>

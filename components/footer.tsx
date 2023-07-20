@@ -1,15 +1,16 @@
-import Link from "next/link";
+import NextLink from "next/link";
 
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/lib/siteConfig";
 import { Content } from "@/components/content";
+import { Link } from "@/components/link";
 import { Logo } from "@/components/logo";
 
 import { Button } from "@/components/ui/button";
 
 export const Footer = () => {
 	return (
-		<Content as="footer" className="flex flex-col py-8">
+		<Content as="footer" className="flex flex-col pt-16 pb-8">
 			<div className="flex flex-col justify-between md:flex-row">
 				<div className="pb-4 md:pb-0">
 					<Logo />
@@ -33,27 +34,33 @@ export const Footer = () => {
 						<Link
 							className="hover:text-[#00aaff] transition-colors"
 							href="https://opencollective.com/hack-place"
-						>
-							Sponsor our organization
-						</Link>
+							text="Sponsor our organization"
+							unstyled
+							external
+						/>
 						<Link
 							className="hover:text-[#00aaff] transition-colors"
 							href="https://bank.hackclub.com/donations/start/hack-place"
-						>
-							Make an individual, one-time contribution
-						</Link>
+							text="Make an individual, one-time contribution"
+							unstyled
+							external
+						/>
 					</div>
 				</div>
 			</div>
 
-			<div className="flex flex-col justify-between pt-4 gap-y-2 sm:gap-y-0 sm:flex-row">
+			<div className="flex flex-col justify-between pt-8 gap-y-2 sm:gap-y-0 sm:flex-row">
 				<p className="my-auto text-muted-foreground">
 					© 2023 hack.place()™
 				</p>
 
 				<section className="my-auto">
 					{siteConfig.links.map((link) => (
-						<Link key={link.title} href={link.href}>
+						<NextLink
+							key={link.title}
+							href={link.href}
+							target="_blank"
+						>
 							<Button
 								size="icon"
 								variant="ghost"
@@ -63,7 +70,7 @@ export const Footer = () => {
 									className={cn(link.color, "w-5 h-5")}
 								/>
 							</Button>
-						</Link>
+						</NextLink>
 					))}
 				</section>
 			</div>

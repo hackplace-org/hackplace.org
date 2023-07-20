@@ -8,7 +8,9 @@ import {
 	Linkedin,
 	MessagesSquare,
 	Landmark,
-	Banknote,
+	HeartHandshake,
+	Mail,
+	Code,
 	Sun,
 	MoonStar,
 	Laptop,
@@ -90,7 +92,71 @@ export const siteConfig = {
 			href: "https://opencollective.com/hack-place",
 			description: "Help support our cause, receive perks in return.",
 			color: "group-hover:text-[#84aef3]",
-			Icon: Banknote,
+			Icon: HeartHandshake,
+		},
+	],
+	people: [
+		{
+			name: "Anish Pallati",
+			roles: ["Co-founder", "CEO"],
+			description: "His name is Anish",
+			links: [
+				{
+					title: "email",
+					href: "mailto:anish@hackplace.org",
+					color: "hover:text-[#ce3c30]",
+					Icon: Mail,
+				},
+				{
+					title: "github",
+					href: "https://github.com/ap-1",
+					color: "hover:text-[#00aaff]",
+					Icon: Github,
+				},
+				{
+					title: "linkedin",
+					href: "https://www.linkedin.com/in/anish-pallati/",
+					color: "hover:text-[#0a66c2]",
+					Icon: Linkedin,
+				},
+				{
+					title: "devpost",
+					href: "https://devpost.com/anishpallati",
+					color: "hover:text-[#23a196]",
+					Icon: Code,
+				},
+			],
+		},
+		{
+			name: "Sharabh Ojha",
+			roles: ["Co-founder", "COO"],
+			description: "His name is Sharabh",
+			links: [
+				{
+					title: "email",
+					href: "mailto:sharabh@hackplace.org",
+					color: "hover:text-[#ce3c30]",
+					Icon: Mail,
+				},
+				{
+					title: "github",
+					href: "https://github.com/shojha24",
+					color: "hover:text-[#00aaff]",
+					Icon: Github,
+				},
+				{
+					title: "linkedin",
+					href: "https://www.linkedin.com/in/sharabh-ojha-988a68218/",
+					color: "hover:text-[#0a66c2]",
+					Icon: Linkedin,
+				},
+				{
+					title: "devpost",
+					href: "https://devpost.com/sharabho",
+					color: "hover:text-[#23a196]",
+					Icon: Code,
+				},
+			],
 		},
 	],
 	themes: [
