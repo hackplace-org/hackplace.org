@@ -22,6 +22,7 @@ export default {
 				sans: ["var(--font-satoshi)", ...fontFamily.sans],
 			},
 			colors: {
+				brand: "var(--brand)",
 				border: "hsl(var(--border))",
 				input: "hsl(var(--input))",
 				ring: "hsl(var(--ring))",

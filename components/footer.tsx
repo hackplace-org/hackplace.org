@@ -18,7 +18,7 @@ export const Footer = () => {
 
 				<div className="flex flex-col gap-4 sm:flex-row">
 					<div className="flex flex-col w-full gap-y-1 text-muted-foreground sm:w-72">
-						<h4 className="border-l-[5px] pl-2 border-[#00aaff] font-bold text-primary">
+						<h4 className="border-l-[5px] pl-2 border-brand font-bold text-primary">
 							Workshops
 						</h4>
 
@@ -27,19 +27,19 @@ export const Footer = () => {
 					</div>
 
 					<div className="flex flex-col w-full gap-y-1 text-muted-foreground sm:w-72">
-						<h4 className="border-l-[5px] pl-2 border-[#00aaff] font-bold text-primary">
+						<h4 className="border-l-[5px] pl-2 border-brand font-bold text-primary">
 							Donate
 						</h4>
 
 						<Link
-							className="hover:text-[#00aaff] transition-colors"
+							className="hover:text-brand transition-colors"
 							href="https://opencollective.com/hack-place"
 							text="Sponsor our organization"
 							unstyled
 							external
 						/>
 						<Link
-							className="hover:text-[#00aaff] transition-colors"
+							className="hover:text-brand transition-colors"
 							href="https://bank.hackclub.com/donations/start/hack-place"
 							text="Make an individual, one-time contribution"
 							unstyled
@@ -54,7 +54,7 @@ export const Footer = () => {
 					© 2023 hack.place()™
 				</p>
 
-				<section className="my-auto">
+				<section className="mx-auto my-auto sm:mx-0">
 					{siteConfig.links.map((link) => (
 						<NextLink
 							key={link.title}

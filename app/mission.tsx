@@ -86,7 +86,7 @@ const MissionItem = forwardRef<
 
 			<div className="z-20 relative bg-background px-6 py-8 w-[calc(100%-2px)] h-[calc(100%-2px)] rounded-lg m-[1px]">
 				<Grain className="z-10 rounded-lg" />
-				<Icon className="w-6 h-6 mb-2 transition-colors group-hover:text-[#00aaff] dark:group-hover:text-white" />
+				<Icon className="w-6 h-6 mb-2 transition-colors group-hover:text-brand dark:group-hover:text-white" />
 				{children}
 			</div>
 		</div>
@@ -118,7 +118,7 @@ export const Mission = () => {
 
 	return (
 		<Content as="section" className="py-16" border="bottom">
-			<h1 className="w-fit mx-auto text-center p-4 rounded-2xl bg-[#00aaff] text-sky-900 text-6xl font-bold">
+			<h1 className="w-fit mx-auto text-center p-4 rounded-2xl bg-brand text-sky-900 text-6xl font-bold">
 				Our mission
 			</h1>
 

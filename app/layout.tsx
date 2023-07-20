@@ -30,7 +30,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
 				<body
 					className={cn(
 						satoshi.variable,
-						"font-sans antialiased selection:bg-[#00aaff] selection:text-sky-900"
+						"font-sans antialiased selection:bg-brand selection:text-sky-900"
 					)}
 				>
 					<ThemeProvider fontVariable={satoshi.variable}>

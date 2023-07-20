@@ -23,14 +23,14 @@ export const siteConfig = {
 			href: "/",
 			protected: false,
 			description: "We learned how to code—now it's your turn.",
-			color: "group-hover:text-[#00aaff]",
+			color: "group-hover:text-brand",
 			Icon: Home,
 		},
 		{
 			title: "Workshops",
 			href: "/workshops",
 			description: "Engaging projects hand-crafted by our instructors.",
-			color: "group-hover:text-[#00aaff]",
+			color: "group-hover:text-brand",
 			protected: false,
 			Icon: Lightbulb,
 		},
@@ -38,7 +38,7 @@ export const siteConfig = {
 			title: "Hackathons",
 			href: "/hackathons",
 			description: "And we haven't forgotten the prizes.",
-			color: "group-hover:text-[#00aaff]",
+			color: "group-hover:text-brand",
 			protected: false,
 			Icon: Trophy,
 		},
@@ -46,7 +46,7 @@ export const siteConfig = {
 			title: "Seminars",
 			href: "/seminars",
 			description: "Attend seminars from experts in their fields.",
-			color: "group-hover:text-[#00aaff]",
+			color: "group-hover:text-brand",
 			protected: false,
 			Icon: Mic,
 		},
@@ -56,7 +56,7 @@ export const siteConfig = {
 			title: "GitHub",
 			href: "https://github.com/hackplace-org",
 			description: "Share our commitment to open-source software.",
-			color: "group-hover:text-[#00aaff]",
+			color: "group-hover:text-brand",
 			Icon: Github,
 		},
 		{
@@ -110,7 +110,7 @@ export const siteConfig = {
 				{
 					title: "github",
 					href: "https://github.com/ap-1",
-					color: "hover:text-[#00aaff]",
+					color: "hover:text-brand",
 					Icon: Github,
 				},
 				{
@@ -141,7 +141,7 @@ export const siteConfig = {
 				{
 					title: "github",
 					href: "https://github.com/shojha24",
-					color: "hover:text-[#00aaff]",
+					color: "hover:text-brand",
 					Icon: Github,
 				},
 				{

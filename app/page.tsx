@@ -39,7 +39,7 @@ const Person = ({ person }: PersonProps) => (
 	<div className="flex flex-col w-full group">
 		<UserCircle className="mx-auto w-72 h-72" strokeWidth={0.75} />
 
-		<p className="text-sm font-bold mx-auto group-hover:text-[#00aaff] transition-all">
+		<p className="mx-auto text-sm font-bold transition-all group-hover:text-brand">
 			{person.name}
 		</p>
 		<p className="mx-auto text-sm text-muted-foreground">
@@ -74,7 +74,7 @@ const Marquee = ({ labels, ...props }: MarqueeProps) => (
 		{labels.map((label) => (
 			<li
 				key={label}
-				className="relative transition-colors border-dotted hover:border-solid hover:bg-[#00aaff] hover:text-white border my-auto p-4 rounded-lg"
+				className="relative p-4 my-auto transition-colors border border-dotted rounded-lg hover:border-solid hover:bg-brand hover:text-white"
 			>
 				<div className="absolute transition-opacity top-0 left-0 rounded-lg w-full h-full bg-[url(/noise.svg)] opacity-0 hover:opacity-25 brightness-100 contrast-150"></div>
 				{label}
@@ -168,7 +168,7 @@ export default function Home() {
 				<Grain />
 				<hgroup className="flex flex-col w-full md:w-1/2 gap-y-4">
 					<h1 className="text-6xl font-bold">We learned to code.</h1>
-					<h2 className="border-l-[7px] pl-4 border-[#00aaff] text-4xl font-semibold text-muted-foreground">
+					<h2 className="border-l-[7px] pl-4 border-brand text-4xl font-semibold text-muted-foreground">
 						Now it&apos;s <Hover>your turn.</Hover>
 					</h2>
 
@@ -183,7 +183,7 @@ export default function Home() {
 				</hgroup>
 
 				<div className="w-full md:w-1/2 md:relative">
-					<div className="md:absolute md:translate-x-1/2 translate-x-0 mx-auto md:mx-0 w-1/2 flex h-full rounded-2xl bg-[#00aaff] rotate-6">
+					<div className="flex w-1/2 h-full mx-auto translate-x-0 md:absolute md:translate-x-1/2 md:mx-0 rounded-2xl bg-brand rotate-6">
 						<ImageIcon className="w-40 h-40 m-auto" />
 					</div>
 				</div>
@@ -198,7 +198,7 @@ export default function Home() {
 				border="bottom"
 			>
 				<Grain />
-				<h1 className="w-fit mx-auto text-center p-4 rounded-2xl bg-[#00aaff] text-sky-900 text-6xl font-bold">
+				<h1 className="p-4 mx-auto text-6xl font-bold text-center w-fit rounded-2xl bg-brand text-sky-900">
 					Our team
 				</h1>
 				<h2 className="w-full mx-auto my-4 text-2xl font-thin text-center md:w-3/4">
@@ -245,7 +245,7 @@ export default function Home() {
 					}}
 				>
 					<h1
-						className="border-l-[10px] break-all pl-4 h-fit border-[#00aaff] text-6xl font-bold max-w-1/2"
+						className="border-l-[10px] break-all pl-4 h-fit border-brand text-6xl font-bold max-w-1/2"
 						style={{ gridArea: "a" }}
 					>
 						A vibrant community of...
@@ -299,7 +299,7 @@ export default function Home() {
 			>
 				<Grain />
 				<div className="flex flex-col w-full text-primary">
-					<h1 className="border-l-[10px] pl-4 border-[#00aaff] text-6xl font-bold">
+					<h1 className="border-l-[10px] pl-4 border-brand text-6xl font-bold">
 						Ready to get started?
 					</h1>
 					<h2 className="my-4 text-2xl font-thin">
@@ -349,7 +349,7 @@ export default function Home() {
 					<NextLink className="mt-6" href="/workshops">
 						<Button
 							variant="link"
-							className="py-6 pl-0 text-2xl font-extrabold text-black dark:text-white transition-all hover:text-[#00aaff] dark:hover:text-glow group hover:no-underline"
+							className="py-6 pl-0 text-2xl font-extrabold text-black transition-all dark:text-white hover:text-brand dark:hover:text-glow group hover:no-underline"
 						>
 							Let&apos;s go{" "}
 							<span className="ml-2 group-hover:animate-[spin_0.75s_cubic-bezier(0,0,0.2,1)_1]">
