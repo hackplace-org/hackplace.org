@@ -83,7 +83,7 @@ const Marquee = ({ labels, ...props }: MarqueeProps) => (
 	</ul>
 );
 
-export const channel = cva("rounded-lg", {
+const channel = cva("rounded-lg", {
 	variants: {
 		round: {
 			default: "",
