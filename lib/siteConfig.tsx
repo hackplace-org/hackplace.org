@@ -159,6 +159,7 @@ export const siteConfig = {
 			],
 		},
 	],
+	defaultTheme: "dark",
 	themes: [
 		{
 			name: "Light",

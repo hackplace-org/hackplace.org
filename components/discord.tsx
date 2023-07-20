@@ -1,5 +1,6 @@
 "use client";
 
+import { siteConfig } from "@/lib/siteConfig";
 import { useTheme } from "next-themes";
 import { useUser } from "@clerk/nextjs";
 
@@ -8,7 +9,7 @@ export const Discord = () => {
 	const { isSignedIn, user, isLoaded } = useUser();
 
 	let src = `https://canary.discord.com/widget?id=979086159022030899&theme=${
-		resolvedTheme ?? "dark"
+		resolvedTheme ?? siteConfig.defaultTheme
 	}`;
 
 	if (isLoaded && isSignedIn && user.username) {
