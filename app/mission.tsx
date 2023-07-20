@@ -124,7 +124,7 @@ export const Mission = () => {
 
 			<div
 				onMouseMove={onMouseMove}
-				className="grid w-full grid-cols-2 grid-rows-3 gap-2 mt-8 group/cards sm:grid-rows-2 sm:grid-cols-3 text-muted-foreground"
+				className="grid w-full grid-cols-1 grid-rows-6 gap-2 mt-8 sm:grid-rows-3 sm:grid-cols-2 group/cards md:grid-rows-2 md:grid-cols-3 text-muted-foreground"
 			>
 				<MissionItem ref={ref1} Icon={Palmtree}>
 					to create a <Hover>robust ecosystem</Hover> for students to{" "}
