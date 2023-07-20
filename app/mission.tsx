@@ -72,7 +72,7 @@ const MissionItem = forwardRef<
 			ref={clonedRef}
 			onMouseMove={onMouseMove}
 			className={cn(
-				"will-change-transform relative rounded-lg cursor-pointer group",
+				"bg-border dark:bg-inherit will-change-transform relative rounded-lg cursor-pointer group",
 				"before:bg-[radial-gradient(800px_circle_at_var(--mouse-x)_var(--mouse-y),rgba(255,255,255,0.06),transparent_40%)]",
 				"before:z-30 hover:before:opacity-100 before:select-none before:pointer-events-none before:opacity-0 before:transition-opacity before:duration-500 before:rounded-[inherit] before:content-[''] before:h-full before:left-0 before:absolute before:top-0 before:w-full"
 			)}
