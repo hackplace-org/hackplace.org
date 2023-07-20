@@ -245,7 +245,7 @@ export default function Home() {
 					}}
 				>
 					<h1
-						className="border-l-[10px] pl-4 h-fit border-[#00aaff] text-6xl font-bold max-w-1/2"
+						className="border-l-[10px] break-all pl-4 h-fit border-[#00aaff] text-6xl font-bold max-w-1/2"
 						style={{ gridArea: "a" }}
 					>
 						A vibrant community of...
