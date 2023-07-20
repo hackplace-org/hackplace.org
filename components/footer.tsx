@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 
 export const Footer = () => {
 	return (
-		<Content as="footer" className="flex flex-col pt-16 pb-8">
+		<Content as="footer" className="flex flex-col py-8">
 			<div className="flex flex-col justify-between md:flex-row">
 				<div className="pb-4 md:pb-0">
 					<Logo />
