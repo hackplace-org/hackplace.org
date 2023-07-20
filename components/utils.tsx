@@ -20,7 +20,8 @@ export const Hover = ({ children, className }: HoverProps) => (
 	<span
 		className={cn(
 			className,
-			"text-black transition-all dark:text-white font-bold dark:hover:selection:text-white hover:selection:text-black hover:text-[#00aaff] dark:hover:text-glow"
+			"text-black dark:text-white font-bold transition-all",
+			"hover:text-[#00aaff] dark:hover:text-[#00aaff] sm:dark:hover:text-glow sm:dark:hover:selection:text-white"
 		)}
 	>
 		{children}
