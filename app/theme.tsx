@@ -16,7 +16,7 @@ export const ThemeProvider = ({
 			enableSystem
 			attribute="class"
 			defaultTheme="dark"
-			enableColorScheme={false}
+			enableColorScheme={true}
 		>
 			<style jsx global>
 				{`
