@@ -349,7 +349,7 @@ export default function Home() {
 					<NextLink className="mt-6" href="/workshops">
 						<Button
 							variant="link"
-							className="py-6 pl-0 text-2xl font-extrabold text-black transition-all dark:text-white hover:text-brand dark:hover:text-glow group hover:no-underline"
+							className="py-6 pl-0 text-2xl font-extrabold text-black transition-all hover:text-brand dark:hover:text-brand sm:dark:hover:text-glow sm:dark:hover:selection:text-white dark:text-white group hover:no-underline"
 						>
 							Let&apos;s go{" "}
 							<span className="ml-2 group-hover:animate-[spin_0.75s_cubic-bezier(0,0,0.2,1)_1]">
