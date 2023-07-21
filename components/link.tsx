@@ -37,7 +37,7 @@ export const Link = ({
 			<a
 				className={cn(
 					className,
-					unstyled || "text-brand hover:underline decoration-dashed transition-all",
+					unstyled || "text-brand hover:underline transition-all",
 					"inline-block"
 				)}
 			>

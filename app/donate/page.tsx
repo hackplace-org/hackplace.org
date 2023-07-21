@@ -2,9 +2,16 @@ import { Link } from "@/components/link";
 import { Navbar } from "@/components/navbar";
 import { Content } from "@/components/content";
 import { Hover, Grain } from "@/components/utils";
+import {
+	Accordion,
+	AccordionItem,
+	AccordionTrigger,
+	AccordionContent,
+} from "@/components/ui/accordion";
 
 import { Cost } from "@/app/donate/cost";
-import { Anchor } from "lucide-react";
+import { DonateForm } from "@/app/donate/form";
+import { Anchor, BadgeDollarSign, HelpingHand } from "lucide-react";
 
 export default function Donate() {
 	return (
@@ -24,11 +31,14 @@ export default function Donate() {
 				<h2 className="my-4 text-2xl font-thin">
 					We&apos;re a small team of{" "}
 					<Hover>high school volunteers</Hover>, and we rely on{" "}
-					<Hover>your contributions</Hover> to stay afloat.
+					<Hover>your contributions</Hover> to stay afloat!
 				</h2>
 
 				<div className="absolute bottom-0 right-0 translate-y-24 text-muted -z-10">
-					<Anchor className="w-72 h-72 rotate-[15deg]" />
+					<Anchor
+						className="w-72 h-72 rotate-[15deg]"
+						strokeWidth={0.75}
+					/>
 				</div>
 			</Content>
 
@@ -37,7 +47,7 @@ export default function Donate() {
 					Proposed budget
 				</h1>
 				<h2 className="w-full mx-auto my-4 text-2xl font-thin text-center md:w-3/4">
-					Here is a breakdown of our expected costs, as reflected in
+					Here is a breakdown of our expected costs, as outlined in
 					our{" "}
 					<Link
 						href="https://github.com/hackplace-org/documentation/blob/main/Sponsorship%20Proposal.pdf"
@@ -52,6 +62,114 @@ export default function Donate() {
 					...for an estimated <Hover>$111</Hover> in liquidity and an
 					additional <Hover>$2,500</Hover> prize valuation.
 				</h2>
+			</Content>
+
+			<Content
+				as="section"
+				className="py-16"
+				border="bottom"
+				outerClassName="relative"
+				id="individual"
+			>
+				<Grain />
+
+				<h1 className="border-l-[10px] pl-4 border-brand text-6xl font-bold">
+					Want to help us out?
+				</h1>
+				<h2 className="my-4 text-2xl font-thin">
+					If you&apos;re not willing to shell out a bunch of money,
+					that&apos;s OK&mdash;<Hover>every penny counts</Hover>!
+				</h2>
+
+				<DonateForm />
+
+				<div className="absolute top-0 left-0 -translate-y-32 text-muted -z-10">
+					<BadgeDollarSign
+						className="w-72 h-72 rotate-[15deg]"
+						strokeWidth={0.75}
+					/>
+				</div>
+
+				<div className="absolute bottom-0 right-0 -translate-x-12 translate-y-28 text-muted -z-10">
+					<HelpingHand
+						className="w-80 h-80 rotate-[15deg]"
+						strokeWidth={0.75}
+					/>
+				</div>
+			</Content>
+
+			<Content
+				as="section"
+				className="py-16"
+				border="bottom"
+				id="sponsor"
+			>
+				<h1 className="border-l-[10px] pl-4 border-brand text-6xl font-bold">
+					Are you a company or organization?
+				</h1>
+				<h2 className="my-4 text-2xl font-thin">
+					We&apos;re also accepting <Hover>larger-scale</Hover>{" "}
+					monetary donations, <Hover>merchandise</Hover>, and more on{" "}
+					<Link
+						href="https://opencollective.com/hack-place"
+						text="OpenCollective"
+						external
+					/>
+					!
+				</h2>
+
+				<Accordion type="single" className="w-full" collapsible>
+					<AccordionItem value="item-1">
+						<AccordionTrigger>
+							What kind of contributions are you accepting?
+						</AccordionTrigger>
+						<AccordionContent>
+							Money, merch, perks/credits on your
+							platform&mdash;you name it! We&apos;re open to
+							receiving anything that we can offer as a prize in
+							our <Link href="/hackathons" text="hackathons" />.
+						</AccordionContent>
+					</AccordionItem>
+
+					<AccordionItem value="item-2">
+						<AccordionTrigger>
+							What are you planning on doing with the money?
+						</AccordionTrigger>
+						<AccordionContent>
+							If you offer money, we plan on using it to fund our
+							organization&mdash;you can find our proposed budget
+							above. Any surplus will be used to buy additional
+							prizes for our{" "}
+							<Link href="/hackathons" text="hackathons" />.
+						</AccordionContent>
+					</AccordionItem>
+
+					<AccordionItem value="item-3">
+						<AccordionTrigger>
+							What do I receive in return?
+						</AccordionTrigger>
+						<AccordionContent>
+							Depending on the value of your contribution, we
+							offer several perks in return. You can see them on
+							our{" "}
+							<Link
+								href="https://opencollective.com/hack-place"
+								text="OpenCollective"
+								external
+							/>
+							.
+						</AccordionContent>
+					</AccordionItem>
+
+					<AccordionItem value="item-4">
+						<AccordionTrigger>
+							I have further questions. Can I contact you?
+						</AccordionTrigger>
+						<AccordionContent>
+							Yes! Our contact information is available below.
+						</AccordionContent>
+					</AccordionItem>
+				</Accordion>
 			</Content>
 		</>
 	);

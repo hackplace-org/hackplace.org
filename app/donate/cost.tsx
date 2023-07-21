@@ -3,6 +3,7 @@
 import { useRef, type PropsWithChildren, type MouseEventHandler } from "react";
 
 import { Link } from "@/components/link";
+import { Hover } from "@/components/utils";
 import { CardItem } from "@/components/card";
 
 interface CostItemProps {
@@ -24,14 +25,16 @@ const CostItem = ({
 			<hgroup>
 				<h2 className="text-xl font-semibold">{name}</h2>
 				<h1 className="text-3xl font-bold">
-					{strikethroughCost && (
-						<>
-							<span className="line-through">
-								{strikethroughCost}
-							</span>{" "}
-						</>
-					)}
-					{actualCost}{" "}
+					<Hover>
+						{strikethroughCost && (
+							<>
+								<span className="line-through">
+									{strikethroughCost}
+								</span>{" "}
+							</>
+						)}
+						{actualCost}
+					</Hover>{" "}
 					<span className="text-2xl text-muted-foreground">
 						{label}
 					</span>
@@ -57,17 +60,19 @@ export const Cost = () => {
 	const ref9 = useRef<HTMLDivElement>(null);
 
 	const onMouseMove: MouseEventHandler<HTMLDivElement> = (e) => {
-		[ref1, ref2, ref3, ref4, ref5, ref6, ref7, ref8, ref9].forEach((ref) => {
-			const card = ref.current;
-			if (!card) return;
+		[ref1, ref2, ref3, ref4, ref5, ref6, ref7, ref8, ref9].forEach(
+			(ref) => {
+				const card = ref.current;
+				if (!card) return;
 
-			const rect = card.getBoundingClientRect(),
-				x = e.clientX - rect.left,
-				y = e.clientY - rect.top;
+				const rect = card.getBoundingClientRect(),
+					x = e.clientX - rect.left,
+					y = e.clientY - rect.top;
 
-			card.style.setProperty("--mouse-x", `${x}px`);
-			card.style.setProperty("--mouse-y", `${y}px`);
-		});
+				card.style.setProperty("--mouse-x", `${x}px`);
+				card.style.setProperty("--mouse-y", `${y}px`);
+			}
+		);
 	};
 
 	return (
