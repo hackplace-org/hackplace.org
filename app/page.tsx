@@ -353,7 +353,7 @@ export default function Home() {
 						>
 							Let&apos;s go{" "}
 							<span className="ml-2 group-hover:animate-[spin_0.75s_cubic-bezier(0,0,0.2,1)_1]">
-								⯈
+								►
 							</span>
 						</Button>
 					</NextLink>
