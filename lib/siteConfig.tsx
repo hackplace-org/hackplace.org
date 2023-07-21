@@ -22,9 +22,9 @@ export const siteConfig = {
 		{
 			title: "Home",
 			href: "/",
-			protected: false,
 			description: "We learned how to code—now it's your turn.",
 			color: "group-hover:text-brand",
+			isPublic: true,
 			Icon: Home,
 		},
 		{
@@ -32,7 +32,7 @@ export const siteConfig = {
 			href: "/workshops",
 			description: "Engaging projects hand-crafted by our instructors.",
 			color: "group-hover:text-brand",
-			protected: false,
+			isPublic: false,
 			Icon: Lightbulb,
 		},
 		{
@@ -40,7 +40,7 @@ export const siteConfig = {
 			href: "/hackathons",
 			description: "And we haven't forgotten the prizes.",
 			color: "group-hover:text-brand",
-			protected: false,
+			isPublic: true,
 			Icon: Trophy,
 		},
 		{
@@ -48,7 +48,7 @@ export const siteConfig = {
 			href: "/seminars",
 			description: "Attend seminars from experts in their fields.",
 			color: "group-hover:text-brand",
-			protected: false,
+			isPublic: true,
 			Icon: Mic,
 		},
 		{
@@ -56,7 +56,7 @@ export const siteConfig = {
 			href: "/donate",
 			description: "A little support goes a long way.",
 			color: "group-hover:text-brand",
-			protected: false,
+			isPublic: true,
 			Icon: Banknote,
 		},
 	],

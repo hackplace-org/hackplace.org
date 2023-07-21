@@ -14,6 +14,21 @@ export const Footer = () => {
 			<div className="flex flex-col justify-between md:flex-row">
 				<div className="pb-4 md:pb-0">
 					<Logo />
+					<p className="w-4/5 mt-1 text-muted-foreground">
+						is an entirely{" "}
+						<Link
+							href={siteConfig.links[0].href}
+							text="open source"
+							external
+						/>{" "}
+						and{" "}
+						<Link
+							href={siteConfig.links[4].href}
+							text="financially transparent"
+							external
+						/>{" "}
+						nonprofit organization.
+					</p>
 				</div>
 
 				<div className="flex flex-col gap-4 sm:flex-row">
@@ -32,14 +47,14 @@ export const Footer = () => {
 						</h4>
 
 						<Link
-							className="hover:text-brand transition-colors"
+							className="transition-colors hover:text-brand"
 							href="https://opencollective.com/hack-place"
 							text="Sponsor our organization"
 							unstyled
 							external
 						/>
 						<Link
-							className="hover:text-brand transition-colors"
+							className="transition-colors hover:text-brand"
 							href="https://bank.hackclub.com/donations/start/hack-place"
 							text="Make an individual, one-time contribution"
 							unstyled

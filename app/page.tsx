@@ -224,7 +224,7 @@ export default function Home() {
 					<Ruler className="w-[25rem] h-[25rem]" strokeWidth={0.75} />
 				</div>
 
-				<div className="absolute bottom-0 hidden -translate-x-1/2 translate-y-[20%] left-1/2 md:block text-muted -z-10">
+				<div className="absolute bottom-0 -translate-x-1/2 translate-y-[20%] left-1/2 text-muted -z-10">
 					<Pencil
 						className="w-[25rem] h-[25rem]"
 						strokeWidth={0.75}
@@ -359,7 +359,7 @@ export default function Home() {
 					</NextLink>
 				</div>
 
-				<div className="absolute top-0 right-0 hidden -translate-y-12 md:block text-muted -z-10">
+				<div className="absolute top-0 right-0 -translate-y-12 text-muted -z-10">
 					<MousePointerClick
 						className="w-[25rem] h-[25rem] rotate-[15deg]"
 						strokeWidth={0.75}
