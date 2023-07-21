@@ -33,12 +33,8 @@ export const Footer = () => {
 						<p className="mt-2">
 							Contact:{" "}
 							<Link
-								href="mailto:anish@hackplace.org"
-								text="anish@hackplace.org"
-							/>{" "}
-							<Link
-								href="mailto:sharabh@hackplace.org"
-								text="sharabh@hackplace.org"
+								href="mailto:support@hackplace.org"
+								text="support@hackplace.org"
 							/>
 						</p>
 					</div>
