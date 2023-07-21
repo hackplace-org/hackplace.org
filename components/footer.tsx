@@ -14,7 +14,7 @@ export const Footer = () => {
 			<div className="flex flex-col justify-between md:flex-row">
 				<div className="pb-4 md:pb-0">
 					<Logo />
-					<div className="flex flex-col w-4/5 text-muted-foreground gap-y-1">
+					<div className="flex flex-col w-full sm:w-4/5 text-muted-foreground gap-y-1">
 						<p>
 							is an entirely{" "}
 							<Link
