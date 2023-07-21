@@ -104,7 +104,7 @@ export default function Donate() {
 				border="bottom"
 				id="sponsor"
 			>
-				<h1 className="border-l-[10px] pl-4 border-brand text-6xl font-bold">
+				<h1 className="border-l-[10px] break-all pl-4 border-brand text-6xl font-bold">
 					Are you a company or organization?
 				</h1>
 				<h2 className="my-4 text-2xl font-thin">
