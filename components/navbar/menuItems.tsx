@@ -82,7 +82,7 @@ export const MenuItems = ({ currentTitle, className }: MenuItemsProps) => {
 								</NavigationMenuLink>
 							</li>
 
-							{siteConfig.pages.slice(1).map((page) => (
+							{siteConfig.pages.slice(1, 4).map((page) => (
 								<ListItem key={page.href} item={page} />
 							))}
 						</ul>

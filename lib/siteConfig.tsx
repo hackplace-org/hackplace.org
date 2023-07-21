@@ -3,6 +3,7 @@ import {
 	Lightbulb,
 	Trophy,
 	Mic,
+	Banknote,
 	Github,
 	Instagram,
 	Linkedin,
@@ -49,6 +50,14 @@ export const siteConfig = {
 			color: "group-hover:text-brand",
 			protected: false,
 			Icon: Mic,
+		},
+		{
+			title: "Donate",
+			href: "/donate",
+			description: "A little support goes a long way.",
+			color: "group-hover:text-brand",
+			protected: false,
+			Icon: Banknote,
 		},
 	],
 	links: [
