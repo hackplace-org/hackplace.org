@@ -21,11 +21,11 @@ const sanitize = (n: unknown) =>
 	parseFloat(z.string().parse(n).replace(/[$,]/g, ""));
 
 const formSchema = z.object({
-	name: z.string().min(1),
-	email: z.string().email(),
+	name: z.string().min(1, "Please enter your name"),
+	email: z.string().email("Please provide a valid email address"),
 	amount: z.preprocess(
 		(n) => Math.ceil(sanitize(n) * 100),
-		z.number().positive()
+		z.number().positive("Please provide a valid donation amount")
 	),
 });
 
