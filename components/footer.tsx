@@ -2,10 +2,11 @@ import NextLink from "next/link";
 
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/lib/siteConfig";
-import { Content } from "@/components/content";
+
 import { Link } from "@/components/link";
 import { Logo } from "@/components/logo";
-
+import { Heading } from "@/components/utils"
+import { Content } from "@/components/content";
 import { Button } from "@/components/ui/button";
 
 export const Footer = () => {
@@ -42,18 +43,18 @@ export const Footer = () => {
 
 				<div className="flex flex-col gap-4 sm:flex-row">
 					<div className="flex flex-col w-full gap-y-1 text-muted-foreground sm:w-72">
-						<h4 className="border-l-[5px] pl-2 border-brand font-bold text-primary">
+						<Heading className="text-primary" size="small">
 							Workshops
-						</h4>
+						</Heading>
 
 						<p>Intro to HTML/CSS/JS</p>
 						<p>Intro to React</p>
 					</div>
 
 					<div className="flex flex-col w-full gap-y-1 text-muted-foreground sm:w-72">
-						<h4 className="border-l-[5px] pl-2 border-brand font-bold text-primary">
+						<Heading className="text-primary" size="small">
 							Donate
-						</h4>
+						</Heading>
 
 						<Link
 							className="transition-colors hover:text-brand"

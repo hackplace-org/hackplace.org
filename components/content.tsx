@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import { createElement } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 
-export const content = cva("", {
+const content = cva("", {
 	variants: {
 		border: {
 			top: "border-t",
@@ -41,7 +41,12 @@ export const Content = <T extends keyof JSX.IntrinsicElements = "div">({
 			className: cn(content({ border }), "border-dashed", outerClassName),
 			...rest,
 		},
-		<div className={cn("mx-auto max-w-7xl px-8", className)}>
+		<div
+			className={cn(
+				"mx-auto max-w-7xl px-8 overflow-x-hidden",
+				className
+			)}
+		>
 			{children}
 		</div>
 	);

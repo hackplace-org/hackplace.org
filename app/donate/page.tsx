@@ -1,7 +1,7 @@
 import { Link } from "@/components/link";
 import { Navbar } from "@/components/navbar";
 import { Content } from "@/components/content";
-import { Hover, Grain } from "@/components/utils";
+import { Heading, Hover, Grain } from "@/components/utils";
 import {
 	Accordion,
 	AccordionItem,
@@ -25,9 +25,7 @@ export default function Donate() {
 			>
 				<Grain />
 
-				<h1 className="border-l-[10px] pl-4 border-brand text-6xl font-bold">
-					A little support goes a long way.
-				</h1>
+				<Heading>A little support goes a long way.</Heading>
 				<h2 className="my-4 text-2xl font-thin">
 					We&apos;re a small team of{" "}
 					<Hover>high school volunteers</Hover>, and we rely on{" "}
@@ -73,9 +71,7 @@ export default function Donate() {
 			>
 				<Grain />
 
-				<h1 className="border-l-[10px] pl-4 border-brand text-6xl font-bold">
-					Want to help us out?
-				</h1>
+				<Heading>Want to help us out?</Heading>
 				<h2 className="my-4 text-2xl font-thin">
 					If you&apos;re not willing to shell out a bunch of money,
 					that&apos;s OK&mdash;<Hover>every penny counts</Hover>!
@@ -104,9 +100,7 @@ export default function Donate() {
 				border="bottom"
 				id="sponsor"
 			>
-				<h1 className="border-l-[10px] break-all pl-4 border-brand text-6xl font-bold">
-					Are you a company or organization?
-				</h1>
+				<Heading>Are you a company or organization?</Heading>
 				<h2 className="my-4 text-2xl font-thin">
 					We&apos;re also accepting <Hover>larger-scale</Hover>{" "}
 					monetary donations, <Hover>merchandise</Hover>, and more on{" "}

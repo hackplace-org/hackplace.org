@@ -1,5 +1,36 @@
 import { cn } from "@/lib/utils";
-import { type ComponentProps } from "react";
+import { cva, type VariantProps } from "class-variance-authority";
+import type { PropsWithChildren, ComponentProps } from "react";
+
+const heading = cva("break-all h-fit border-brand", {
+	variants: {
+		size: {
+			main: "text-6xl border-l-[10px] font-bold pl-4",
+			sub: "text-4xl border-l-[7px] font-semibold pl-4",
+			small: "border-l-[5px] font-bold pl-2",
+		},
+	},
+	defaultVariants: {
+		size: "main",
+	},
+});
+
+interface HeadingProps
+	extends ComponentProps<"h1">,
+		VariantProps<typeof heading> {}
+
+export const Heading = ({
+	className,
+	children,
+	size,
+	...props
+}: PropsWithChildren<HeadingProps>) => {
+	return (
+		<h1 className={cn(heading({ size }), className)} {...props}>
+			{children}
+		</h1>
+	);
+};
 
 interface GrainProps {
 	className?: string;

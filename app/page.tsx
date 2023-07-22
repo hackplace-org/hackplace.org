@@ -21,7 +21,7 @@ import { Link } from "@/components/link";
 import { Navbar } from "@/components/navbar";
 import { Content } from "@/components/content";
 import { Discord } from "@/components/discord";
-import { Hover, Grain } from "@/components/utils";
+import { Heading, Hover, Grain } from "@/components/utils";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -168,9 +168,9 @@ export default function Home() {
 				<Grain />
 				<hgroup className="flex flex-col w-full md:w-1/2 gap-y-4">
 					<h1 className="text-6xl font-bold">We learned to code.</h1>
-					<h2 className="border-l-[7px] pl-4 border-brand text-4xl font-semibold text-muted-foreground">
+					<Heading className="text-muted-foreground" size="sub">
 						Now it&apos;s <Hover>your turn.</Hover>
-					</h2>
+					</Heading>
 
 					<h3 className="my-4 text-xl font-thin mt-">
 						hack.place() fully immerses students throughout Monmouth
@@ -244,12 +244,9 @@ export default function Home() {
 							"'a f' 'a f' 'b f' 'c f' 'd f' 'e f'",
 					}}
 				>
-					<h1
-						className="border-l-[10px] break-all pl-4 h-fit border-brand text-6xl font-bold max-w-1/2"
-						style={{ gridArea: "a" }}
-					>
+					<Heading className="max-w-1/2" style={{ gridArea: "a" }}>
 						A vibrant community of...
-					</h1>
+					</Heading>
 
 					<div
 						className="flex gap-4 my-2 overflow-hidden select-none group"
@@ -299,9 +296,7 @@ export default function Home() {
 			>
 				<Grain />
 				<div className="flex flex-col w-full text-primary">
-					<h1 className="border-l-[10px] pl-4 border-brand text-6xl font-bold">
-						Ready to get started?
-					</h1>
+					<Heading>Ready to get started?</Heading>
 					<h2 className="my-4 text-2xl font-thin">
 						See how our programs can help you{" "}
 						<Hover>level up.</Hover>
