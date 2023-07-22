@@ -92,7 +92,7 @@ export const MenuItems = ({ currentTitle, className }: MenuItemsProps) => {
 				<NavigationMenuItem>
 					<NavigationMenuTrigger>Connect</NavigationMenuTrigger>
 					<NavigationMenuContent>
-						<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+						<ul className="grid md:w-[400px] gap-3 p-4 lg:w-[500px] md:grid-cols-2">
 							{siteConfig.links.map((link) => (
 								<ListItem key={link.href} item={link} />
 							))}
