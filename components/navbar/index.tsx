@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-import { siteConfig } from "@/lib/siteConfig";
+import { pages } from "@/lib/siteConfig";
 import { Content } from "@/components/content";
 import { Logo } from "@/components/logo";
 
@@ -12,7 +12,7 @@ import { MenuToggle } from "@/components/navbar/menuToggle";
 import { ThemeSwitcher } from "@/components/navbar/themeSwitcher";
 
 export interface NavbarProps {
-	currentTitle: (typeof siteConfig.pages)[number]["title"];
+	currentTitle: (typeof pages)[number]["title"];
 }
 
 export const Navbar = ({ currentTitle }: NavbarProps) => {

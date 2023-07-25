@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { siteConfig } from "@/lib/siteConfig";
+import { people } from "@/lib/siteConfig";
 import { Mission } from "@/app/mission";
 
 import { Link } from "@/components/link";
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
 };
 
 interface PersonProps {
-	person: (typeof siteConfig.people)[number];
+	person: (typeof people)[number];
 }
 
 const Person = ({ person }: PersonProps) => (
@@ -214,7 +214,7 @@ export default function Home() {
 				</h2>
 
 				<div className="flex flex-col w-full mt-4 sm:flex-row">
-					{siteConfig.people.map((person) => (
+					{people.map((person) => (
 						<Person key={person.name} person={person} />
 					))}
 				</div>

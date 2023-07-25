@@ -4,7 +4,7 @@ import { useState, useEffect, type JSX } from "react";
 import { useTheme } from "next-themes";
 import { Loader2 } from "lucide-react";
 
-import { siteConfig } from "@/lib/siteConfig";
+import { themes } from "@/lib/siteConfig";
 import { Button } from "@/components/ui/button";
 import {
 	Popover,
@@ -19,7 +19,7 @@ export const ThemeSwitcher = () => {
 	);
 
 	useEffect(() => {
-		const currentTheme = siteConfig.themes.find(
+		const currentTheme = themes.find(
 			(theme) => theme.value === resolvedTheme
 		);
 
@@ -37,7 +37,7 @@ export const ThemeSwitcher = () => {
 			</PopoverTrigger>
 
 			<PopoverContent align="end" className="flex flex-col p-1 w-30">
-				{siteConfig.themes.map((theme) => (
+				{themes.map((theme) => (
 					<Button
 						variant="ghost"
 						key={theme.value}

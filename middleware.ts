@@ -1,4 +1,4 @@
-import { siteConfig } from "@/lib/siteConfig";
+import { pages } from "@/lib/siteConfig";
 import { authMiddleware, clerkClient } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
 
@@ -25,13 +25,13 @@ export default authMiddleware({
 			return NextResponse.redirect(url);
 		}
 	},
-	publicRoutes: siteConfig.pages.reduce((filtered, { isPublic, href }) => {
+	publicRoutes: pages.reduce((filtered, { isPublic, href }) => {
 		if (isPublic) {
 			filtered.push(href);
 		}
 
 		return filtered;
-	}, [] as (typeof siteConfig.pages)[number]["href"][]),
+	}, [] as (typeof pages)[number]["href"][]),
 });
 
 export const config = {

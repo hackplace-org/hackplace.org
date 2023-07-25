@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { cn } from "@/lib/utils";
-import { siteConfig } from "@/lib/siteConfig";
+import { pages, links } from "@/lib/siteConfig";
 import {
 	NavigationMenu,
 	NavigationMenuContent,
@@ -17,7 +17,7 @@ import {
 import { type NavbarProps } from "@/components/navbar";
 
 interface ListItemProps {
-	item: (typeof siteConfig.pages | typeof siteConfig.links)[number];
+	item: (typeof pages | typeof links)[number];
 }
 
 const ListItem = ({ item }: ListItemProps) => {
@@ -76,13 +76,13 @@ export const MenuItems = ({ currentTitle, className }: MenuItemsProps) => {
 											hack.place()
 										</div>
 										<p className="text-sm leading-tight text-muted-foreground">
-											{siteConfig.pages[0].description}
+											{pages[0].description}
 										</p>
 									</a>
 								</NavigationMenuLink>
 							</li>
 
-							{siteConfig.pages.slice(2, 5).map((page) => (
+							{pages.slice(2, 5).map((page) => (
 								<ListItem key={page.href} item={page} />
 							))}
 						</ul>
@@ -93,7 +93,7 @@ export const MenuItems = ({ currentTitle, className }: MenuItemsProps) => {
 					<NavigationMenuTrigger>Connect</NavigationMenuTrigger>
 					<NavigationMenuContent>
 						<ul className="grid md:w-[400px] gap-3 p-4 lg:w-[500px] md:grid-cols-2">
-							{siteConfig.links.map((link) => (
+							{links.map((link) => (
 								<ListItem key={link.href} item={link} />
 							))}
 						</ul>
