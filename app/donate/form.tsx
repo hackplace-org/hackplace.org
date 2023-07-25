@@ -29,10 +29,10 @@ const formSchema = z.object({
 	),
 });
 
-type Input = z.infer<typeof formSchema>;
+type FormInput = z.infer<typeof formSchema>;
 
 export const DonateForm = () => {
-	const form = useForm<Input>({
+	const form = useForm<FormInput>({
 		resolver: zodResolver(formSchema),
 		defaultValues: {
 			name: "",
@@ -41,7 +41,7 @@ export const DonateForm = () => {
 		},
 	});
 
-	const onSubmit = ({ name, email, amount }: Input) => {
+	const onSubmit = ({ name, email, amount }: FormInput) => {
 		const url = new URL(
 			"https://bank.hackclub.com/donations/start/hack-place"
 		);
