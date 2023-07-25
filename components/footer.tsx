@@ -1,7 +1,7 @@
 import NextLink from "next/link";
 
 import { cn } from "@/lib/utils";
-import { siteConfig } from "@/lib/siteConfig";
+import { links, workshops } from "@/lib/siteConfig";
 
 import { Link } from "@/components/link";
 import { Logo } from "@/components/logo";
@@ -19,20 +19,20 @@ export const Footer = () => {
 						<p>
 							is an entirely{" "}
 							<Link
-								href={siteConfig.links[0].href}
+								href={links[0].href}
 								text="open source"
 								external
 							/>{" "}
 							and{" "}
 							<Link
-								href={siteConfig.links[4].href}
+								href={links[4].href}
 								text="financially transparent"
 								external
 							/>{" "}
 							nonprofit organization.
 						</p>
 
-						<div className="flex flex-row mt-2 gap-x-2">
+						<div className="flex flex-row mt-2 mb-6 lg:mb-0 gap-x-2">
 							<NextLink href="https://discord.gg/QmPdqegQNb">
 								<Button>Join our team</Button>
 							</NextLink>
@@ -52,8 +52,9 @@ export const Footer = () => {
 							Workshops
 						</Heading>
 
-						<p>Intro to HTML/CSS/JS</p>
-						<p>Intro to React</p>
+						{workshops.map((workshop) => (
+							<p key={workshop.id}>{workshop.name}</p>
+						))}
 					</div>
 
 					<div className="flex flex-col w-full gap-y-1 text-muted-foreground sm:w-72">
@@ -83,7 +84,7 @@ export const Footer = () => {
 				</p>
 
 				<section className="mx-auto my-auto sm:mx-0">
-					{siteConfig.links.map((link) => (
+					{links.map((link) => (
 						<NextLink
 							key={link.title}
 							href={link.href}
