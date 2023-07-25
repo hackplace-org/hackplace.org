@@ -13,6 +13,12 @@ import { Cost } from "@/app/donate/cost";
 import { DonateForm } from "@/app/donate/form";
 import { Anchor, BadgeDollarSign, HelpingHand } from "lucide-react";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "Donate",
+};
+
 export default function Donate() {
 	return (
 		<>

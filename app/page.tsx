@@ -31,6 +31,12 @@ import {
 	AccordionTrigger,
 } from "@/components/ui/accordion";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "Home",
+};
+
 interface PersonProps {
 	person: (typeof siteConfig.people)[number];
 }

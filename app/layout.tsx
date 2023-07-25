@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/app/theme";
 import { ClerkProvider } from "@clerk/nextjs";
 import type { PropsWithChildren } from "react";
+import type { Metadata } from "next";
 
 import { Footer } from "@/components/footer";
 import "./globals.css";
@@ -18,7 +19,7 @@ const satoshi = localFont({
 // 	variable: "--font-manrope",
 // });
 
-export const metadata = {
+export const metadata: Metadata = {
 	title: "hack.place()",
 	description: "hack.place()",
 };

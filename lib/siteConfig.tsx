@@ -1,5 +1,6 @@
 import {
 	Home,
+	ClipboardCheck,
 	Lightbulb,
 	Trophy,
 	Mic,
@@ -26,6 +27,14 @@ export const siteConfig = {
 			color: "group-hover:text-brand",
 			isPublic: true,
 			Icon: Home,
+		},
+		{
+			title: "Onboarding",
+			href: "/onboarding",
+			description: "Get started with hack.place().",
+			color: "group-hover:text-brand",
+			isPublic: false,
+			Icon: ClipboardCheck,
 		},
 		{
 			title: "Workshops",
