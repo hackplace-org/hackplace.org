@@ -5,15 +5,15 @@ import { siteConfig } from "@/lib/siteConfig";
 
 import { Link } from "@/components/link";
 import { Logo } from "@/components/logo";
-import { Heading } from "@/components/utils"
+import { Heading } from "@/components/utils";
 import { Content } from "@/components/content";
 import { Button } from "@/components/ui/button";
 
 export const Footer = () => {
 	return (
 		<Content as="footer" className="flex flex-col py-8">
-			<div className="flex flex-col justify-between md:flex-row">
-				<div className="pb-4 md:pb-0">
+			<div className="flex flex-col justify-between lg:flex-row">
+				<div className="pb-4 lg:pb-0">
 					<Logo />
 					<div className="flex flex-col w-full sm:w-4/5 text-muted-foreground gap-y-1">
 						<p>
@@ -31,13 +31,18 @@ export const Footer = () => {
 							/>{" "}
 							nonprofit organization.
 						</p>
-						<p className="mt-2">
-							Contact:{" "}
-							<Link
-								href="mailto:support@hackplace.org"
-								text="support@hackplace.org"
-							/>
-						</p>
+
+						<div className="flex flex-row mt-2 gap-x-2">
+							<NextLink href="https://discord.gg/QmPdqegQNb">
+								<Button>Join our team</Button>
+							</NextLink>
+
+							<NextLink href="mailto:support@hackplace.org">
+								<Button variant="outline">
+									Contact support
+								</Button>
+							</NextLink>
+						</div>
 					</div>
 				</div>
 
