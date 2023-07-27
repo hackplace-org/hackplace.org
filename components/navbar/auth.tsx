@@ -1,38 +1,26 @@
 "use client";
 
 import { UserPlus, UserX } from "lucide-react";
-import {
-	SignInButton,
-	SignOutButton,
-	SignedIn,
-	SignedOut,
-} from "@clerk/nextjs";
+import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 
 export const Auth = () => {
 	return (
 		<div className="flex">
 			<SignedIn>
-				<SignOutButton>
-					<Button
-						size="icon"
-						variant="ghost"
-						className="flex my-auto md:hidden"
-					>
-						<UserX className="w-5 h-5" />
-					</Button>
-				</SignOutButton>
-
-				<SignOutButton>
-					<Button className="flex-row hidden my-auto md:flex gap-x-2">
-						<UserX className="w-5 h-5" />
-						Sign out
-					</Button>
-				</SignOutButton>
+				<div className="my-auto">
+					<UserButton
+						appearance={{
+							elements: {
+								userButtonPopoverFooter: "hidden",
+							},
+						}}
+					/>
+				</div>
 			</SignedIn>
 
 			<SignedOut>
-				<SignInButton>
+				<SignInButton mode="modal">
 					<Button
 						size="icon"
 						variant="ghost"
@@ -42,7 +30,7 @@ export const Auth = () => {
 					</Button>
 				</SignInButton>
 
-				<SignInButton>
+				<SignInButton mode="modal">
 					<Button className="flex-row hidden my-auto md:flex gap-x-2">
 						<UserPlus className="w-5 h-5" />
 						Sign in
