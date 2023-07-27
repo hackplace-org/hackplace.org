@@ -5,8 +5,8 @@ import { Content } from "@/components/content";
 import { Heading } from "@/components/utils";
 
 import { OnboardingForm } from "@/app/onboarding/form";
-import type { Metadata } from "next";
 import { Separator } from "@/components/ui/separator";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
 	title: "Onboarding",

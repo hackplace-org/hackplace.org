@@ -1,16 +1,15 @@
-import { headers } from "next/headers";
-import { NextResponse } from "next/server";
-
 import { pages } from "@/lib/siteConfig";
+import { NextResponse } from "next/server";
 import { authMiddleware, clerkClient } from "@clerk/nextjs";
 
 declare global {
 	interface UserPrivateMetadata {
 		onboardingCompleted: boolean;
+		nonce: number;
 	}
 }
 
-export const fetchCache = "default-no-store"
+export const fetchCache = "default-no-store";
 
 export default authMiddleware({
 	afterAuth: async (auth, { nextUrl }) => {
@@ -41,6 +40,11 @@ export default authMiddleware({
 			url.searchParams.set("redirect", pathname);
 
 			return NextResponse.redirect(url);
+		} else if (
+			pathname === "/onboarding" &&
+			user.privateMetadata.onboardingCompleted
+		) {
+			return NextResponse.redirect(new URL("/", nextUrl));
 		}
 	},
 	publicRoutes: pages.reduce((filtered, { isPublic, href }) => {

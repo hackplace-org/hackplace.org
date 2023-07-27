@@ -21,6 +21,7 @@ export async function saveResponse(data: FormInput & UserId) {
 	await clerkClient.users.updateUser(userId, {
 		privateMetadata: {
 			onboardingCompleted: true,
+			nonce: Date.now(),
 		},
 	});
 }
