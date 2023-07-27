@@ -15,6 +15,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
+import { useToast } from "@/components/ui/use-toast";
 import {
 	Form,
 	FormControl,
@@ -48,6 +49,7 @@ interface OnboardingFormProps {
 
 export const OnboardingForm = ({ redirectTo }: OnboardingFormProps) => {
 	const router = useRouter();
+	const { toast } = useToast();
 	const { userId } = useAuth();
 	const [workshopInterest, setWorkshopInterest] = useState(false);
 
@@ -128,9 +130,14 @@ export const OnboardingForm = ({ redirectTo }: OnboardingFormProps) => {
 	};
 
 	const onSubmit = async (values: FormInput) => {
-		await saveResponse({ ...values, userId }).then(() =>
-			router.push(redirectTo)
-		);
+		await saveResponse({ ...values, userId });
+
+		router.push(redirectTo);
+		toast({
+			title: "Success! Your response has been saved.",
+			description:
+				"If you are not redirected shortly, please refresh the page.",
+		});
 	};
 
 	return (

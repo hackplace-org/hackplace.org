@@ -7,6 +7,7 @@ import type { PropsWithChildren } from "react";
 import type { Metadata } from "next";
 
 import { Footer } from "@/components/footer";
+import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
 
 const satoshi = localFont({
@@ -36,7 +37,9 @@ export default function RootLayout({ children }: PropsWithChildren) {
 				>
 					<ThemeProvider fontVariable={satoshi.variable}>
 						{children}
+
 						<Footer />
+						<Toaster />
 					</ThemeProvider>
 				</body>
 			</html>

@@ -24,6 +24,7 @@
 		"@radix-ui/react-separator": "^1.0.3",
 		"@radix-ui/react-slider": "^1.1.2",
 		"@radix-ui/react-slot": "^1.0.2",
+		"@radix-ui/react-toast": "^1.1.4",
 		"@t3-oss/env-nextjs": "^0.6.0",
 		"@types/node": "20.3.1",
 		"@types/react": "18.2.12",
@@ -49,6 +50,7 @@
 	},
 	"devDependencies": {
 		"bun-framework-next": "^12.2.5",
-		"drizzle-kit": "^0.19.12"
+		"drizzle-kit": "^0.19.12",
+		"shadcn-ui": "^0.3.0"
 	}
 }
