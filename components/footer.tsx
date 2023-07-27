@@ -29,7 +29,7 @@ export const Footer = () => {
 								text="financially transparent"
 								external
 							/>{" "}
-							nonprofit organization.
+							fiscally sponsored nonprofit organization.
 						</p>
 
 						<div className="flex flex-row mt-2 mb-6 lg:mb-0 gap-x-2">
