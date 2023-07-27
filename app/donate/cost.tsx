@@ -148,12 +148,12 @@ export const Cost = () => {
 
 			<CardItem ref={ref6}>
 				<CostItem
-					name="PlanetScale"
+					name="Turso"
 					strikethroughCost="$29"
 					actualCost="$0"
 					label="per month"
 				>
-					(limited Hobby tier)
+					(limited Starter tier)
 				</CostItem>
 			</CardItem>
 
