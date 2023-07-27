@@ -18,14 +18,15 @@ import { type NavbarProps } from "@/components/navbar";
 
 interface ListItemProps {
 	item: (typeof pages | typeof links)[number];
+	target?: string;
 }
 
-const ListItem = ({ item }: ListItemProps) => {
+const ListItem = ({ item, target }: ListItemProps) => {
 	return (
 		<li>
 			<NavigationMenuLink asChild>
 				<a
-					target="_blank"
+					target={target ?? "_self"}
 					href={item.href}
 					className="block p-3 space-y-1 leading-none no-underline transition-colors rounded-md outline-none select-none group hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
 				>
@@ -95,7 +96,11 @@ export const MenuItems = ({ currentTitle, className }: MenuItemsProps) => {
 					<NavigationMenuContent>
 						<ul className="grid md:w-[400px] gap-3 p-4 lg:w-[500px] md:grid-cols-2">
 							{links.map((link) => (
-								<ListItem key={link.href} item={link} />
+								<ListItem
+									key={link.href}
+									item={link}
+									target="_blank"
+								/>
 							))}
 						</ul>
 					</NavigationMenuContent>
