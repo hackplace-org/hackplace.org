@@ -1,6 +1,8 @@
+import { headers } from "next/headers";
+import { NextResponse } from "next/server";
+
 import { pages } from "@/lib/siteConfig";
 import { authMiddleware, clerkClient } from "@clerk/nextjs";
-import { NextResponse } from "next/server";
 
 declare global {
 	interface UserPrivateMetadata {
@@ -8,12 +10,28 @@ declare global {
 	}
 }
 
+export const fetchCache = "default-no-store"
+
 export default authMiddleware({
 	afterAuth: async (auth, { nextUrl }) => {
-		if (auth.isApiRoute || !auth.userId) return;
+		if (auth.isApiRoute) return;
+
+		const { pathname, searchParams } = nextUrl;
+
+		if (!auth.userId) {
+			if (pathname === "/onboarding") {
+				const url = new URL(
+					searchParams.get("redirect") ?? "/",
+					nextUrl
+				);
+
+				return NextResponse.redirect(url);
+			}
+
+			return;
+		}
 
 		const user = await clerkClient.users.getUser(auth.userId);
-		const { pathname } = nextUrl;
 
 		if (
 			pathname !== "/onboarding" &&
