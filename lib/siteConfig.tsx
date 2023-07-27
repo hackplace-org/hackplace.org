@@ -208,3 +208,13 @@ export const workshops = [
 	{ id: "weather-app", name: "HTML/CSS/JS: Weather App" },
 	{ id: "cookie-clicker", name: "React: Cookie Clicker" },
 ] as const;
+
+export const days = [
+	{ id: "sunday", name: "Sunday" },
+	{ id: "monday", name: "Monday" },
+	{ id: "tuesday", name: "Tuesday" },
+	{ id: "wednesday", name: "Wednesday" },
+	{ id: "thursday", name: "Thursday" },
+	{ id: "friday", name: "Friday" },
+	{ id: "saturday", name: "Saturday" },
+] as const;
