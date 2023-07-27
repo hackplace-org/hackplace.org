@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 import type { PropsWithChildren, ComponentProps } from "react";
 
-const heading = cva("break-all h-fit border-brand", {
+const heading = cva("break-word h-fit border-brand", {
 	variants: {
 		size: {
 			main: "text-6xl border-l-[10px] font-bold pl-4",
