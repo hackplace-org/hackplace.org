@@ -10,23 +10,33 @@ declare global {
 	}
 }
 
-export const fetchCache = "default-no-store";
+export const fetchCache = "default-no-store"
 
 export default authMiddleware({
 	afterAuth: async (auth, { nextUrl }) => {
+		if (auth.isApiRoute) return;
+
 		const { pathname, searchParams } = nextUrl;
 
-		if (pathname === "/onboarding") {
-			const url = new URL(searchParams.get("redirect") ?? "/", nextUrl);
+		if (!auth.userId) {
+			if (pathname === "/onboarding") {
+				const url = new URL(
+					searchParams.get("redirect") ?? "/",
+					nextUrl
+				);
 
-			return NextResponse.redirect(url);
+				return NextResponse.redirect(url);
+			}
+
+			return;
 		}
-
-		if (auth.isApiRoute || !auth.userId) return;
 
 		const user = await clerkClient.users.getUser(auth.userId);
 
-		if (!user.privateMetadata.onboardingCompleted) {
+		if (
+			pathname !== "/onboarding" &&
+			!user.privateMetadata.onboardingCompleted
+		) {
 			const url = new URL("/onboarding", nextUrl);
 			url.searchParams.set("redirect", pathname);
 
