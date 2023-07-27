@@ -25,6 +25,7 @@ const ListItem = ({ item }: ListItemProps) => {
 		<li>
 			<NavigationMenuLink asChild>
 				<a
+					target="_blank"
 					href={item.href}
 					className="block p-3 space-y-1 leading-none no-underline transition-colors rounded-md outline-none select-none group hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
 				>
