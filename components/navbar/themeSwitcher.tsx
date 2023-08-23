@@ -1,10 +1,8 @@
 "use client";
 
-import { useState, useEffect, type JSX } from "react";
 import { useTheme } from "next-themes";
-import { Loader2 } from "lucide-react";
+import { Sun, MoonStar, Laptop } from "lucide-react";
 
-import { themes } from "@/lib/siteConfig";
 import { Button } from "@/components/ui/button";
 import {
 	Popover,
@@ -12,27 +10,35 @@ import {
 	PopoverTrigger,
 } from "@/components/ui/popover";
 
+const themes = [
+	{
+		name: "Light",
+		value: "light",
+		Icon: Sun,
+	},
+	{
+		name: "Dark",
+		value: "dark",
+		Icon: MoonStar,
+	},
+	{
+		name: "System",
+		value: "system",
+		Icon: Laptop,
+	},
+] as const;
+
 export const ThemeSwitcher = () => {
-	const { resolvedTheme, setTheme } = useTheme();
-	const [icon, setIcon] = useState<JSX.Element>(
-		<Loader2 className="w-5 h-5 animate-spin" />
-	);
-
-	useEffect(() => {
-		const currentTheme = themes.find(
-			(theme) => theme.value === resolvedTheme
-		);
-
-		if (!currentTheme) return;
-
-		setIcon(<currentTheme.Icon className="w-5 h-5" />);
-	}, [resolvedTheme]);
+	const { setTheme } = useTheme();
 
 	return (
 		<Popover>
 			<PopoverTrigger className="my-auto" asChild>
 				<Button size="icon" variant="ghost">
-					{icon}
+					<Sun className="w-5 h-5 transition-all scale-100 rotate-0 dark:-rotate-90 dark:scale-0" />
+					<MoonStar className="absolute w-5 h-5 transition-all scale-0 rotate-90 dark:rotate-0 dark:scale-100" />
+
+					<span className="sr-only">Toggle theme</span>
 				</Button>
 			</PopoverTrigger>
 

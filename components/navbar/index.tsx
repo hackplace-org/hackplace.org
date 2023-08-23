@@ -1,14 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import { Menu, X } from "lucide-react";
+
 import { cn } from "@/lib/utils";
 import { pages } from "@/lib/siteConfig";
-import { Content } from "@/components/content";
-import { Logo } from "@/components/logo";
 
+import { Logo } from "@/components/logo";
+import { Content } from "@/components/content";
+import { Button } from "@/components/ui/button";
 import { Auth } from "@/components/navbar/auth";
 import { MenuItems } from "@/components/navbar/menuItems";
-import { MenuToggle } from "@/components/navbar/menuToggle";
 import { ThemeSwitcher } from "@/components/navbar/themeSwitcher";
 
 export interface NavbarProps {
@@ -30,7 +32,28 @@ export const Navbar = ({ currentTitle }: NavbarProps) => {
 				<div className="flex flex-row gap-x-2">
 					<ThemeSwitcher />
 					<Auth />
-					<MenuToggle menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+
+					<Button
+						size="icon"
+						variant="ghost"
+						className="flex my-auto md:hidden"
+						onClick={() => setMenuOpen((open) => !open)}
+					>
+						<Menu
+							className={cn(
+								"w-5 h-5 transition-all scale-100 rotate-0",
+								menuOpen && "-rotate-90 scale-0"
+							)}
+						/>
+						<X
+							className={cn(
+								"absolute w-5 h-5 transition-all scale-0 rotate-90",
+								menuOpen && "rotate-0 scale-100"
+							)}
+						/>
+
+						<span className="sr-only">Toggle menu</span>
+					</Button>
 				</div>
 			</div>
 
