@@ -13,9 +13,6 @@ import {
 	Twitter,
 	Mail,
 	Code,
-	Sun,
-	MoonStar,
-	Laptop,
 	Sunrise,
 	Tv,
 	ClipboardList,
@@ -180,25 +177,6 @@ export const people = [
 				Icon: Code,
 			},
 		],
-	},
-] as const;
-
-export const defaultTheme = "dark" as const;
-export const themes = [
-	{
-		name: "Light",
-		value: "light",
-		Icon: Sun,
-	},
-	{
-		name: "Dark",
-		value: "dark",
-		Icon: MoonStar,
-	},
-	{
-		name: "System",
-		value: "system",
-		Icon: Laptop,
 	},
 ] as const;
 
