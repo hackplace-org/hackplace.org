@@ -178,7 +178,7 @@ export default function Home() {
 						Now it&apos;s <Hover>your turn.</Hover>
 					</Heading>
 
-					<h3 className="my-4 text-xl font-thin mt-">
+					<h3 className="my-4 text-xl font-thin">
 						hack.place() fully immerses students throughout Monmouth
 						County in the world of programming through{" "}
 						<Link href="/workshops" text="workshops" />,{" "}
