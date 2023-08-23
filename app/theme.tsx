@@ -1,6 +1,5 @@
 "use client";
 
-import { defaultTheme } from "@/lib/siteConfig";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { type PropsWithChildren } from "react";
 
@@ -16,7 +15,7 @@ export const ThemeProvider = ({
 		<NextThemesProvider
 			enableSystem
 			attribute="class"
-			defaultTheme={defaultTheme}
+			defaultTheme="dark"
 			enableColorScheme={true}
 		>
 			<style jsx global>
