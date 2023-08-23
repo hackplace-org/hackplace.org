@@ -10,12 +10,16 @@ import {
 	Linkedin,
 	MessagesSquare,
 	Landmark,
-	HeartHandshake,
+	Twitter,
 	Mail,
 	Code,
 	Sun,
 	MoonStar,
 	Laptop,
+	Sunrise,
+	Tv,
+	ClipboardList,
+	Sunset,
 } from "lucide-react";
 
 export const pages = [
@@ -79,14 +83,14 @@ export const links = [
 	},
 	{
 		title: "Instagram",
-		href: "https://instagram.com/hackplace_org",
+		href: "https://instagram.com/_hackplace",
 		description: "Browse our photos, videos, and announcements.",
 		color: "group-hover:text-[#e4405f]",
 		Icon: Instagram,
 	},
 	{
 		title: "LinkedIn",
-		href: "https://www.linkedin.com/company/hack-place/",
+		href: "https://www.linkedin.com/company/hackplace-org/",
 		description: "Connect with our employees and volunteers.",
 		color: "group-hover:text-[#0a66c2]",
 		Icon: Linkedin,
@@ -99,18 +103,18 @@ export const links = [
 		Icon: MessagesSquare,
 	},
 	{
+		title: "Twitter",
+		href: "https://twitter.com/_hackplace",
+		description: "Get updates on our events and activities.",
+		color: "group-hover:text-[#1D9BF0]",
+		Icon: Twitter,
+	},
+	{
 		title: "Hack Club Bank",
 		href: "https://bank.hackclub.com/hack-place",
 		description: "Full transparency on all of our finances.",
 		color: "group-hover:text-[#e7364e]",
 		Icon: Landmark,
-	},
-	{
-		title: "OpenCollective",
-		href: "https://opencollective.com/hack-place",
-		description: "Help support our cause, receive perks in return.",
-		color: "group-hover:text-[#84aef3]",
-		Icon: HeartHandshake,
 	},
 ] as const;
 
@@ -217,4 +221,31 @@ export const days = [
 	{ id: "thursday", name: "Thursday" },
 	{ id: "friday", name: "Friday" },
 	{ id: "saturday", name: "Saturday" },
+] as const;
+
+export const stages = [
+	{
+		id: "sunrise",
+		name: "Opening Ceremony",
+		start: new Date("Fri Sep 22 2023 18:30:00 GMT-0400"),
+		Icon: Sunrise,
+	},
+	{
+		id: "tv",
+		name: "Judging Period",
+		start: new Date("Sun Sep 24 2023 20:00:00 GMT-0400"),
+		Icon: Tv,
+	},
+	{
+		id: "clipboardlist",
+		name: "Public Voting Ends",
+		start: new Date("Mon Sep 25 2023 18:30:00 GMT-0400"),
+		Icon: ClipboardList,
+	},
+	{
+		id: "sunset",
+		name: "Closing Ceremony",
+		start: new Date("Mon Sep 25 2023 20:00:00 GMT-0400"),
+		Icon: Sunset,
+	},
 ] as const;
