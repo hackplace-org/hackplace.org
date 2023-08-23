@@ -100,7 +100,7 @@ export const links = [
 		Icon: MessagesSquare,
 	},
 	{
-		title: "Twitter",
+		title: "Twitter? X?",
 		href: "https://twitter.com/_hackplace",
 		description: "Get updates on our events and activities.",
 		color: "group-hover:text-[#1D9BF0]",
@@ -189,6 +189,8 @@ export const activities = [
 export const workshops = [
 	{ id: "weather-app", name: "HTML/CSS/JS: Weather App" },
 	{ id: "cookie-clicker", name: "React: Cookie Clicker" },
+	{ id: "discord-bot", name: "Object Oriented Python: Discord Bot" },
+	{ id: "magic-mod", name: "Minecraft Modding: Magic Mod" },
 ] as const;
 
 export const days = [
