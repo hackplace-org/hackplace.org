@@ -109,13 +109,7 @@ export default function Donate() {
 				<Heading>Are you a company or organization?</Heading>
 				<h2 className="my-4 text-2xl font-thin">
 					We&apos;re also accepting <Hover>larger-scale</Hover>{" "}
-					monetary donations, <Hover>merchandise</Hover>, and more on{" "}
-					<Link
-						href="https://opencollective.com/hack-place"
-						text="OpenCollective"
-						external
-					/>
-					!
+					monetary donations, <Hover>merchandise</Hover>, and more!
 				</h2>
 
 				<Accordion type="single" className="w-full" collapsible>
@@ -145,23 +139,6 @@ export default function Donate() {
 					</AccordionItem>
 
 					<AccordionItem value="item-3">
-						<AccordionTrigger>
-							What do I receive in return?
-						</AccordionTrigger>
-						<AccordionContent>
-							Depending on the value of your contribution, we
-							offer several perks in return. You can see them on
-							our{" "}
-							<Link
-								href="https://opencollective.com/hack-place"
-								text="OpenCollective"
-								external
-							/>
-							.
-						</AccordionContent>
-					</AccordionItem>
-
-					<AccordionItem value="item-4">
 						<AccordionTrigger>
 							I have further questions. Can I contact you?
 						</AccordionTrigger>
