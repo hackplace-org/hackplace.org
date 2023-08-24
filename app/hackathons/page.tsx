@@ -11,7 +11,7 @@ export default function Hackathons() {
 		<>
 			<Navbar currentTitle="Hackathons" />
 			<Content as="section" className="py-16" border="bottom">
-				TODO
+				Coming soon
 			</Content>
 		</>
 	);

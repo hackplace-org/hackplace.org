@@ -12,7 +12,7 @@ export default function Seminars() {
 		<>
 			<Navbar currentTitle="Seminars" />
 			<Content as="main" className="py-16" border="bottom">
-				TODO
+				Coming soon
 			</Content>
 		</>
 	);
