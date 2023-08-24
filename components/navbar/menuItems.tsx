@@ -14,6 +14,7 @@ import {
 	NavigationMenuTrigger,
 	navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { Badge } from "@/components/ui/badge";
 import { type NavbarProps } from "@/components/navbar";
 
 interface ListItemProps {
@@ -22,6 +23,8 @@ interface ListItemProps {
 }
 
 const ListItem = ({ item, target }: ListItemProps) => {
+	const soon: ListItemProps["item"]["title"][] = ["Workshops", "Seminars"];
+
 	return (
 		<li>
 			<NavigationMenuLink asChild>
@@ -33,11 +36,22 @@ const ListItem = ({ item, target }: ListItemProps) => {
 					<div
 						className={cn(
 							item.color,
-							"flex flex-row gap-x-1 transition-colors text-sm font-medium leading-none"
+							"flex flex-row justify-between transition-colors text-sm font-medium leading-none"
 						)}
 					>
-						<item.Icon className="w-3 h-3 my-auto" />
-						{item.title}
+						<div className="flex flex-row gap-x-1">
+							<item.Icon className="w-3 h-3 my-auto" />
+							<p className="my-auto">{item.title}</p>
+						</div>
+
+						{!target &&
+							(soon.includes(item.title) ? (
+								<Badge>Soon</Badge>
+							) : (
+								<Badge className="bg-brand text-white">
+									New
+								</Badge>
+							))}
 					</div>
 					<p className="text-sm leading-snug line-clamp-2 text-muted-foreground">
 						{item.description}
@@ -74,8 +88,11 @@ export const MenuItems = ({ currentTitle, className }: MenuItemsProps) => {
 											className="justify-start h-24 w-14"
 										/>
 
-										<div className="mt-4 mb-2 text-lg font-medium">
-											{pages[2].title}
+										<div className="flex flex-row justify-between text-lg font-medium leading-none mt-4 mb-2">
+											<p className="my-auto">
+												{pages[2].title}
+											</p>
+											<Badge>Soon</Badge>
 										</div>
 										<p className="text-sm leading-tight text-muted-foreground">
 											{pages[2].description}
