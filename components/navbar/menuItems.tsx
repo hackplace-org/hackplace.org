@@ -64,7 +64,7 @@ export const MenuItems = ({ currentTitle, className }: MenuItemsProps) => {
 								<NavigationMenuLink asChild>
 									<a
 										className="flex flex-col justify-end w-full h-full p-6 no-underline rounded-md outline-none select-none bg-gradient-to-b from-muted/50 to-muted focus:shadow-md"
-										href="/"
+										href="/hatch"
 									>
 										<Image
 											src="/icon.svg"
@@ -75,16 +75,16 @@ export const MenuItems = ({ currentTitle, className }: MenuItemsProps) => {
 										/>
 
 										<div className="mt-4 mb-2 text-lg font-medium">
-											hack.place()
+											{pages[2].title}
 										</div>
 										<p className="text-sm leading-tight text-muted-foreground">
-											{pages[0].description}
+											{pages[2].description}
 										</p>
 									</a>
 								</NavigationMenuLink>
 							</li>
 
-							{pages.slice(2, 5).map((page) => (
+							{pages.slice(3, 6).map((page) => (
 								<ListItem key={page.href} item={page} />
 							))}
 						</ul>

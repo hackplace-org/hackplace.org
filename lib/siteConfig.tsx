@@ -1,6 +1,7 @@
 import {
 	Home,
 	ClipboardCheck,
+	Egg,
 	Lightbulb,
 	Trophy,
 	Mic,
@@ -35,6 +36,14 @@ export const pages = [
 		color: "group-hover:text-brand",
 		isPublic: false,
 		Icon: ClipboardCheck,
+	},
+	{
+		title: "Hatch",
+		href: "/",
+		description: "Helping you turn your ideas into reality.",
+		color: "group-hover:text-brand",
+		isPublic: true,
+		Icon: Egg,
 	},
 	{
 		title: "Workshops",
