@@ -67,6 +67,8 @@ interface MenuItemsProps extends NavbarProps {
 }
 
 export const MenuItems = ({ currentTitle, className }: MenuItemsProps) => {
+	const HatchIcon = pages[2].Icon;
+
 	return (
 		<NavigationMenu className={className}>
 			<NavigationMenuList>
@@ -89,9 +91,13 @@ export const MenuItems = ({ currentTitle, className }: MenuItemsProps) => {
 										/>
 
 										<div className="flex flex-row justify-between text-lg font-medium leading-none mt-4 mb-2">
-											<p className="my-auto">
-												{pages[2].title}
-											</p>
+											<div className="flex flex-row gap-x-1">
+												<HatchIcon className="w-4 h-4 my-auto" />
+												<p className="my-auto">
+													{pages[2].title}
+												</p>
+											</div>
+
 											<Badge>Soon</Badge>
 										</div>
 										<p className="text-sm leading-tight text-muted-foreground">
