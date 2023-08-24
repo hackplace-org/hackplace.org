@@ -48,7 +48,7 @@ const ListItem = ({ item, target }: ListItemProps) => {
 							(soon.includes(item.title) ? (
 								<Badge>Soon</Badge>
 							) : (
-								<Badge className="bg-brand text-white">
+								<Badge className="text-white bg-brand hover:bg-brand hover:opacity-90">
 									New
 								</Badge>
 							))}
@@ -90,7 +90,7 @@ export const MenuItems = ({ currentTitle, className }: MenuItemsProps) => {
 											className="justify-start h-24 w-14"
 										/>
 
-										<div className="flex flex-row justify-between text-lg font-medium leading-none mt-4 mb-2">
+										<div className="flex flex-row justify-between mt-4 mb-2 text-lg font-medium leading-none">
 											<div className="flex flex-row gap-x-1">
 												<HatchIcon className="w-4 h-4 my-auto" />
 												<p className="my-auto">
