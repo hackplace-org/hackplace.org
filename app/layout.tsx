@@ -27,7 +27,31 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: PropsWithChildren) {
 	return (
-		<ClerkProvider>
+		<ClerkProvider
+			appearance={{
+				signIn: {
+					elements: {
+						card: "bg-popover border border-border",
+						headerTitle: "text-popover-foreground",
+						headerSubtitle: "text-muted-foreground",
+						modalCloseButton: "text-muted-foreground",
+						socialButtonsBlockButton:
+							"text-popover-foreground rounded-md border hover:bg-secondary/50 border-input",
+						socialButtonsProviderIcon__github: "dark:invert",
+						dividerLine: "bg-muted-foreground/20",
+						dividerText: "text-muted-foreground",
+						formFieldLabel: "text-popover-foreground",
+						formFieldInput:
+							"transition-colors border border-input bg-transparent dark:text-primary rounded-md h-9 px-3 py-1 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring",
+						formButtonPrimary:
+							"text-white bg-brand transition-opacity hover:bg-brand hover:opacity-90",
+						footerActionText: "text-popover-foreground",
+						footerActionLink:
+							"underline-offset-4 transition-all text-brand hover:underline hover:text-brand",
+					},
+				},
+			}}
+		>
 			<html lang="en" suppressHydrationWarning>
 				<body
 					className={cn(
