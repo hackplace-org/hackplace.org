@@ -13,10 +13,6 @@ interface CostItemProps {
 	label?: string;
 }
 
-const Workshops = {
-
-    
-}
 
 const CostItem = ({
 	name,
@@ -27,7 +23,6 @@ const CostItem = ({
 }: PropsWithChildren<CostItemProps>) => {
 	return (
 		<div className="flex flex-col justify-between h-full">
-			<hgroup>
 				<h2 className="text-xl font-semibold">{name}</h2>
 				<h1 className="text-3xl font-bold">
 					<Hover>
@@ -44,7 +39,6 @@ const CostItem = ({
 						{label}
 					</span>
 				</h1>
-			</hgroup>
 
 			<h3 className="ml-auto text-sm text-muted-foreground">
 				{children}
