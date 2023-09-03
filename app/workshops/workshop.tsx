@@ -53,6 +53,7 @@ export const WorkshopsList = () => {
     const ref7 = useRef<HTMLDivElement>(null);
     const ref8 = useRef<HTMLDivElement>(null);
     const ref9 = useRef<HTMLDivElement>(null);
+    //IF YOU WANT TO ADD WORKSHOPS, ADD THEM TO THIS BELOW, AND COPY PASTE THE LINE ABOVE IF THERE ARE NO REFS LEFT
     const workshops = [
         {
             title: "Intro to Web Development",
@@ -117,7 +118,7 @@ export const WorkshopsList = () => {
     return (
         <div
             onMouseMove={onMouseMove}
-            className="grid grid-cols-2 gap-2 "
+            className="grid grid-cols-2 gap-2 mt-8 "
         >
             {workshops.map((workshop, i) => (
                 <CardItem ref={workshop.ref}>

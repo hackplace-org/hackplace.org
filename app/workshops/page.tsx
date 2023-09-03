@@ -47,8 +47,7 @@ export default function Workshop() {
 				</h2>
 
 
-			</Content>
-			<Content as="section" className="py-16" border="bottom">
+			
 				<WorkshopsList></WorkshopsList>
 			</Content>
 
