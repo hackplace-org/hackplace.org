@@ -121,7 +121,7 @@ export default function Donate() {
 							Money, merch, perks/credits on your
 							platform&mdash;you name it! We&apos;re open to
 							receiving anything that we can offer as a prize in
-							our <Link href="/hackathons" text="hackathons" />.
+							our <Link href="/equihacks" text="hackathon" />.
 						</AccordionContent>
 					</AccordionItem>
 
@@ -134,7 +134,7 @@ export default function Donate() {
 							organization&mdash;you can find our proposed budget
 							above. Any surplus will be used to buy additional
 							prizes for our{" "}
-							<Link href="/hackathons" text="hackathons" />.
+							<Link href="/equihacks" text="hackathon" />.
 						</AccordionContent>
 					</AccordionItem>
 

@@ -54,8 +54,8 @@ export const pages = [
 		Icon: Lightbulb,
 	},
 	{
-		title: "Hackathons",
-		href: "/hackathons",
+		title: "EquiHacks",
+		href: "/equihacks",
 		description: "And we haven't forgotten the prizes.",
 		color: "group-hover:text-brand",
 		isPublic: true,

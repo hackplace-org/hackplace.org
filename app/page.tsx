@@ -182,7 +182,7 @@ export default function Home() {
 						hack.place() fully immerses students throughout Monmouth
 						County in the world of programming through{" "}
 						<Link href="/workshops" text="workshops" />,{" "}
-						<Link href="/hackathons" text="hackathons" />, and{" "}
+						<Link href="/equihacks" text="hackathons" />, and{" "}
 						<Link href="/seminars" text="seminars" /> that teach
 						them to use the most current technologies.
 					</h3>
