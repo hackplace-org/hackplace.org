@@ -6,7 +6,7 @@ import { Grain } from "@/components/utils";
 import { Heading } from "@/components/utils";
 import { Hover } from "@/components/utils";
 
-import { SkipForward } from "lucide-react";
+import { Medal, SkipForward } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -45,6 +45,30 @@ export default function Workshop() {
 				</h1>
 
 				<List />
+			</Content>
+
+			<Content
+				as="section"
+				border="bottom"
+				className="flex py-16"
+				outerClassName="relative"
+			>
+				<Grain />
+				<div className="flex flex-col w-full text-primary">
+					<Heading>Learn, build, compete.</Heading>
+					<h2 className="my-4 text-2xl font-thin">
+						After completing a workshop, compete with your peers to{" "}
+						<Hover>build the best project</Hover> and{" "}
+						<Hover>earn prizes.</Hover>
+					</h2>
+				</div>
+
+				<div className="absolute top-0 right-0 -translate-y-12 text-muted -z-10">
+					<Medal
+						className="w-[25rem] h-[25rem] rotate-[15deg]"
+						strokeWidth={0.75}
+					/>
+				</div>
 			</Content>
 		</>
 	);
