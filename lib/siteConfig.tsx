@@ -189,22 +189,6 @@ export const people = [
 	},
 ] as const;
 
-export const activities = [
-	{ id: "workshops", name: "Workshops" },
-	{ id: "seminars", name: "Seminars" },
-	{ id: "hackathons", name: "Hackathons" },
-] as const;
-
-export const days = [
-	{ id: "sunday", name: "Sunday" },
-	{ id: "monday", name: "Monday" },
-	{ id: "tuesday", name: "Tuesday" },
-	{ id: "wednesday", name: "Wednesday" },
-	{ id: "thursday", name: "Thursday" },
-	{ id: "friday", name: "Friday" },
-	{ id: "saturday", name: "Saturday" },
-] as const;
-
 export const stages = [
 	{
 		id: "sunrise",

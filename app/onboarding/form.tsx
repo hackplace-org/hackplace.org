@@ -7,7 +7,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, type ControllerRenderProps } from "react-hook-form";
 import { useState, type Dispatch, type SetStateAction } from "react";
 
-import { activities, workshops, days } from "@/lib/siteConfig";
 import { saveResponse } from "@/app/onboarding/action";
 import { Heading, Hover } from "@/components/utils";
 
@@ -25,6 +24,29 @@ import {
 	FormLabel,
 	FormMessage,
 } from "@/components/ui/form";
+
+const workshops = [
+	{ id: "weather-app", name: "HTML/CSS/JS: Weather App" },
+	{ id: "cookie-clicker", name: "React: Cookie Clicker" },
+	{ id: "discord-bot", name: "Object Oriented Python: Discord Bot" },
+	{ id: "magic-mod", name: "Minecraft Modding: Magic Mod" },
+] as const;
+
+const activities = [
+	{ id: "workshops", name: "Workshops" },
+	{ id: "seminars", name: "Seminars" },
+	{ id: "hackathons", name: "Hackathons" },
+] as const;
+
+const days = [
+	{ id: "sunday", name: "Sunday" },
+	{ id: "monday", name: "Monday" },
+	{ id: "tuesday", name: "Tuesday" },
+	{ id: "wednesday", name: "Wednesday" },
+	{ id: "thursday", name: "Thursday" },
+	{ id: "friday", name: "Friday" },
+	{ id: "saturday", name: "Saturday" },
+] as const;
 
 const formSchema = z.object({
 	interests: z
