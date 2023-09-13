@@ -2,23 +2,6 @@ import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 
 import type { PropsWithChildren, ComponentProps } from "react";
-import type { LucideIcon } from "lucide-react";
-
-interface ContainerItemProps {
-	Icon: LucideIcon;
-}
-
-export const ContainerItem = ({
-	Icon,
-	children,
-}: PropsWithChildren<ContainerItemProps>) => {
-	return (
-		<div>
-			<Icon className="w-6 h-6 mb-2 transition-colors group-hover:text-brand dark:group-hover:text-white" />
-			{children}
-		</div>
-	);
-};
 
 const heading = cva("break-word h-fit border-brand", {
 	variants: {
