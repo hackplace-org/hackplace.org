@@ -1,6 +1,6 @@
 "use client";
 
-import { forwardRef, type MouseEventHandler } from "react";
+import { forwardRef } from "react";
 import { cva } from "class-variance-authority";
 import {
 	Calculator,
@@ -17,7 +17,7 @@ import {
 import { cn } from "@/lib/utils";
 import { CardItem } from "@/components/card";
 import { Badge } from "@/components/ui/badge";
-import { useRefArray } from "@/components/hooks/useRefArray";
+import { useCards } from "@/components/hooks/useCards";
 
 const workshops = [
 	{
@@ -125,21 +125,7 @@ const WorkshopItem = forwardRef<HTMLDivElement, WorkshopItemProps>(
 WorkshopItem.displayName = "WorkshopItem";
 
 export const List = () => {
-	const refs = useRefArray<HTMLDivElement>(workshops.length);
-
-	const onMouseMove: MouseEventHandler<HTMLDivElement> = (e) => {
-		refs.current.forEach((ref) => {
-			const card = ref.current;
-			if (!card) return;
-
-			const rect = card.getBoundingClientRect(),
-				x = e.clientX - rect.left,
-				y = e.clientY - rect.top;
-
-			card.style.setProperty("--mouse-x", `${x}px`);
-			card.style.setProperty("--mouse-y", `${y}px`);
-		});
-	};
+	const [refs, onMouseMove] = useCards(workshops.length);
 
 	return (
 		<div

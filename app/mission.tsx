@@ -1,6 +1,6 @@
 "use client";
 
-import type { MouseEventHandler, PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
 import {
 	Palmtree,
 	PackageOpen,
@@ -14,7 +14,7 @@ import {
 import { CardItem } from "@/components/card";
 import { Content } from "@/components/content";
 import { Hover } from "@/components/utils";
-import { useRefArray } from "@/components/hooks/useRefArray";
+import { useCards } from "@/components/hooks/useCards";
 
 interface ContainerItemProps {
 	Icon: LucideIcon;
@@ -33,21 +33,7 @@ export const ContainerItem = ({
 };
 
 export const Mission = () => {
-	const refs = useRefArray<HTMLDivElement>(6);
-
-	const onMouseMove: MouseEventHandler<HTMLDivElement> = (e) => {
-		refs.current.forEach((ref) => {
-			const card = ref.current;
-			if (!card) return;
-
-			const rect = card.getBoundingClientRect(),
-				x = e.clientX - rect.left,
-				y = e.clientY - rect.top;
-
-			card.style.setProperty("--mouse-x", `${x}px`);
-			card.style.setProperty("--mouse-y", `${y}px`);
-		});
-	};
+	const [refs, onMouseMove] = useCards(6);
 
 	return (
 		<Content as="section" className="py-16" border="bottom">
