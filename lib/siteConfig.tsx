@@ -195,13 +195,6 @@ export const activities = [
 	{ id: "hackathons", name: "Hackathons" },
 ] as const;
 
-export const workshops = [
-	{ id: "weather-app", name: "HTML/CSS/JS: Weather App" },
-	{ id: "cookie-clicker", name: "React: Cookie Clicker" },
-	{ id: "discord-bot", name: "Object Oriented Python: Discord Bot" },
-	{ id: "magic-mod", name: "Minecraft Modding: Magic Mod" },
-] as const;
-
 export const days = [
 	{ id: "sunday", name: "Sunday" },
 	{ id: "monday", name: "Monday" },

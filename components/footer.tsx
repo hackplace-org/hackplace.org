@@ -1,7 +1,7 @@
 import NextLink from "next/link";
 
 import { cn } from "@/lib/utils";
-import { links, workshops } from "@/lib/siteConfig";
+import { links } from "@/lib/siteConfig";
 
 import { Link } from "@/components/link";
 import { Logo } from "@/components/logo";
@@ -47,16 +47,6 @@ export const Footer = () => {
 				</div>
 
 				<div className="flex flex-col gap-4 sm:flex-row">
-					<div className="flex flex-col w-full gap-y-1 text-muted-foreground sm:w-72">
-						<Heading className="text-primary" size="small">
-							Workshops
-						</Heading>
-
-						{workshops.map((workshop) => (
-							<p key={workshop.id}>{workshop.name}</p>
-						))}
-					</div>
-
 					<div className="flex flex-col w-full gap-y-1 text-muted-foreground sm:w-72">
 						<Heading className="text-primary" size="small">
 							Donate
