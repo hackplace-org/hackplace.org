@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, type PropsWithChildren, type MouseEventHandler } from "react";
+import { useRef, type MouseEventHandler } from "react";
 import {
 	Palmtree,
 	PackageOpen,
@@ -8,28 +8,13 @@ import {
 	Baby,
 	Wrench,
 	Trophy,
-	type LucideIcon,
 } from "lucide-react";
 
-import { Hover } from "@/components/utils";
 import { CardItem } from "@/components/card";
 import { Content } from "@/components/content";
 
-interface MissionItemProps {
-	Icon: LucideIcon;
-}
-
-const MissionItem = ({
-	Icon,
-	children,
-}: PropsWithChildren<MissionItemProps>) => {
-	return (
-		<div>
-			<Icon className="w-6 h-6 mb-2 transition-colors group-hover:text-brand dark:group-hover:text-white" />
-			{children}
-		</div>
-	);
-};
+import { Hover } from "@/components/utils";
+import { ContainerItem } from "@/components/utils";
 
 export const Mission = () => {
 	const ref1 = useRef<HTMLDivElement>(null);
@@ -64,49 +49,49 @@ export const Mission = () => {
 				className="grid w-full grid-cols-1 grid-rows-6 gap-2 mt-8 sm:grid-rows-3 sm:grid-cols-2 group/cards md:grid-rows-2 md:grid-cols-3 text-muted-foreground"
 			>
 				<CardItem ref={ref1}>
-					<MissionItem Icon={Palmtree}>
+					<ContainerItem Icon={Palmtree}>
 						to create a <Hover>robust ecosystem</Hover> for students
 						to <Hover>teach themselves</Hover> how to code
-					</MissionItem>
+					</ContainerItem>
 				</CardItem>
 
 				<CardItem ref={ref2}>
-					<MissionItem Icon={PackageOpen}>
+					<ContainerItem Icon={PackageOpen}>
 						to <Hover>open-source</Hover> all of our materials and
 						resources, making them{" "}
 						<Hover>accessible to everyone</Hover>
-					</MissionItem>
+					</ContainerItem>
 				</CardItem>
 
 				<CardItem ref={ref3}>
-					<MissionItem Icon={Baby}>
+					<ContainerItem Icon={Baby}>
 						to be <Hover>readily available</Hover> to assist every
 						student, <Hover>regardless</Hover> of their experience
-					</MissionItem>
+					</ContainerItem>
 				</CardItem>
 
 				<CardItem ref={ref4}>
-					<MissionItem Icon={PictureInPicture2}>
+					<ContainerItem Icon={PictureInPicture2}>
 						to be <Hover>completely transparent</Hover> in all of
 						our operations and finances as a{" "}
 						<Hover>nonprofit</Hover>
-					</MissionItem>
+					</ContainerItem>
 				</CardItem>
 
 				<CardItem ref={ref5}>
-					<MissionItem Icon={Wrench}>
+					<ContainerItem Icon={Wrench}>
 						to allow students to develop projects{" "}
 						<Hover>on their own</Hover> through our{" "}
 						<Hover>interactive</Hover> workshops
-					</MissionItem>
+					</ContainerItem>
 				</CardItem>
 
 				<CardItem ref={ref6}>
-					<MissionItem Icon={Trophy}>
+					<ContainerItem Icon={Trophy}>
 						to inspire a new generation of students to become{" "}
 						<Hover>creative</Hover>, <Hover>successful</Hover>{" "}
 						programmers
-					</MissionItem>
+					</ContainerItem>
 				</CardItem>
 			</div>
 		</Content>
