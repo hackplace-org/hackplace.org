@@ -1,6 +1,7 @@
 "use client";
 
 import { forwardRef, type MouseEventHandler } from "react";
+import { cva } from "class-variance-authority";
 import {
 	Calculator,
 	Palette,
@@ -84,11 +85,15 @@ const workshops = [
 	},
 ] as const;
 
-const difficulties = {
-	Beginner: "bg-green-400 text-green-900",
-	Intermediate: "bg-yellow-400 text-yellow-900",
-	Advanced: "bg-red-400 text-red-900",
-} as const;
+const badge = cva("", {
+	variants: {
+		difficulty: {
+			Beginner: "bg-green-400 text-green-900",
+			Intermediate: "bg-yellow-400 text-yellow-900",
+			Advanced: "bg-red-400 text-red-900",
+		},
+	},
+});
 
 type WorkshopItemProps = (typeof workshops)[number];
 
@@ -104,14 +109,14 @@ const WorkshopItem = forwardRef<HTMLDivElement, WorkshopItemProps>(
 						</h1>
 					</div>
 
-					<Badge className={cn("my-auto", difficulties[difficulty])}>
+					<Badge className={cn("my-auto", badge({ difficulty }))}>
 						{difficulty}
 					</Badge>
 				</div>
 
 				<h2 className="text-lg mt-1">
-					<span className="italic">{topic}</span>{" "}
-					<span className="font-light">by {author}</span>
+					<span className="font-semibold">{topic}</span>{" "}
+					<span className="font-thin">by {author}</span>
 				</h2>
 			</CardItem>
 		);
