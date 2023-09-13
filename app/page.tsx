@@ -297,7 +297,7 @@ export default function Home() {
 			<Content
 				as="section"
 				border="bottom"
-				className="flex py-16 font-sans"
+				className="flex py-16"
 				outerClassName="relative"
 			>
 				<Grain />
