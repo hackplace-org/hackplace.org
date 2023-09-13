@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, type MouseEventHandler } from "react";
+import { useRef, type MouseEventHandler, type PropsWithChildren } from "react";
 import {
 	Palmtree,
 	PackageOpen,
@@ -8,13 +8,28 @@ import {
 	Baby,
 	Wrench,
 	Trophy,
+	type LucideIcon,
 } from "lucide-react";
 
 import { CardItem } from "@/components/card";
 import { Content } from "@/components/content";
-
 import { Hover } from "@/components/utils";
-import { ContainerItem } from "@/components/utils";
+
+interface ContainerItemProps {
+	Icon: LucideIcon;
+}
+
+export const ContainerItem = ({
+	Icon,
+	children,
+}: PropsWithChildren<ContainerItemProps>) => {
+	return (
+		<div>
+			<Icon className="w-6 h-6 mb-2 transition-colors group-hover:text-brand dark:group-hover:text-white" />
+			{children}
+		</div>
+	);
+};
 
 export const Mission = () => {
 	const ref1 = useRef<HTMLDivElement>(null);
