@@ -1,8 +1,7 @@
 # Todo
 
-1. Migrate to `bun dev` once it supports the current version of Next.js
-2. Turbopack is currently broken when using Bun
-3. Dynamic metadata (`app/robots.ts`) is currently not supported in Turbopack
-4. Host the logo URLs in this repository rather than using external URLs
-5. Implement PWA support
-6. Use the Grain component for elements in home page Marquee
+1. Turbopack is currently broken when using Bun
+2. Dynamic metadata (`app/robots.ts`) is currently not supported in Turbopack
+3. Host the logo URLs in this repository rather than using external URLs
+4. Implement PWA support
+5. Use the Grain component for elements in home page Marquee
