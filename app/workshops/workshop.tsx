@@ -20,7 +20,6 @@ const CostItem = ({
     name,
     label,
     gitLink,
-    children,
 }: PropsWithChildren<CostItemProps>) => {
     return (
         <div className="flex flex-col justify-between h-full">

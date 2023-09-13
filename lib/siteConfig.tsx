@@ -1,3 +1,4 @@
+import { Description } from "@radix-ui/react-toast";
 import {
 	Home,
 	ClipboardCheck,
@@ -215,26 +216,94 @@ export const days = [
 export const stages = [
 	{
 		id: "sunrise",
-		name: "Opening Ceremony",
+		name: "October 20th",
 		start: new Date("Fri Sep 22 2023 18:30:00 GMT-0400"),
 		Icon: Sunrise,
+		events:[
+			{
+				startTime: "5:00",
+				endTime: "6:00",
+				eventName: "Opening Ceremony",
+				description: "This ceremony will reveal the theme of the hackathon and the rules"
+			},
+			{
+				startTime: "6:00",
+				endTime: "00",
+				eventName: "Start of the Hackathon",
+				description: "This will be the offical start of the hackathon and project may began from this date"
+			},
+		]
 	},
 	{
 		id: "tv",
-		name: "Judging Period",
+		name: "October 21st",
 		start: new Date("Sun Sep 24 2023 20:00:00 GMT-0400"),
 		Icon: Tv,
+		events:[
+			{
+				startTime: "12:00 PM",
+				endTime: "4:00 PM",
+				eventName: "Workshops",
+				description: "Final times and workshops are still being decided"
+			},
+		]
 	},
 	{
 		id: "clipboardlist",
-		name: "Public Voting Ends",
+		name: "October 22nd",
 		start: new Date("Mon Sep 25 2023 18:30:00 GMT-0400"),
 		Icon: ClipboardList,
+		events:[
+			{
+				startTime: "12:00 PM",
+				endTime: "4:00 PM",
+				eventName: "Workshops",
+				description: "Final times and workshops are still being decided"
+			},
+			{
+				startTime: "00",
+				endTime: "6:00 PM",
+				eventName: "Hackathon End and Judging Start",
+				description: "All projects must be submited on Devpost by this time"
+			},
+		]
 	},
 	{
 		id: "sunset",
-		name: "Closing Ceremony",
+		name: "October 23rd",
 		start: new Date("Mon Sep 25 2023 20:00:00 GMT-0400"),
 		Icon: Sunset,
+		events:[
+			{
+				startTime: "00",
+				endTime: "3:00 PM",
+				eventName: "Juding Ends",
+				description: "The Judging period has ended and results are finalized"
+			},
+			{
+				startTime: "4:30 PM",
+				endTime: "5:15 PM",
+				eventName: "Project Expos",
+				description: "People can present their projects for everyone to see"
+			},	
+			{
+				startTime: "5:15 PM",
+				endTime: "6:00 PM",
+				eventName: "Closing Ceremony",
+				description: "This ceremony will end the hackathon and give out the prizes to the winners"
+			},	
+			{
+				startTime: "6:00 PM",
+				endTime: "6:45 PM",
+				eventName: "EquiTalks",
+				description: "In this event, speakers from various backgrounds talking about their contributions to the advancement of STEM"
+			},	
+			{
+				startTime: "6:45 PM",
+				endTime: "7:30 PM",
+				eventName: "Monmouth Event",
+				description: "A special treat for our Monmouth County participants!"
+			},	
+		]
 	},
 ] as const;
