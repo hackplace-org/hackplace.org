@@ -1,10 +1,11 @@
 "use client";
 
-import { useRef, type PropsWithChildren, type MouseEventHandler } from "react";
+import type { MouseEventHandler, PropsWithChildren } from "react";
 
 import { Link } from "@/components/link";
 import { Hover } from "@/components/utils";
 import { CardItem } from "@/components/card";
+import { useRefArray } from "@/components/hooks/useRefArray";
 
 interface CostItemProps {
 	name: string;
@@ -49,30 +50,20 @@ const CostItem = ({
 };
 
 export const Cost = () => {
-	const ref1 = useRef<HTMLDivElement>(null);
-	const ref2 = useRef<HTMLDivElement>(null);
-	const ref3 = useRef<HTMLDivElement>(null);
-	const ref4 = useRef<HTMLDivElement>(null);
-	const ref5 = useRef<HTMLDivElement>(null);
-	const ref6 = useRef<HTMLDivElement>(null);
-	const ref7 = useRef<HTMLDivElement>(null);
-	const ref8 = useRef<HTMLDivElement>(null);
-	const ref9 = useRef<HTMLDivElement>(null);
+	const refs = useRefArray<HTMLDivElement>(9);
 
 	const onMouseMove: MouseEventHandler<HTMLDivElement> = (e) => {
-		[ref1, ref2, ref3, ref4, ref5, ref6, ref7, ref8, ref9].forEach(
-			(ref) => {
-				const card = ref.current;
-				if (!card) return;
+		refs.current.forEach((ref) => {
+			const card = ref.current;
+			if (!card) return;
 
-				const rect = card.getBoundingClientRect(),
-					x = e.clientX - rect.left,
-					y = e.clientY - rect.top;
+			const rect = card.getBoundingClientRect(),
+				x = e.clientX - rect.left,
+				y = e.clientY - rect.top;
 
-				card.style.setProperty("--mouse-x", `${x}px`);
-				card.style.setProperty("--mouse-y", `${y}px`);
-			}
-		);
+			card.style.setProperty("--mouse-x", `${x}px`);
+			card.style.setProperty("--mouse-y", `${y}px`);
+		});
 	};
 
 	return (
@@ -80,7 +71,7 @@ export const Cost = () => {
 			onMouseMove={onMouseMove}
 			className="grid grid-cols-1 gap-2 mt-8 group/cards grid-rows-9 sm:grid-cols-2 sm:grid-rows-5 md:grid-rows-3 md:grid-cols-3"
 		>
-			<CardItem ref={ref1}>
+			<CardItem ref={refs.current[0]}>
 				<CostItem
 					name="Google Workspace"
 					strikethroughCost="$12"
@@ -97,7 +88,7 @@ export const Cost = () => {
 				</CostItem>
 			</CardItem>
 
-			<CardItem ref={ref2}>
+			<CardItem ref={refs.current[1]}>
 				<CostItem
 					name="Google Domains"
 					actualCost="$12"
@@ -107,7 +98,7 @@ export const Cost = () => {
 				</CostItem>
 			</CardItem>
 
-			<CardItem ref={ref3}>
+			<CardItem ref={refs.current[2]}>
 				<CostItem
 					name="Sendy"
 					strikethroughCost="$69 + $1"
@@ -124,7 +115,7 @@ export const Cost = () => {
 				</CostItem>
 			</CardItem>
 
-			<CardItem ref={ref4}>
+			<CardItem ref={refs.current[3]}>
 				<CostItem
 					name="Vercel"
 					strikethroughCost="$20"
@@ -135,7 +126,7 @@ export const Cost = () => {
 				</CostItem>
 			</CardItem>
 
-			<CardItem ref={ref5}>
+			<CardItem ref={refs.current[4]}>
 				<CostItem
 					name="Clerk"
 					strikethroughCost="$35"
@@ -146,7 +137,7 @@ export const Cost = () => {
 				</CostItem>
 			</CardItem>
 
-			<CardItem ref={ref6}>
+			<CardItem ref={refs.current[5]}>
 				<CostItem
 					name="Turso"
 					strikethroughCost="$29"
@@ -157,7 +148,7 @@ export const Cost = () => {
 				</CostItem>
 			</CardItem>
 
-			<CardItem ref={ref7}>
+			<CardItem ref={refs.current[6]}>
 				<CostItem
 					name="Zoom Pro"
 					strikethroughCost="$149"
@@ -174,7 +165,7 @@ export const Cost = () => {
 				</CostItem>
 			</CardItem>
 
-			<CardItem ref={ref8}>
+			<CardItem ref={refs.current[7]}>
 				<CostItem
 					name="Instagram"
 					actualCost="$99"
@@ -184,7 +175,7 @@ export const Cost = () => {
 				</CostItem>
 			</CardItem>
 
-			<CardItem ref={ref9}>
+			<CardItem ref={refs.current[8]}>
 				<CostItem
 					name="Hackathon Prize Valuation"
 					actualCost="$2,500"

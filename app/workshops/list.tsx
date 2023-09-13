@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, forwardRef, type MouseEventHandler } from "react";
+import { forwardRef, type MouseEventHandler } from "react";
 import {
 	Calculator,
 	Palette,
@@ -16,6 +16,7 @@ import {
 import { cn } from "@/lib/utils";
 import { CardItem } from "@/components/card";
 import { Badge } from "@/components/ui/badge";
+import { useRefArray } from "@/components/hooks/useRefArray";
 
 const workshops = [
 	{
@@ -119,20 +120,10 @@ const WorkshopItem = forwardRef<HTMLDivElement, WorkshopItemProps>(
 WorkshopItem.displayName = "WorkshopItem";
 
 export const List = () => {
-	const ref1 = useRef<HTMLDivElement>(null);
-	const ref2 = useRef<HTMLDivElement>(null);
-	const ref3 = useRef<HTMLDivElement>(null);
-	const ref4 = useRef<HTMLDivElement>(null);
-	const ref5 = useRef<HTMLDivElement>(null);
-	const ref6 = useRef<HTMLDivElement>(null);
-	const ref7 = useRef<HTMLDivElement>(null);
-	const ref8 = useRef<HTMLDivElement>(null);
-	const ref9 = useRef<HTMLDivElement>(null);
-
-	const refs = [ref1, ref2, ref3, ref4, ref5, ref6, ref7, ref8, ref9];
+	const refs = useRefArray<HTMLDivElement>(workshops.length);
 
 	const onMouseMove: MouseEventHandler<HTMLDivElement> = (e) => {
-		refs.forEach((ref) => {
+		refs.current.forEach((ref) => {
 			const card = ref.current;
 			if (!card) return;
 
@@ -152,8 +143,8 @@ export const List = () => {
 		>
 			{workshops.map((workshop, i) => (
 				<WorkshopItem
+					ref={refs.current[i]}
 					key={workshop.topic}
-					ref={refs[i]}
 					{...workshop}
 				/>
 			))}

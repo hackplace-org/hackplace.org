@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, type MouseEventHandler, type PropsWithChildren } from "react";
+import type { MouseEventHandler, PropsWithChildren } from "react";
 import {
 	Palmtree,
 	PackageOpen,
@@ -14,6 +14,7 @@ import {
 import { CardItem } from "@/components/card";
 import { Content } from "@/components/content";
 import { Hover } from "@/components/utils";
+import { useRefArray } from "@/components/hooks/useRefArray";
 
 interface ContainerItemProps {
 	Icon: LucideIcon;
@@ -32,15 +33,10 @@ export const ContainerItem = ({
 };
 
 export const Mission = () => {
-	const ref1 = useRef<HTMLDivElement>(null);
-	const ref2 = useRef<HTMLDivElement>(null);
-	const ref3 = useRef<HTMLDivElement>(null);
-	const ref4 = useRef<HTMLDivElement>(null);
-	const ref5 = useRef<HTMLDivElement>(null);
-	const ref6 = useRef<HTMLDivElement>(null);
+	const refs = useRefArray<HTMLDivElement>(6);
 
 	const onMouseMove: MouseEventHandler<HTMLDivElement> = (e) => {
-		[ref1, ref2, ref3, ref4, ref5, ref6].forEach((ref) => {
+		refs.current.forEach((ref) => {
 			const card = ref.current;
 			if (!card) return;
 
@@ -63,14 +59,14 @@ export const Mission = () => {
 				onMouseMove={onMouseMove}
 				className="grid w-full grid-cols-1 grid-rows-6 gap-2 mt-8 sm:grid-rows-3 sm:grid-cols-2 group/cards md:grid-rows-2 md:grid-cols-3 text-muted-foreground"
 			>
-				<CardItem ref={ref1}>
+				<CardItem ref={refs.current[0]}>
 					<ContainerItem Icon={Palmtree}>
 						to create a <Hover>robust ecosystem</Hover> for students
 						to <Hover>teach themselves</Hover> how to code
 					</ContainerItem>
 				</CardItem>
 
-				<CardItem ref={ref2}>
+				<CardItem ref={refs.current[1]}>
 					<ContainerItem Icon={PackageOpen}>
 						to <Hover>open-source</Hover> all of our materials and
 						resources, making them{" "}
@@ -78,14 +74,14 @@ export const Mission = () => {
 					</ContainerItem>
 				</CardItem>
 
-				<CardItem ref={ref3}>
+				<CardItem ref={refs.current[2]}>
 					<ContainerItem Icon={Baby}>
 						to be <Hover>readily available</Hover> to assist every
 						student, <Hover>regardless</Hover> of their experience
 					</ContainerItem>
 				</CardItem>
 
-				<CardItem ref={ref4}>
+				<CardItem ref={refs.current[3]}>
 					<ContainerItem Icon={PictureInPicture2}>
 						to be <Hover>completely transparent</Hover> in all of
 						our operations and finances as a{" "}
@@ -93,7 +89,7 @@ export const Mission = () => {
 					</ContainerItem>
 				</CardItem>
 
-				<CardItem ref={ref5}>
+				<CardItem ref={refs.current[4]}>
 					<ContainerItem Icon={Wrench}>
 						to allow students to develop projects{" "}
 						<Hover>on their own</Hover> through our{" "}
@@ -101,7 +97,7 @@ export const Mission = () => {
 					</ContainerItem>
 				</CardItem>
 
-				<CardItem ref={ref6}>
+				<CardItem ref={refs.current[5]}>
 					<ContainerItem Icon={Trophy}>
 						to inspire a new generation of students to become{" "}
 						<Hover>creative</Hover>, <Hover>successful</Hover>{" "}
