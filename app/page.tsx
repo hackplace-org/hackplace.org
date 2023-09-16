@@ -1,35 +1,35 @@
-import NextLink from "next/link";
-import type { ComponentProps } from "react";
-import { cva, type VariantProps } from "class-variance-authority";
+import { type VariantProps, cva } from "class-variance-authority";
 import {
-	Hash,
-	Ruler,
-	Pencil,
-	ImageIcon,
-	UserCircle,
 	GraduationCap,
+	Hash,
+	ImageIcon,
+	type LucideIcon,
 	MessagesSquare,
 	MousePointerClick,
-	type LucideIcon,
+	Pencil,
+	Ruler,
+	UserCircle,
 } from "lucide-react";
+import NextLink from "next/link";
+import type { ComponentProps } from "react";
 
-import { cn } from "@/lib/utils";
-import { people } from "@/lib/siteConfig";
 import { Mission } from "@/app/mission";
+import { people } from "@/lib/siteConfig";
+import { cn } from "@/lib/utils";
 
-import { Link } from "@/components/link";
-import { Navbar } from "@/components/navbar";
 import { Content } from "@/components/content";
 import { Discord } from "@/components/discord";
-import { Heading, Hover, Grain } from "@/components/utils";
+import { Link } from "@/components/link";
+import { Navbar } from "@/components/navbar";
+import { Grain, Heading, Hover } from "@/components/utils";
 
-import { Button } from "@/components/ui/button";
 import {
 	Accordion,
 	AccordionContent,
 	AccordionItem,
 	AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
 
 import type { Metadata } from "next";
 
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
 };
 
 interface PersonProps {
-	person: (typeof people)[number];
+	person: typeof people[number];
 }
 
 const Person = ({ person }: PersonProps) => (
@@ -82,7 +82,7 @@ const Marquee = ({ labels, ...props }: MarqueeProps) => (
 				key={label}
 				className="relative p-4 my-auto transition-colors border border-dotted rounded-lg hover:border-solid hover:bg-brand hover:text-white"
 			>
-				<div className="absolute transition-opacity top-0 left-0 rounded-lg w-full h-full bg-[url(/noise.svg)] opacity-0 hover:opacity-25 brightness-100 contrast-150"></div>
+				<div className="absolute transition-opacity top-0 left-0 rounded-lg w-full h-full bg-[url(/noise.svg)] opacity-0 hover:opacity-25 brightness-100 contrast-150" />
 				{label}
 			</li>
 		))}
@@ -118,22 +118,19 @@ const Channel = ({
 	const selection = channel({ round });
 
 	return (
-		<div
-			className="flex flex-row w-full group gap-x-4"
-			style={{ gridArea }}
-		>
+		<div className="flex flex-row w-full group gap-x-4" style={{ gridArea }}>
 			<NextLink href={href} passHref legacyBehavior>
 				<a
 					target="_blank"
 					className={cn(
 						"relative w-full transition-all group-hover:text-white group-hover:bg-[#5865f2] border flex flex-row justify-between p-4 font-bold",
-						selection
+						selection,
 					)}
 				>
 					<Grain
 						className={cn(
 							"z-0 transition-opacity top-0 left-0 h-full opacity-0 group-hover:opacity-25",
-							selection
+							selection,
 						)}
 					/>
 
@@ -179,12 +176,12 @@ export default function Home() {
 					</Heading>
 
 					<h3 className="my-4 text-xl font-thin">
-						hack.place() fully immerses students throughout Monmouth
-						County in the world of programming through{" "}
+						hack.place() fully immerses students throughout Monmouth County in
+						the world of programming through{" "}
 						<Link href="/workshops" text="workshops" />,{" "}
 						<Link href="/equihacks" text="hackathons" />, and{" "}
-						<Link href="/seminars" text="seminars" /> that teach
-						them to use the most current technologies.
+						<Link href="/seminars" text="seminars" /> that teach them to use the
+						most current technologies.
 					</h3>
 				</hgroup>
 
@@ -208,9 +205,9 @@ export default function Home() {
 					Our team
 				</h1>
 				<h2 className="w-full mx-auto my-4 text-2xl font-thin text-center md:w-3/4">
-					We are a team of talented high school{" "}
-					<Hover>programmers</Hover> and <Hover>engineers</Hover> that
-					are committed to teaching kids what we know!
+					We are a team of talented high school <Hover>programmers</Hover> and{" "}
+					<Hover>engineers</Hover> that are committed to teaching kids what we
+					know!
 				</h2>
 
 				<div className="flex flex-col w-full mt-4 sm:flex-row">
@@ -231,10 +228,7 @@ export default function Home() {
 				</div>
 
 				<div className="absolute bottom-0 -translate-x-1/2 translate-y-[20%] left-1/2 text-muted -z-10">
-					<Pencil
-						className="w-[25rem] h-[25rem]"
-						strokeWidth={0.75}
-					/>
+					<Pencil className="w-[25rem] h-[25rem]" strokeWidth={0.75} />
 				</div>
 			</Content>
 
@@ -246,8 +240,7 @@ export default function Home() {
 				<div
 					className="grid gap-y-2 gap-x-0 md:gap-x-8"
 					style={{
-						gridTemplateAreas:
-							"'a f' 'a f' 'b f' 'c f' 'd f' 'e f'",
+						gridTemplateAreas: "'a f' 'a f' 'b f' 'c f' 'd f' 'e f'",
 					}}
 				>
 					<Heading className="max-w-1/2" style={{ gridArea: "a" }}>
@@ -304,8 +297,7 @@ export default function Home() {
 				<div className="flex flex-col w-full text-primary">
 					<Heading>Ready to get started?</Heading>
 					<h2 className="my-4 text-2xl font-thin">
-						See how our programs can help you{" "}
-						<Hover>level up.</Hover>
+						See how our programs can help you <Hover>level up.</Hover>
 					</h2>
 
 					<Accordion type="single" className="w-full" collapsible>
@@ -320,28 +312,25 @@ export default function Home() {
 									text="High Technology High School"
 									external
 								/>{" "}
-								(Lincroft, NJ), ranking 1st-2nd nationally among
-								the best STEM high schools (
+								(Lincroft, NJ), ranking 1st-2nd nationally among the best STEM
+								high schools (
 								<Link
 									href="https://www.usnews.com/education/best-high-schools/new-jersey/districts/monmouth-county-vocational-school-district/high-technology-high-school-12808"
 									text="U.S. News"
 									external
 								/>
-								). We are passionate about computer science and
-								software engineering, and we want to share our
-								knowledge with our community!
+								). We are passionate about computer science and software
+								engineering, and we want to share our knowledge with our
+								community!
 							</AccordionContent>
 						</AccordionItem>
 
 						<AccordionItem value="item-2">
-							<AccordionTrigger>
-								What are our qualifications?
-							</AccordionTrigger>
+							<AccordionTrigger>What are our qualifications?</AccordionTrigger>
 							<AccordionContent>
-								All of our teachers have years of experience in
-								programming and computer science. We have taken
-								related courses at our school, and we have also
-								participated in various hackathons and
+								All of our teachers have years of experience in programming and
+								computer science. We have taken related courses at our school,
+								and we have also participated in various hackathons and
 								competitions!
 							</AccordionContent>
 						</AccordionItem>
