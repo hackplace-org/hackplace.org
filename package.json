@@ -6,7 +6,8 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"lint": "next lint",
+		"lint": "next lint && biome check --apply ./",
+		"format": "biome format --write ./",
 		"studio": "drizzle-kit studio --config drizzle.config.ts",
 		"generate": "drizzle-kit generate:sqlite --out ./db/drizzle --breakpoints --schema=./db/schema.ts"
 	},
@@ -52,6 +53,7 @@
 		"zod": "^3.22.2"
 	},
 	"devDependencies": {
+		"@biomejs/biome": "1.2.2",
 		"drizzle-kit": "^0.19.13",
 		"shadcn-ui": "^0.3.0"
 	}
