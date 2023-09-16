@@ -1,8 +1,8 @@
 import {
-	useRef,
-	createRef,
-	type RefObject,
 	type MouseEventHandler,
+	type RefObject,
+	createRef,
+	useRef,
 } from "react";
 
 const useRefArray = <T>(length: number) => {
@@ -23,9 +23,9 @@ export const useCards = (length: number) => {
 			const card = ref.current;
 			if (!card) return;
 
-			const rect = card.getBoundingClientRect(),
-				x = e.clientX - rect.left,
-				y = e.clientY - rect.top;
+			const rect = card.getBoundingClientRect();
+			const x = e.clientX - rect.left;
+			const y = e.clientY - rect.top;
 
 			card.style.setProperty("--mouse-x", `${x}px`);
 			card.style.setProperty("--mouse-y", `${y}px`);
