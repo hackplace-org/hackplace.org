@@ -20,7 +20,7 @@ export const Footer = () => {
 							is an entirely{" "}
 							<Link href={links[0].href} text="open source" external /> and{" "}
 							<Link
-								href={links[4].href}
+								href={links[5].href}
 								text="financially transparent"
 								external
 							/>{" "}
