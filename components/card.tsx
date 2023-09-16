@@ -1,10 +1,10 @@
 "use client";
 
-import { forwardRef, type PropsWithChildren } from "react";
+import { type PropsWithChildren, forwardRef } from "react";
 
-import { cn } from "@/lib/utils";
-import { Grain } from "@/components/utils";
 import { useClonedRef } from "@/components/hooks/useClonedRef";
+import { Grain } from "@/components/utils";
+import { cn } from "@/lib/utils";
 
 interface CardItemProps {
 	className?: string;
@@ -47,7 +47,7 @@ export const CardItem = forwardRef<
 					"bg-[radial-gradient(400px_circle_at_var(--mouse-x)_var(--mouse-y),rgba(255,255,255,0.3),transparent_40%)]",
 					"group-hover/cards:opacity-100 z-10 select-none pointer-events-none opacity-0 transition-opacity duration-500 rounded-[inherit] content-[''] h-full left-0 absolute top-0 w-full"
 				)}
-			></div>
+			/>
 
 			<div className="z-20 relative bg-background px-6 py-8 w-[calc(100%-2px)] h-[calc(100%-2px)] rounded-lg m-[1px]">
 				<Grain className="z-10 rounded-lg" />
