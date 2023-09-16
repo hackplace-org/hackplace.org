@@ -28,12 +28,16 @@ export const Footer = () => {
 						</p>
 
 						<div className="flex flex-row mt-2 mb-6 lg:mb-0 gap-x-2">
-							<NextLink href="https://discord.gg/QmPdqegQNb">
-								<Button>Join our team</Button>
+							<NextLink href="mailto:support@hackplace.org" target="_blank">
+								<Button>Contact support</Button>
 							</NextLink>
 
-							<NextLink href="mailto:support@hackplace.org">
-								<Button variant="outline">Contact support</Button>
+							<NextLink href="https://discord.gg/QmPdqegQNb" target="_blank">
+								<Button variant="outline">Join our team</Button>
+							</NextLink>
+
+							<NextLink href="https://docs.hackplace.org" target="_blank">
+								<Button variant="outline">Knowledge base</Button>
 							</NextLink>
 						</div>
 					</div>
