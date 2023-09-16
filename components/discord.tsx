@@ -1,7 +1,7 @@
 "use client";
 
-import { useTheme } from "next-themes";
 import { useUser } from "@clerk/nextjs";
+import { useTheme } from "next-themes";
 
 export const Discord = () => {
 	const { resolvedTheme } = useTheme();
@@ -18,8 +18,9 @@ export const Discord = () => {
 	return (
 		<iframe
 			src={src}
+			title="Discord Widget"
 			className="w-full h-[500px] outline-none border-[#5865f2] border-[2px] rounded-lg"
 			sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-		></iframe>
+		/>
 	);
 };
