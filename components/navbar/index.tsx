@@ -1,20 +1,20 @@
 "use client";
 
-import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { useState } from "react";
 
-import { cn } from "@/lib/utils";
 import { pages } from "@/lib/siteConfig";
+import { cn } from "@/lib/utils";
 
-import { Logo } from "@/components/logo";
 import { Content } from "@/components/content";
-import { Button } from "@/components/ui/button";
+import { Logo } from "@/components/logo";
 import { Auth } from "@/components/navbar/auth";
 import { MenuItems } from "@/components/navbar/menuItems";
 import { ThemeSwitcher } from "@/components/navbar/themeSwitcher";
+import { Button } from "@/components/ui/button";
 
 export interface NavbarProps {
-	currentTitle: (typeof pages)[number]["title"];
+	currentTitle: typeof pages[number]["title"];
 }
 
 export const Navbar = ({ currentTitle }: NavbarProps) => {
@@ -24,10 +24,7 @@ export const Navbar = ({ currentTitle }: NavbarProps) => {
 		<Content as="nav" border="bottom">
 			<div className="flex flex-row justify-between h-16">
 				<Logo />
-				<MenuItems
-					currentTitle={currentTitle}
-					className="hidden md:flex"
-				/>
+				<MenuItems currentTitle={currentTitle} className="hidden md:flex" />
 
 				<div className="flex flex-row gap-x-2">
 					<ThemeSwitcher />
@@ -42,13 +39,13 @@ export const Navbar = ({ currentTitle }: NavbarProps) => {
 						<Menu
 							className={cn(
 								"w-5 h-5 transition-all scale-100 rotate-0",
-								menuOpen && "-rotate-90 scale-0"
+								menuOpen && "-rotate-90 scale-0",
 							)}
 						/>
 						<X
 							className={cn(
 								"absolute w-5 h-5 transition-all scale-0 rotate-90",
-								menuOpen && "rotate-0 scale-100"
+								menuOpen && "rotate-0 scale-100",
 							)}
 						/>
 
@@ -60,7 +57,7 @@ export const Navbar = ({ currentTitle }: NavbarProps) => {
 			<div
 				className={cn(
 					"justify-center pb-3 md:hidden",
-					menuOpen ? "flex" : "hidden"
+					menuOpen ? "flex" : "hidden",
 				)}
 			>
 				<MenuItems currentTitle={currentTitle} />

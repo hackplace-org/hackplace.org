@@ -1,6 +1,6 @@
 import { pages } from "@/lib/siteConfig";
-import { NextResponse } from "next/server";
 import { authMiddleware, clerkClient } from "@clerk/nextjs";
+import { NextResponse } from "next/server";
 
 declare global {
 	interface UserPrivateMetadata {
@@ -19,10 +19,7 @@ export default authMiddleware({
 
 		if (!auth.userId) {
 			if (pathname === "/onboarding") {
-				const url = new URL(
-					searchParams.get("redirect") ?? "/",
-					nextUrl
-				);
+				const url = new URL(searchParams.get("redirect") ?? "/", nextUrl);
 
 				return NextResponse.redirect(url);
 			}
@@ -53,7 +50,7 @@ export default authMiddleware({
 		}
 
 		return filtered;
-	}, [] as (typeof pages)[number]["href"][]),
+	}, [] as typeof pages[number]["href"][]),
 });
 
 export const config = {

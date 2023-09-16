@@ -1,7 +1,7 @@
 "use server";
 
-import { insertUser } from "@/db/client";
 import { type FormInput } from "@/app/onboarding/form";
+import { insertUser } from "@/db/client";
 import { clerkClient, type useAuth } from "@clerk/nextjs";
 
 type UserId = {

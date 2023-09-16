@@ -1,20 +1,17 @@
 "use client";
 
-import { z } from "zod";
 import { useAuth } from "@clerk/nextjs";
-import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm, type ControllerRenderProps } from "react-hook-form";
-import { useState, type Dispatch, type SetStateAction } from "react";
+import { useRouter } from "next/navigation";
+import { type Dispatch, type SetStateAction, useState } from "react";
+import { type ControllerRenderProps, useForm } from "react-hook-form";
+import { z } from "zod";
 
 import { saveResponse } from "@/app/onboarding/action";
 import { Heading, Hover } from "@/components/utils";
 
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import { useToast } from "@/components/ui/use-toast";
 import {
 	Form,
 	FormControl,
@@ -24,6 +21,9 @@ import {
 	FormLabel,
 	FormMessage,
 } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { useToast } from "@/components/ui/use-toast";
 
 const workshops = [
 	{ id: "weather-app", name: "HTML/CSS/JS: Weather App" },
@@ -49,11 +49,9 @@ const days = [
 ] as const;
 
 const formSchema = z.object({
-	interests: z
-		.array(z.string())
-		.refine((value) => value.some((item) => item), {
-			message: "Please select at least one interest",
-		}),
+	interests: z.array(z.string()).refine((value) => value.some((item) => item), {
+		message: "Please select at least one interest",
+	}),
 	workshops: z.array(z.string()),
 	availability: z
 		.array(z.string())
@@ -86,6 +84,7 @@ export const OnboardingForm = ({ redirectTo }: OnboardingFormProps) => {
 	});
 
 	type KeyOfType<T, V> = keyof {
+		// biome-ignore lint/suspicious/noExplicitAny: any is required here
 		[P in keyof T as T[P] extends V ? P : never]: any;
 	};
 
@@ -99,11 +98,11 @@ export const OnboardingForm = ({ redirectTo }: OnboardingFormProps) => {
 		items: ItemList,
 		name: T,
 		trigger?: keyof FormInput,
-		callback?: Dispatch<SetStateAction<boolean>>
+		callback?: Dispatch<SetStateAction<boolean>>,
 	) => {
 		const onItemChange = (
 			field: ControllerRenderProps<FormInput, T>,
-			item: (typeof items)[number]
+			item: typeof items[number],
 		) => {
 			return (checked: boolean) => {
 				if (callback && item.id === trigger) {
@@ -115,9 +114,7 @@ export const OnboardingForm = ({ redirectTo }: OnboardingFormProps) => {
 				if (checked) {
 					field.onChange([...field.value, item.id]);
 				} else {
-					field.onChange(
-						field.value.filter((value) => value !== item.id)
-					);
+					field.onChange(field.value.filter((value) => value !== item.id));
 				}
 			};
 		};
@@ -137,10 +134,7 @@ export const OnboardingForm = ({ redirectTo }: OnboardingFormProps) => {
 									onCheckedChange={onItemChange(field, item)}
 								/>
 
-								<Label
-									htmlFor={item.id}
-									className="text-lg font-medium"
-								>
+								<Label htmlFor={item.id} className="text-lg font-medium">
 									{item.name}
 								</Label>
 							</div>
@@ -176,8 +170,7 @@ export const OnboardingForm = ({ redirectTo }: OnboardingFormProps) => {
 								</FormLabel>
 								<FormDescription className="text-xl">
 									Select the events you are interested in{" "}
-									<Hover>attending</Hover> or{" "}
-									<Hover>participating in</Hover>.
+									<Hover>attending</Hover> or <Hover>participating in</Hover>.
 								</FormDescription>
 							</div>
 
@@ -186,7 +179,7 @@ export const OnboardingForm = ({ redirectTo }: OnboardingFormProps) => {
 									activities,
 									"interests",
 									"workshops",
-									setWorkshopInterest
+									setWorkshopInterest,
 								)}
 							</div>
 							<FormMessage />
@@ -205,15 +198,12 @@ export const OnboardingForm = ({ redirectTo }: OnboardingFormProps) => {
 										<Heading size="sub">Workshops</Heading>
 									</FormLabel>
 									<FormDescription className="text-xl">
-										Which of our{" "}
-										<Hover>existing workshops</Hover> are
-										you interested in?
+										Which of our <Hover>existing workshops</Hover> are you
+										interested in?
 									</FormDescription>
 								</div>
 
-								<div>
-									{createItemOptions(workshops, "workshops")}
-								</div>
+								<div>{createItemOptions(workshops, "workshops")}</div>
 								<FormMessage />
 							</FormItem>
 						)}
@@ -230,8 +220,7 @@ export const OnboardingForm = ({ redirectTo }: OnboardingFormProps) => {
 									<Heading size="sub">Availability</Heading>
 								</FormLabel>
 								<FormDescription className="text-xl">
-									What <Hover>days</Hover> are you able to
-									attend our events?
+									What <Hover>days</Hover> are you able to attend our events?
 								</FormDescription>
 							</div>
 
@@ -251,8 +240,7 @@ export const OnboardingForm = ({ redirectTo }: OnboardingFormProps) => {
 									<Heading size="sub">Suggestions</Heading>
 								</FormLabel>
 								<FormDescription className="text-xl">
-									Do you have any suggestions for a{" "}
-									<Hover>workshop</Hover> or{" "}
+									Do you have any suggestions for a <Hover>workshop</Hover> or{" "}
 									<Hover>seminar</Hover> that we could hold?
 								</FormDescription>
 							</div>

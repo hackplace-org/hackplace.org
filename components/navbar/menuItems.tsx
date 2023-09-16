@@ -1,10 +1,10 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
-import { cn } from "@/lib/utils";
-import { pages, links } from "@/lib/siteConfig";
+import { type NavbarProps } from "@/components/navbar";
+import { Badge } from "@/components/ui/badge";
 import {
 	NavigationMenu,
 	NavigationMenuContent,
@@ -14,8 +14,8 @@ import {
 	NavigationMenuTrigger,
 	navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { Badge } from "@/components/ui/badge";
-import { type NavbarProps } from "@/components/navbar";
+import { links, pages } from "@/lib/siteConfig";
+import { cn } from "@/lib/utils";
 
 interface ListItemProps {
 	item: (typeof pages | typeof links)[number];
@@ -36,7 +36,7 @@ const ListItem = ({ item, target }: ListItemProps) => {
 					<div
 						className={cn(
 							item.color,
-							"flex flex-row justify-between transition-colors text-sm font-medium leading-none"
+							"flex flex-row justify-between transition-colors text-sm font-medium leading-none",
 						)}
 					>
 						<div className="flex flex-row gap-x-1">
@@ -93,9 +93,7 @@ export const MenuItems = ({ currentTitle, className }: MenuItemsProps) => {
 										<div className="flex flex-row justify-between mt-4 mb-2 text-lg font-medium leading-none">
 											<div className="flex flex-row gap-x-1">
 												<HatchIcon className="w-4 h-4 my-auto" />
-												<p className="my-auto">
-													{pages[2].title}
-												</p>
+												<p className="my-auto">{pages[2].title}</p>
 											</div>
 
 											<Badge>Soon</Badge>
@@ -119,11 +117,7 @@ export const MenuItems = ({ currentTitle, className }: MenuItemsProps) => {
 					<NavigationMenuContent>
 						<ul className="grid md:w-[400px] gap-3 p-4 lg:w-[500px] md:grid-cols-2">
 							{links.map((link) => (
-								<ListItem
-									key={link.href}
-									item={link}
-									target="_blank"
-								/>
+								<ListItem key={link.href} item={link} target="_blank" />
 							))}
 						</ul>
 					</NavigationMenuContent>
@@ -131,9 +125,7 @@ export const MenuItems = ({ currentTitle, className }: MenuItemsProps) => {
 
 				<NavigationMenuItem>
 					<Link href="/donate" legacyBehavior passHref>
-						<NavigationMenuLink
-							className={navigationMenuTriggerStyle()}
-						>
+						<NavigationMenuLink className={navigationMenuTriggerStyle()}>
 							Donate
 						</NavigationMenuLink>
 					</Link>

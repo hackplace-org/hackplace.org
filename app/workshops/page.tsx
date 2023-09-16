@@ -1,6 +1,6 @@
 import { List } from "@/app/workshops/list";
-import { Navbar } from "@/components/navbar";
 import { Content } from "@/components/content";
+import { Navbar } from "@/components/navbar";
 
 import { Grain } from "@/components/utils";
 import { Heading } from "@/components/utils";
@@ -27,8 +27,7 @@ export default function Workshop() {
 
 				<Heading>We&apos;re the teachers we wish we had.</Heading>
 				<h2 className="my-4 text-2xl font-thin">
-					Learn the skills you need to{" "}
-					<Hover>build the future.</Hover>
+					Learn the skills you need to <Hover>build the future.</Hover>
 				</h2>
 
 				<div className="absolute bottom-0 right-0 translate-y-24 text-muted -z-10">

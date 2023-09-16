@@ -1,20 +1,20 @@
 "use client";
 
-import type { PropsWithChildren } from "react";
 import {
-	Palmtree,
-	PackageOpen,
-	PictureInPicture2,
 	Baby,
-	Wrench,
-	Trophy,
 	type LucideIcon,
+	PackageOpen,
+	Palmtree,
+	PictureInPicture2,
+	Trophy,
+	Wrench,
 } from "lucide-react";
+import type { PropsWithChildren } from "react";
 
 import { CardItem } from "@/components/card";
 import { Content } from "@/components/content";
-import { Hover } from "@/components/utils";
 import { useCards } from "@/components/hooks/useCards";
+import { Hover } from "@/components/utils";
 
 interface ContainerItemProps {
 	Icon: LucideIcon;
@@ -47,47 +47,43 @@ export const Mission = () => {
 			>
 				<CardItem ref={refs.current[0]}>
 					<ContainerItem Icon={Palmtree}>
-						to create a <Hover>robust ecosystem</Hover> for students
-						to <Hover>teach themselves</Hover> how to code
+						to create a <Hover>robust ecosystem</Hover> for students to{" "}
+						<Hover>teach themselves</Hover> how to code
 					</ContainerItem>
 				</CardItem>
 
 				<CardItem ref={refs.current[1]}>
 					<ContainerItem Icon={PackageOpen}>
-						to <Hover>open-source</Hover> all of our materials and
-						resources, making them{" "}
-						<Hover>accessible to everyone</Hover>
+						to <Hover>open-source</Hover> all of our materials and resources,
+						making them <Hover>accessible to everyone</Hover>
 					</ContainerItem>
 				</CardItem>
 
 				<CardItem ref={refs.current[2]}>
 					<ContainerItem Icon={Baby}>
-						to be <Hover>readily available</Hover> to assist every
-						student, <Hover>regardless</Hover> of their experience
+						to be <Hover>readily available</Hover> to assist every student,{" "}
+						<Hover>regardless</Hover> of their experience
 					</ContainerItem>
 				</CardItem>
 
 				<CardItem ref={refs.current[3]}>
 					<ContainerItem Icon={PictureInPicture2}>
-						to be <Hover>completely transparent</Hover> in all of
-						our operations and finances as a{" "}
-						<Hover>nonprofit</Hover>
+						to be <Hover>completely transparent</Hover> in all of our operations
+						and finances as a <Hover>nonprofit</Hover>
 					</ContainerItem>
 				</CardItem>
 
 				<CardItem ref={refs.current[4]}>
 					<ContainerItem Icon={Wrench}>
-						to allow students to develop projects{" "}
-						<Hover>on their own</Hover> through our{" "}
-						<Hover>interactive</Hover> workshops
+						to allow students to develop projects <Hover>on their own</Hover>{" "}
+						through our <Hover>interactive</Hover> workshops
 					</ContainerItem>
 				</CardItem>
 
 				<CardItem ref={refs.current[5]}>
 					<ContainerItem Icon={Trophy}>
 						to inspire a new generation of students to become{" "}
-						<Hover>creative</Hover>, <Hover>successful</Hover>{" "}
-						programmers
+						<Hover>creative</Hover>, <Hover>successful</Hover> programmers
 					</ContainerItem>
 				</CardItem>
 			</div>

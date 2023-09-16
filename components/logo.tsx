@@ -1,10 +1,10 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
-import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export const Logo = () => {
 	const { resolvedTheme } = useTheme();
@@ -12,9 +12,7 @@ export const Logo = () => {
 	const [logo, setLogo] = useState("/light-logo.svg");
 
 	useEffect(() => {
-		setLogo(
-			resolvedTheme === "dark" ? "/light-logo.svg" : "/dark-logo.svg"
-		);
+		setLogo(resolvedTheme === "dark" ? "/light-logo.svg" : "/dark-logo.svg");
 	}, [resolvedTheme]);
 
 	return (

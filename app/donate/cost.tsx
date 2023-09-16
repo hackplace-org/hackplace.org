@@ -2,10 +2,10 @@
 
 import type { PropsWithChildren } from "react";
 
-import { Link } from "@/components/link";
-import { Hover } from "@/components/utils";
 import { CardItem } from "@/components/card";
 import { useCards } from "@/components/hooks/useCards";
+import { Link } from "@/components/link";
+import { Hover } from "@/components/utils";
 
 interface CostItemProps {
 	name: string;
@@ -29,22 +29,16 @@ const CostItem = ({
 					<Hover>
 						{strikethroughCost && (
 							<>
-								<span className="line-through">
-									{strikethroughCost}
-								</span>{" "}
+								<span className="line-through">{strikethroughCost}</span>{" "}
 							</>
 						)}
 						{actualCost}
 					</Hover>{" "}
-					<span className="text-2xl text-muted-foreground">
-						{label}
-					</span>
+					<span className="text-2xl text-muted-foreground">{label}</span>
 				</h1>
 			</hgroup>
 
-			<h3 className="ml-auto text-sm text-muted-foreground">
-				{children}
-			</h3>
+			<h3 className="ml-auto text-sm text-muted-foreground">{children}</h3>
 		</div>
 	);
 };
@@ -65,21 +59,12 @@ export const Cost = () => {
 					label="per user / month"
 				>
 					(thanks to{" "}
-					<Link
-						href="https://hackclub.com/"
-						text="Hack Club"
-						external
-					/>
-					)
+					<Link href="https://hackclub.com/" text="Hack Club" external />)
 				</CostItem>
 			</CardItem>
 
 			<CardItem ref={refs.current[1]}>
-				<CostItem
-					name="Google Domains"
-					actualCost="$12"
-					label="per year"
-				>
+				<CostItem name="Google Domains" actualCost="$12" label="per year">
 					(not including email)
 				</CostItem>
 			</CardItem>
@@ -92,12 +77,7 @@ export const Cost = () => {
 					label="per 10,000 emails"
 				>
 					(thanks to{" "}
-					<Link
-						href="https://hackclub.com/"
-						text="Hack Club"
-						external
-					/>
-					)
+					<Link href="https://hackclub.com/" text="Hack Club" external />)
 				</CostItem>
 			</CardItem>
 
@@ -142,12 +122,7 @@ export const Cost = () => {
 					label="per year"
 				>
 					(thanks to{" "}
-					<Link
-						href="https://hackclub.com/"
-						text="Hack Club"
-						external
-					/>
-					)
+					<Link href="https://hackclub.com/" text="Hack Club" external />)
 				</CostItem>
 			</CardItem>
 

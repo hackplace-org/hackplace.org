@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import { Navbar } from "@/components/navbar";
 import { Content } from "@/components/content";
+import { Navbar } from "@/components/navbar";
 import { Heading } from "@/components/utils";
 
 import { OnboardingForm } from "@/app/onboarding/form";
@@ -22,11 +22,7 @@ export default function Onboarding({ searchParams }: OnboardingProps) {
 	return (
 		<>
 			<Navbar currentTitle="Onboarding" />
-			<Content
-				as="main"
-				className="flex flex-col py-8 gap-y-8"
-				border="bottom"
-			>
+			<Content as="main" className="flex flex-col py-8 gap-y-8" border="bottom">
 				<Image
 					src="/icon.svg"
 					width={250}

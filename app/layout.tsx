@@ -1,10 +1,10 @@
 import localFont from "next/font/local";
 
-import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/app/theme";
+import { cn } from "@/lib/utils";
 import { ClerkProvider } from "@clerk/nextjs";
-import type { PropsWithChildren } from "react";
 import type { Metadata } from "next";
+import type { PropsWithChildren } from "react";
 
 import { Footer } from "@/components/footer";
 import { Toaster } from "@/components/ui/toaster";
@@ -56,7 +56,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
 				<body
 					className={cn(
 						satoshi.variable,
-						"font-sans overflow-x-hidden antialiased selection:bg-brand selection:text-sky-900"
+						"font-sans overflow-x-hidden antialiased selection:bg-brand selection:text-sky-900",
 					)}
 				>
 					<ThemeProvider fontVariable={satoshi.variable}>

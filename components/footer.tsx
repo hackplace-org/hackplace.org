@@ -1,13 +1,13 @@
 import NextLink from "next/link";
 
-import { cn } from "@/lib/utils";
 import { links } from "@/lib/siteConfig";
+import { cn } from "@/lib/utils";
 
+import { Content } from "@/components/content";
 import { Link } from "@/components/link";
 import { Logo } from "@/components/logo";
-import { Heading } from "@/components/utils";
-import { Content } from "@/components/content";
 import { Button } from "@/components/ui/button";
+import { Heading } from "@/components/utils";
 
 export const Footer = () => {
 	return (
@@ -18,12 +18,7 @@ export const Footer = () => {
 					<div className="flex flex-col w-full sm:w-4/5 text-muted-foreground gap-y-1">
 						<p>
 							is an entirely{" "}
-							<Link
-								href={links[0].href}
-								text="open source"
-								external
-							/>{" "}
-							and{" "}
+							<Link href={links[0].href} text="open source" external /> and{" "}
 							<Link
 								href={links[4].href}
 								text="financially transparent"
@@ -38,9 +33,7 @@ export const Footer = () => {
 							</NextLink>
 
 							<NextLink href="mailto:support@hackplace.org">
-								<Button variant="outline">
-									Contact support
-								</Button>
+								<Button variant="outline">Contact support</Button>
 							</NextLink>
 						</div>
 					</div>
@@ -69,25 +62,17 @@ export const Footer = () => {
 			</div>
 
 			<div className="flex flex-col justify-between pt-8 gap-y-2 sm:gap-y-0 sm:flex-row">
-				<p className="my-auto text-muted-foreground">
-					© 2023 hack.place()™
-				</p>
+				<p className="my-auto text-muted-foreground">© 2023 hack.place()™</p>
 
 				<section className="mx-auto my-auto sm:mx-0">
 					{links.map((link) => (
-						<NextLink
-							key={link.title}
-							href={link.href}
-							target="_blank"
-						>
+						<NextLink key={link.title} href={link.href} target="_blank">
 							<Button
 								size="icon"
 								variant="ghost"
 								className="transition-colors group"
 							>
-								<link.Icon
-									className={cn(link.color, "w-5 h-5")}
-								/>
+								<link.Icon className={cn(link.color, "w-5 h-5")} />
 							</Button>
 						</NextLink>
 					))}

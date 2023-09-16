@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, type HTMLAttributes } from "react";
+import { type HTMLAttributes, useState } from "react";
 
-import { cn } from "@/lib/utils";
 import { stages } from "@/lib/siteConfig";
+import { cn } from "@/lib/utils";
 import { type LucideIcon } from "lucide-react";
 
 interface TimelineIconProps extends HTMLAttributes<HTMLDivElement> {
@@ -24,7 +24,7 @@ const TimelineIcon = ({
 				selected
 					? "bg-brand text-white"
 					: "transition-colors hover:text-white hover:bg-brand text-background bg-foreground",
-				"grid w-10 h-10 rounded-full place-items-center"
+				"grid w-10 h-10 rounded-full place-items-center",
 			)}
 			{...props}
 		>

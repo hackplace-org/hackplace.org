@@ -120,6 +120,7 @@ const Channel = ({
 	return (
 		<div className="flex flex-row w-full group gap-x-4" style={{ gridArea }}>
 			<NextLink href={href} passHref legacyBehavior>
+				{/* biome-ignore lint/a11y/useValidAnchor: NextLink passes the href */}
 				<a
 					target="_blank"
 					className={cn(

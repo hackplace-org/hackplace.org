@@ -1,11 +1,11 @@
 import { cn } from "@/lib/utils";
 
 import { ArrowUpRight } from "lucide-react";
-import { type PropsWithChildren } from "react";
 import {
-	default as NextLink,
 	type LinkProps as NextLinkProps,
+	default as NextLink,
 } from "next/link";
+import { type PropsWithChildren } from "react";
 
 type BaseLinkProps = Omit<
 	React.AnchorHTMLAttributes<HTMLAnchorElement>,
@@ -34,11 +34,12 @@ export const Link = ({
 			target={external ? "_blank" : "_self"}
 			{...rest}
 		>
+			{/* biome-ignore lint/a11y/useValidAnchor: NextLink passes the href */}
 			<a
 				className={cn(
 					className,
 					unstyled || "text-brand hover:underline transition-all",
-					"inline-block"
+					"inline-block",
 				)}
 			>
 				{text}

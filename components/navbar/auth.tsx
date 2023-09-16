@@ -1,8 +1,8 @@
 "use client";
 
-import { UserPlus } from "lucide-react";
-import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
+import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { UserPlus } from "lucide-react";
 
 export const Auth = () => {
 	return (
@@ -17,16 +17,13 @@ export const Auth = () => {
 									"w-52 bg-popover text-popover-foreground border-border shadow-md rounded-md p-0",
 								userPreview: "p-4 border-b border-border -mb-1",
 								userPreviewMainIdentifier: "font-semibold",
-								userPreviewSecondaryIdentifier:
-									"text-muted-foreground",
+								userPreviewSecondaryIdentifier: "text-muted-foreground",
 								userButtonPopoverMain: "space-y-2",
 								userButtonPopoverActions: "px-1 pb-1 space-y-1",
 								userButtonPopoverActionButton:
 									"p-0 rounded-lg transition-colors hover:bg-secondary",
-								userButtonPopoverActionButtonText:
-									"text-popover-foreground",
-								userButtonPopoverActionButtonIcon:
-									"text-popover-foreground",
+								userButtonPopoverActionButtonText: "text-popover-foreground",
+								userButtonPopoverActionButtonIcon: "text-popover-foreground",
 								userButtonPopoverFooter: "hidden",
 							},
 						}}

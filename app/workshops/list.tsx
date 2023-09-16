@@ -1,23 +1,23 @@
 "use client";
 
-import { forwardRef } from "react";
 import { cva } from "class-variance-authority";
 import {
+	Bot,
 	Calculator,
-	Palette,
 	CloudSun,
 	Cookie,
-	Disc3,
-	Bot,
-	Server,
 	DatabaseBackup,
+	Disc3,
+	Palette,
+	Server,
 	Wand2,
 } from "lucide-react";
+import { forwardRef } from "react";
 
-import { cn } from "@/lib/utils";
 import { CardItem } from "@/components/card";
-import { Badge } from "@/components/ui/badge";
 import { useCards } from "@/components/hooks/useCards";
+import { Badge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
 
 const workshops = [
 	{
@@ -95,7 +95,7 @@ const badge = cva("", {
 	},
 });
 
-type WorkshopItemProps = (typeof workshops)[number];
+type WorkshopItemProps = typeof workshops[number];
 
 const WorkshopItem = forwardRef<HTMLDivElement, WorkshopItemProps>(
 	({ topic, application, difficulty, author, Icon }, ref) => {
@@ -104,9 +104,7 @@ const WorkshopItem = forwardRef<HTMLDivElement, WorkshopItemProps>(
 				<div className="flex flex-row justify-between">
 					<div className="flex flex-row gap-2 group-hover:text-primary transition-colors">
 						<Icon className="w-6 h-6 my-auto" />
-						<h1 className="font-extrabold text-2xl">
-							{application}
-						</h1>
+						<h1 className="font-extrabold text-2xl">{application}</h1>
 					</div>
 
 					<Badge className={cn("my-auto", badge({ difficulty }))}>
@@ -120,7 +118,7 @@ const WorkshopItem = forwardRef<HTMLDivElement, WorkshopItemProps>(
 				</h2>
 			</CardItem>
 		);
-	}
+	},
 );
 WorkshopItem.displayName = "WorkshopItem";
 

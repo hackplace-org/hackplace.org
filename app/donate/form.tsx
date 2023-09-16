@@ -1,11 +1,10 @@
 "use client";
 
-import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import {
 	Form,
 	FormControl,
@@ -15,6 +14,7 @@ import {
 	FormLabel,
 	FormMessage,
 } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 const sanitize = (n: unknown) =>
@@ -25,7 +25,7 @@ const formSchema = z.object({
 	email: z.string().email("Please provide a valid email address"),
 	amount: z.preprocess(
 		(n) => Math.ceil(sanitize(n) * 100),
-		z.number().positive("Please provide a valid donation amount")
+		z.number().positive("Please provide a valid donation amount"),
 	),
 });
 
@@ -42,9 +42,7 @@ export const DonateForm = () => {
 	});
 
 	const onSubmit = ({ name, email, amount }: FormInput) => {
-		const url = new URL(
-			"https://bank.hackclub.com/donations/start/hack-place"
-		);
+		const url = new URL("https://bank.hackclub.com/donations/start/hack-place");
 		url.search = new URLSearchParams({
 			name,
 			email,
@@ -56,10 +54,7 @@ export const DonateForm = () => {
 
 	return (
 		<Form {...form}>
-			<form
-				className="pt-4 space-y-4"
-				onSubmit={form.handleSubmit(onSubmit)}
-			>
+			<form className="pt-4 space-y-4" onSubmit={form.handleSubmit(onSubmit)}>
 				<FormField
 					control={form.control}
 					name="name"
@@ -108,9 +103,7 @@ export const DonateForm = () => {
 									<Input {...field} />
 								</div>
 							</FormControl>
-							<FormDescription>
-								Donation amount in USD
-							</FormDescription>
+							<FormDescription>Donation amount in USD</FormDescription>
 							<FormMessage />
 						</FormItem>
 					)}
