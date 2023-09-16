@@ -1,10 +1,7 @@
-import { useRef, useEffect, type ForwardedRef } from "react";
+import { type ForwardedRef, useEffect, useRef } from "react";
 
 // https://github.com/facebook/react/issues/24722
-export const useClonedRef = <T>(
-	ref: ForwardedRef<T>,
-	initialValue: any = null
-) => {
+export const useClonedRef = <T>(ref: ForwardedRef<T>, initialValue = null) => {
 	const targetRef = useRef<T>(initialValue);
 
 	useEffect(() => {
