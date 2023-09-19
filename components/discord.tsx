@@ -7,7 +7,7 @@ export const Discord = () => {
 	const { resolvedTheme } = useTheme();
 	const { isSignedIn, user, isLoaded } = useUser();
 
-	let src = `https://canary.discord.com/widget?id=979086159022030899&theme=${
+	let src = `https://canary.discord.com/widget?id=888441920651669534&theme=${
 		resolvedTheme ?? "dark"
 	}`;
 
