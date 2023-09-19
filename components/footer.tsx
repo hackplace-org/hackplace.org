@@ -32,7 +32,7 @@ export const Footer = () => {
 								<Button>Contact support</Button>
 							</NextLink>
 
-							<NextLink href="https://discord.gg/QmPdqegQNb" target="_blank">
+							<NextLink href="https://discord.gg/9u4zzBTjbW" target="_blank">
 								<Button variant="outline">Join our team</Button>
 							</NextLink>
 
