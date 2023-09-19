@@ -103,7 +103,7 @@ export const links = [
 	},
 	{
 		title: "Discord",
-		href: "https://discord.gg/YTZdFWgR6V",
+		href: "https://discord.gg/ucAEhh74eW",
 		description: "Chat with our community members and staff.",
 		color: "group-hover:text-[#5865f2]",
 		Icon: MessagesSquare,
