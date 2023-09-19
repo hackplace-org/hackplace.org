@@ -259,22 +259,22 @@ export default function Home() {
 					<Channel
 						gridArea="c"
 						name="announcements"
-						href="https://discord.gg/zveRDRvEPP"
+						href="https://discord.gg/PCjKJeU75H"
 						description="View important hack.place() announcements"
 						round="top"
 					/>
 					<Channel
 						gridArea="d"
-						name="support"
-						href="https://discord.gg/paZgnXkeha"
+						name="questions"
+						href="https://discord.gg/vU6SnRbbrq"
 						description="Get help with any question you may have"
 						Icon={MessagesSquare}
 					/>
 					<Channel
 						gridArea="e"
 						name="lounge"
-						href="https://discord.gg/QmPdqegQNb"
-						description="Socialize with staff and members of our community"
+						href="https://discord.gg/D9CAbAMspX"
+						description="Socialize with members of our community"
 						round="bottom"
 					/>
 
