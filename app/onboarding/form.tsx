@@ -2,7 +2,6 @@
 
 import { useAuth } from "@clerk/nextjs";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useRouter } from "next/navigation";
 import { type Dispatch, type SetStateAction, useState } from "react";
 import { type ControllerRenderProps, useForm } from "react-hook-form";
 import { z } from "zod";
@@ -23,7 +22,6 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { useToast } from "@/components/ui/use-toast";
 
 const workshops = [
 	{ id: "weather-app", name: "HTML/CSS/JS: Weather App" },
@@ -63,13 +61,11 @@ const formSchema = z.object({
 
 export type FormInput = z.infer<typeof formSchema>;
 
-interface OnboardingFormProps {
+export interface OnboardingFormProps {
 	redirectTo: string;
 }
 
 export const OnboardingForm = ({ redirectTo }: OnboardingFormProps) => {
-	const router = useRouter();
-	const { toast } = useToast();
 	const { userId } = useAuth();
 	const [workshopInterest, setWorkshopInterest] = useState(false);
 
@@ -146,14 +142,7 @@ export const OnboardingForm = ({ redirectTo }: OnboardingFormProps) => {
 	};
 
 	const onSubmit = async (values: FormInput) => {
-		await saveResponse({ ...values, userId });
-
-		router.push(redirectTo);
-		toast({
-			title: "Success! Your response has been saved.",
-			description:
-				"If you are not redirected shortly, please refresh the page.",
-		});
+		await saveResponse({ ...values, userId, redirectTo });
 	};
 
 	return (
