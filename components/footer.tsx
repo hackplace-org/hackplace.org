@@ -70,10 +70,16 @@ export const Footer = () => {
 
 				<section className="mx-auto my-auto sm:mx-0">
 					{links.map((link) => (
-						<NextLink key={link.title} href={link.href} target="_blank">
+						<NextLink
+							key={link.title}
+							title={link.title}
+							href={link.href}
+							target="_blank"
+						>
 							<Button
 								size="icon"
 								variant="ghost"
+								name={link.title}
 								className="transition-colors group"
 							>
 								<link.Icon className={cn(link.color, "w-5 h-5")} />
