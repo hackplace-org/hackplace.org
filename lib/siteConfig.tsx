@@ -116,7 +116,7 @@ export const links = [
 		Icon: Twitter,
 	},
 	{
-		title: "Hack Club Bank",
+		title: "HCB",
 		href: "https://hcb.hackclub.com/_hackplace",
 		description: "Full transparency on all of our finances.",
 		color: "group-hover:text-[#e7364e]",
