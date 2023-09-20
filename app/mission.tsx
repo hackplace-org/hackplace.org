@@ -47,43 +47,43 @@ export const Mission = () => {
 			>
 				<CardItem ref={refs.current[0]}>
 					<ContainerItem Icon={Palmtree}>
-						to create a <Hover>robust ecosystem</Hover> for students to{" "}
+						to create a robust ecosystem for students to{" "}
 						<Hover>teach themselves</Hover> how to code
 					</ContainerItem>
 				</CardItem>
 
 				<CardItem ref={refs.current[1]}>
 					<ContainerItem Icon={PackageOpen}>
-						to <Hover>open-source</Hover> all of our materials and resources,
-						making them <Hover>accessible to everyone</Hover>
+						to open-source all of our materials and resources, making them{" "}
+						<Hover>accessible to everyone</Hover>
 					</ContainerItem>
 				</CardItem>
 
 				<CardItem ref={refs.current[2]}>
 					<ContainerItem Icon={Baby}>
-						to be <Hover>readily available</Hover> to assist every student,{" "}
-						<Hover>regardless</Hover> of their experience
+						to be <Hover>readily available</Hover> to assist every student,
+						regardless of their experience
 					</ContainerItem>
 				</CardItem>
 
 				<CardItem ref={refs.current[3]}>
 					<ContainerItem Icon={PictureInPicture2}>
 						to be <Hover>completely transparent</Hover> in all of our operations
-						and finances as a <Hover>nonprofit</Hover>
+						and finances as a nonprofit
 					</ContainerItem>
 				</CardItem>
 
 				<CardItem ref={refs.current[4]}>
 					<ContainerItem Icon={Wrench}>
 						to allow students to develop projects <Hover>on their own</Hover>{" "}
-						through our <Hover>interactive</Hover> workshops
+						through our interactive workshops
 					</ContainerItem>
 				</CardItem>
 
 				<CardItem ref={refs.current[5]}>
 					<ContainerItem Icon={Trophy}>
-						to inspire a new generation of students to become{" "}
-						<Hover>creative</Hover>, <Hover>successful</Hover> programmers
+						to inspire a new generation of students to become creative,{" "}
+						<Hover>successful</Hover> programmers
 					</ContainerItem>
 				</CardItem>
 			</div>
