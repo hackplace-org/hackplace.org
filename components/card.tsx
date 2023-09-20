@@ -1,6 +1,10 @@
 "use client";
 
-import { type MouseEventHandler, type PropsWithChildren, forwardRef } from "react";
+import {
+	type MouseEventHandler,
+	type PropsWithChildren,
+	forwardRef,
+} from "react";
 
 import { useClonedRef } from "@/components/hooks/useClonedRef";
 import { Grain } from "@/components/utils";
