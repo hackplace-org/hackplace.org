@@ -12,12 +12,13 @@ import { cn } from "@/lib/utils";
 
 interface CardItemProps {
 	className?: string;
+	onClick?: MouseEventHandler<HTMLDivElement>;
 }
 
 export const CardItem = forwardRef<
 	HTMLDivElement,
 	PropsWithChildren<CardItemProps>
->(({ children, className }, ref) => {
+>(({ children, onClick, className }, ref) => {
 	const clonedRef = useClonedRef<HTMLDivElement>(ref);
 
 	const onMouseMove: MouseEventHandler<HTMLDivElement> = (e) => {
@@ -36,9 +37,11 @@ export const CardItem = forwardRef<
 	};
 
 	return (
+		// biome-ignore lint/a11y/useKeyWithClickEvents: not implementing key event yet
 		<div
 			ref={clonedRef}
 			// onMouseMove={onMouseMove}
+			onClick={onClick}
 			className={cn(
 				className,
 				"bg-border dark:bg-inherit will-change-transform relative rounded-lg cursor-pointer group",
