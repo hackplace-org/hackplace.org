@@ -79,7 +79,7 @@ export const Footer = () => {
 							<Button
 								size="icon"
 								variant="ghost"
-								name={link.title}
+								aria-label={link.title}
 								className="transition-colors group"
 							>
 								<link.Icon className={cn(link.color, "w-5 h-5")} />
