@@ -40,9 +40,17 @@ export default function RootLayout({ children }: PropsWithChildren) {
 						socialButtonsProviderIcon__github: "dark:invert",
 						dividerLine: "bg-muted-foreground/20",
 						dividerText: "text-muted-foreground",
+						alertText: "text-popover-foreground",
+						identityPreview: "bg-secondary rounded-2xl border-border",
+						identityPreviewText: "text-muted-foreground",
+						identityPreviewEditButton: "text-brand hover:text-brand",
+						formHeaderTitle: "text-popover-foreground",
+						formHeaderSubtitle: "text-muted-foreground",
+						formResendCodeLink: "text-brand",
 						formFieldLabel: "text-popover-foreground",
 						formFieldInput:
 							"transition-colors border border-input bg-transparent dark:text-primary rounded-md h-9 px-3 py-1 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring",
+						formFieldSuccessText: "text-muted-foreground",
 						formButtonPrimary:
 							"text-white bg-brand transition-opacity hover:bg-brand hover:opacity-90",
 						footerActionText: "text-popover-foreground",
