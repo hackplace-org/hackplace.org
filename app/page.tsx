@@ -4,6 +4,7 @@ import {
 	Hash,
 	ImageIcon,
 	type LucideIcon,
+	Megaphone,
 	MessagesSquare,
 	MousePointerClick,
 	Pencil,
@@ -18,7 +19,6 @@ import { people } from "@/lib/siteConfig";
 import { cn } from "@/lib/utils";
 
 import { Content } from "@/components/content";
-import { Discord } from "@/components/discord";
 import { Link } from "@/components/link";
 import { Navbar } from "@/components/navbar";
 import { Grain, Heading, Hover } from "@/components/utils";
@@ -235,57 +235,43 @@ export default function Home() {
 
 			<Content
 				as="section"
-				className="flex flex-col justify-between py-16 gap-y-4 gap-x-8 md:flex-row"
+				className="flex flex-col py-16 gap-y-4"
 				border="bottom"
 			>
+				<Heading className="max-w-1/2" style={{ gridArea: "a" }}>
+					A vibrant community of...
+				</Heading>
+
 				<div
-					className="grid gap-y-2 gap-x-0 md:gap-x-8"
-					style={{
-						gridTemplateAreas: "'a f' 'a f' 'b f' 'c f' 'd f' 'e f'",
-					}}
+					className="flex gap-4 my-2 overflow-hidden select-none group"
+					style={{ gridArea: "b" }}
 				>
-					<Heading className="max-w-1/2" style={{ gridArea: "a" }}>
-						A vibrant community of...
-					</Heading>
-
-					<div
-						className="flex gap-4 my-2 overflow-hidden select-none group"
-						style={{ gridArea: "b" }}
-					>
-						<Marquee labels={labels} />
-						<Marquee labels={labels} aria-hidden />
-					</div>
-
-					<Channel
-						gridArea="c"
-						name="announcements"
-						href="https://discord.gg/PCjKJeU75H"
-						description="View important hack.place() announcements"
-						round="top"
-					/>
-					<Channel
-						gridArea="d"
-						name="questions"
-						href="https://discord.gg/vU6SnRbbrq"
-						description="Get help with any question you may have"
-						Icon={MessagesSquare}
-					/>
-					<Channel
-						gridArea="e"
-						name="lounge"
-						href="https://discord.gg/D9CAbAMspX"
-						description="Socialize with members of our community"
-						round="bottom"
-					/>
-
-					<div className="hidden md:block" style={{ gridArea: "f" }}>
-						<Discord />
-					</div>
+					<Marquee labels={labels} />
+					<Marquee labels={labels} aria-hidden />
 				</div>
 
-				<div className="block md:hidden">
-					<Discord />
-				</div>
+				<Channel
+					gridArea="c"
+					name="announcements"
+					href="https://discord.gg/PCjKJeU75H"
+					description="View important hack.place() announcements"
+					round="top"
+					Icon={Megaphone}
+				/>
+				<Channel
+					gridArea="d"
+					name="questions"
+					href="https://discord.gg/vU6SnRbbrq"
+					description="Get help with any question you may have"
+					Icon={MessagesSquare}
+				/>
+				<Channel
+					gridArea="e"
+					name="lounge"
+					href="https://discord.gg/D9CAbAMspX"
+					description="Socialize with members of our community"
+					round="bottom"
+				/>
 			</Content>
 
 			<Content
@@ -337,16 +323,8 @@ export default function Home() {
 						</AccordionItem>
 					</Accordion>
 
-					<NextLink className="mt-6" href="/workshops">
-						<Button
-							variant="link"
-							className="py-6 pl-0 text-2xl font-extrabold text-black transition-all hover:text-brand dark:hover:text-brand sm:dark:hover:text-glow sm:dark:hover:selection:text-white dark:text-white group hover:no-underline"
-						>
-							Let&apos;s go{" "}
-							<span className="ml-2 group-hover:animate-[spin_0.75s_cubic-bezier(0,0,0.2,1)_1]">
-								►
-							</span>
-						</Button>
+					<NextLink href="/workshops" className="mt-6">
+						<Button>Let&apos;s go</Button>
 					</NextLink>
 				</div>
 
