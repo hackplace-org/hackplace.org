@@ -22,6 +22,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Loader2 } from "lucide-react";
 
 const workshops = [
 	{ id: "weather-app", name: "HTML/CSS/JS: Weather App" },
@@ -68,6 +69,7 @@ export interface OnboardingFormProps {
 export const OnboardingForm = ({ redirectTo }: OnboardingFormProps) => {
 	const { userId } = useAuth();
 	const [workshopInterest, setWorkshopInterest] = useState(false);
+	const [submitting, setSubmitting] = useState(false);
 
 	const form = useForm<FormInput>({
 		resolver: zodResolver(formSchema),
@@ -142,7 +144,10 @@ export const OnboardingForm = ({ redirectTo }: OnboardingFormProps) => {
 	};
 
 	const onSubmit = async (values: FormInput) => {
-		await saveResponse({ ...values, userId, redirectTo });
+		setSubmitting(true);
+		await saveResponse({ ...values, userId, redirectTo }).then(() =>
+			setSubmitting(false),
+		);
 	};
 
 	return (
@@ -245,7 +250,10 @@ export const OnboardingForm = ({ redirectTo }: OnboardingFormProps) => {
 					)}
 				/>
 
-				<Button type="submit">Let&apos;s go</Button>
+				<Button type="submit" disabled={submitting}>
+					Let&apos;s go{" "}
+					{submitting && <Loader2 className="w-4 h-4 animate-spin ml-2" />}
+				</Button>
 			</form>
 		</Form>
 	);
