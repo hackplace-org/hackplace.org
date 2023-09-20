@@ -32,9 +32,10 @@ const workshops = [
 ] as const;
 
 const activities = [
-	{ id: "workshops", name: "Workshops" },
-	{ id: "seminars", name: "Seminars" },
 	{ id: "hackathons", name: "Hackathons" },
+	{ id: "workshops", name: "Workshops" },
+	{ id: "incubator", name: "Incubator" },
+	{ id: "seminars", name: "Seminars" },
 ] as const;
 
 const days = [
