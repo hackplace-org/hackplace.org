@@ -1,6 +1,6 @@
 "use client";
 
-import { type PropsWithChildren, forwardRef } from "react";
+import { type MouseEventHandler, type PropsWithChildren, forwardRef } from "react";
 
 import { useClonedRef } from "@/components/hooks/useClonedRef";
 import { Grain } from "@/components/utils";
@@ -16,20 +16,20 @@ export const CardItem = forwardRef<
 >(({ children, className }, ref) => {
 	const clonedRef = useClonedRef<HTMLDivElement>(ref);
 
-	// const onMouseMove: MouseEventHandler<HTMLDivElement> = (e) => {
-	// 	const card = clonedRef.current;
-	// 	if (!card) return;
+	const onMouseMove: MouseEventHandler<HTMLDivElement> = (e) => {
+		const card = clonedRef.current;
+		if (!card) return;
 
-	// 	const rect = card.getBoundingClientRect(),
-	// 		x = -(e.clientY - rect.y - rect.height / 2) / 20,
-	// 		y = (e.clientX - rect.x - rect.width / 2) / 20;
+		const rect = card.getBoundingClientRect();
+		const x = -(e.clientY - rect.y - rect.height / 2) / 100;
+		const y = (e.clientX - rect.x - rect.width / 2) / 100;
 
-	// 	const keyframes = {
-	// 		transform: `perspective(500px) rotateX(${x}deg) rotateY(${y}deg)`,
-	// 	};
+		const keyframes = {
+			transform: `perspective(500px) rotateX(${x}deg) rotateY(${y}deg)`,
+		};
 
-	// 	card.animate(keyframes, 250);
-	// };
+		card.animate(keyframes, 250);
+	};
 
 	return (
 		<div
