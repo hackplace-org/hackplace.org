@@ -4,8 +4,7 @@ import { Content } from "@/components/content";
 import { Navbar } from "@/components/navbar";
 import { Heading } from "@/components/utils";
 
-import { OnboardingForm } from "@/app/onboarding/form";
-import { Separator } from "@/components/ui/separator";
+import { Tasks } from "@/app/onboarding/tasks";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -32,16 +31,13 @@ export default function Onboarding({ searchParams }: OnboardingProps) {
 				/>
 
 				<div className="space-y-4">
-					<h1 className="text-6xl font-bold">
-						Before you begin your journey...
-					</h1>
-					<Heading className="text-muted-foreground" size="sub">
-						We have just a few questions for you.
-					</Heading>
+					<Heading>Before we get started...</Heading>
+					<h2 className="my-4 text-2xl font-thin">
+						We have just a few tasks for you.
+					</h2>
 				</div>
 
-				<Separator className="w-1/3 mx-auto" />
-				<OnboardingForm redirectTo={searchParams.redirect ?? "/"} />
+				<Tasks />
 			</Content>
 		</>
 	);
