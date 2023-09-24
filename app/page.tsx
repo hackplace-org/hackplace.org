@@ -63,6 +63,7 @@ const Person = ({ person }: PersonProps) => (
 					<Button
 						size="icon"
 						variant="ghost"
+						title={link.title}
 						aria-label={link.title}
 						className={cn("transition-colors", link.color)}
 					>

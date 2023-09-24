@@ -30,6 +30,7 @@ const ListItem = ({ item, target }: ListItemProps) => {
 			<NavigationMenuLink asChild>
 				<a
 					target={target ?? "_self"}
+					title={item.title}
 					href={item.href}
 					className="block p-3 space-y-1 leading-none no-underline transition-colors rounded-md outline-none select-none group hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
 				>
@@ -80,7 +81,8 @@ export const MenuItems = ({ currentTitle, className }: MenuItemsProps) => {
 								<NavigationMenuLink asChild>
 									<a
 										className="flex flex-col justify-end w-full h-full p-6 no-underline rounded-md outline-none select-none bg-gradient-to-b from-muted/50 to-muted focus:shadow-md"
-										href="/hatch"
+										title={pages[2].title}
+										href={pages[2].href}
 									>
 										<Image
 											src="/icon.svg"
