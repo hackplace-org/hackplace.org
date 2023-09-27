@@ -1,11 +1,12 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 
 import { Content } from "@/components/content";
 import { Navbar } from "@/components/navbar";
 import { Heading } from "@/components/utils";
 
+import { type OnboardingFormProps } from "@/app/onboarding/form";
 import { TaskContainer } from "@/app/onboarding/tasks";
-import type { Metadata } from "next";
 
 export const metadata: Metadata = {
 	title: "Onboarding",
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
 
 interface OnboardingProps {
 	searchParams: {
-		redirect?: string;
+		redirect?: OnboardingFormProps["redirect"];
 	};
 }
 
@@ -37,7 +38,7 @@ export default function Onboarding({ searchParams }: OnboardingProps) {
 					</h2>
 				</div>
 
-				<TaskContainer />
+				<TaskContainer redirect={searchParams.redirect ?? "/"} />
 			</Content>
 		</>
 	);

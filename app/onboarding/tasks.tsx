@@ -2,16 +2,13 @@
 
 import { type SetStateAction, type WritableAtom, useAtom } from "jotai";
 import { atomWithStorage } from "jotai/utils";
-import {
-	ArrowRight,
-	Baby,
-	CheckCheck,
-	type LucideIcon,
-	MessagesSquare,
-	Pencil,
-	Unplug,
-} from "lucide-react";
+import { Baby, MessagesSquare, Unplug, UserCheck } from "lucide-react";
 import Link from "next/link";
+
+import { OnboardingForm, OnboardingFormProps } from "@/app/onboarding/form";
+import { TaskItem } from "@/app/onboarding/item";
+import { links } from "@/lib/siteConfig";
+import { cn } from "@/lib/utils";
 
 import { CardItem } from "@/components/card";
 import { useCards } from "@/components/hooks/useCards";
@@ -28,76 +25,58 @@ import {
 	AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Progress } from "@/components/ui/progress";
-import { links } from "@/lib/siteConfig";
-import { cn } from "@/lib/utils";
-
-interface TaskItemProps {
-	name: string;
-	description: string;
-	complete?: boolean;
-	Icon: LucideIcon;
-}
-
-const TaskItem = ({ name, description, complete, Icon }: TaskItemProps) => {
-	return (
-		<>
-			<div className="flex flex-row justify-between">
-				<div
-					className={cn(
-						"flex flex-row gap-2",
-						!complete && "group-hover/card:text-primary transition-colors",
-					)}
-				>
-					<Icon className="w-6 h-6 my-auto" />
-					<h1 className="font-extrabold text-2xl">{name}</h1>
-				</div>
-
-				{complete ? (
-					<CheckCheck className="text-primary w-6 h-6 my-auto" />
-				) : (
-					<ArrowRight className="text-primary transition-all -translate-x-1/2 opacity-0 group-hover/card:opacity-100 group-hover/card:translate-x-0 w-6 h-6 my-auto" />
-				)}
-			</div>
-
-			<h2 className="text-lg mt-1">{description}</h2>
-		</>
-	);
-};
 
 type AtomType<T> = WritableAtom<T, [SetStateAction<T>], void>;
 
 interface TasksProps {
+	redirect: OnboardingFormProps["redirect"];
 	progressAtom: AtomType<number>;
 	discordOpenAtom: AtomType<boolean>;
 	discordCompleteAtom: AtomType<boolean>;
+	formOpenAtom: AtomType<boolean>;
+	formCompleteAtom: AtomType<boolean>;
 }
 
+const NUM_CARDS = 3;
+
 const Tasks = ({
+	redirect,
 	progressAtom,
 	discordOpenAtom,
 	discordCompleteAtom,
+	formOpenAtom,
+	formCompleteAtom,
 }: TasksProps) => {
-	const [refs, onMouseMove] = useCards(3);
+	const [refs, onMouseMove] = useCards(NUM_CARDS);
 	const [progress, setProgress] = useAtom(progressAtom);
 
 	const [discordOpen, setDiscordOpen] = useAtom(discordOpenAtom);
 	const [discordComplete, setDiscordComplete] = useAtom(discordCompleteAtom);
 
+	const [formOpen, setFormOpen] = useAtom(formOpenAtom);
+	const [formComplete, setFormComplete] = useAtom(formCompleteAtom);
+
 	return (
 		<>
-			<Progress value={(100 / 3) * progress} />
+			<Progress value={(100 / NUM_CARDS) * progress} />
 
 			<div
 				onMouseMove={onMouseMove}
 				className="mt-8 text-muted-foreground group/cards gap-2 grid grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-2"
 			>
-				<AlertDialog
-					open={discordComplete ? false : discordOpen}
-					onOpenChange={setDiscordOpen}
-				>
+				<CardItem ref={refs.current[0]} className="group/card opacity-50">
+					<TaskItem
+						name="Sign up for hack.place()"
+						description="Now, you can apply to Hatch and register for workshops."
+						complete={true}
+						Icon={UserCheck}
+					/>
+				</CardItem>
+
+				<AlertDialog open={discordOpen}>
 					<AlertDialogTrigger asChild>
 						<CardItem
-							ref={refs.current[0]}
+							ref={refs.current[1]}
 							onClick={() => setDiscordOpen(!discordComplete)}
 							className={cn("group/card", discordComplete && "opacity-50")}
 						>
@@ -113,7 +92,7 @@ const Tasks = ({
 					<AlertDialogContent>
 						<AlertDialogHeader className="text-start">
 							<AlertDialogTitle>Join our Discord server</AlertDialogTitle>
-							<AlertDialogDescription className="pb-2">
+							<AlertDialogDescription className="pb-4">
 								This is where we send important announcements and information.
 								It&apos;s also the easiest way to get in touch with us.{" "}
 								<span className="underline">
@@ -131,13 +110,20 @@ const Tasks = ({
 							</Alert>
 						</AlertDialogHeader>
 
-						<AlertDialogFooter className="flex flex-row justify-end space-x-2">
-							<AlertDialogCancel className="my-auto">Cancel</AlertDialogCancel>
+						<AlertDialogFooter className="flex flex-row justify-end space-x-2 pt-2">
+							<AlertDialogCancel
+								className="my-auto"
+								onClick={() => setDiscordOpen(false)}
+							>
+								Cancel
+							</AlertDialogCancel>
+
 							<Link href={links[3].href} target="_blank">
 								<AlertDialogAction
 									onClick={() => {
 										setProgress((progress) => progress + 1);
 										setDiscordComplete(true);
+										setDiscordOpen(false);
 									}}
 								>
 									Let&apos;s go
@@ -147,36 +133,67 @@ const Tasks = ({
 					</AlertDialogContent>
 				</AlertDialog>
 
-				<CardItem ref={refs.current[1]} className="group/card">
-					<TaskItem
-						name="Select an age group"
-						description="We'll need this to check your eligibility for certain events."
-						Icon={Baby}
-					/>
-				</CardItem>
+				<AlertDialog open={formOpen}>
+					<AlertDialogTrigger asChild>
+						<CardItem
+							ref={refs.current[2]}
+							onClick={() => setFormOpen(discordComplete && !formComplete)}
+							className={cn(
+								"group/card",
+								(formComplete || !discordComplete) && "opacity-50",
+							)}
+						>
+							<TaskItem
+								name="Select an age group"
+								description="We'll need this to check your eligibility for certain events."
+								unlocked={discordComplete}
+								complete={formComplete}
+								Icon={Baby}
+							/>
+						</CardItem>
+					</AlertDialogTrigger>
 
-				<CardItem ref={refs.current[2]} className="group/card">
-					<TaskItem
-						name="Write a short blurb"
-						description="Tell us who you are and what you're most excited about."
-						Icon={Pencil}
-					/>
-				</CardItem>
+					<AlertDialogContent>
+						<AlertDialogHeader className="text-start">
+							<AlertDialogTitle>Select an age group</AlertDialogTitle>
+							<AlertDialogDescription className="pb-4">
+								Activities like our incubator, Hatch, are only open to middle
+								and high school students.
+							</AlertDialogDescription>
+
+							<OnboardingForm
+								redirect={redirect}
+								setProgress={setProgress}
+								setFormOpen={setFormOpen}
+								setFormComplete={setFormComplete}
+							/>
+						</AlertDialogHeader>
+					</AlertDialogContent>
+				</AlertDialog>
 			</div>
 		</>
 	);
 };
 
-export const TaskContainer = () => {
-	const progressAtom = atomWithStorage("progress", 0);
+export const TaskContainer = ({
+	redirect,
+}: Pick<OnboardingFormProps, "redirect">) => {
+	const progressAtom = atomWithStorage("progress", 1);
+
 	const discordOpenAtom = atomWithStorage("discordOpen", false);
 	const discordCompleteAtom = atomWithStorage("discordComplete", false);
 
+	const formOpenAtom = atomWithStorage("formOpen", false);
+	const formCompleteAtom = atomWithStorage("formComplete", false);
+
 	return (
 		<Tasks
+			redirect={redirect}
 			progressAtom={progressAtom}
 			discordOpenAtom={discordOpenAtom}
 			discordCompleteAtom={discordCompleteAtom}
+			formOpenAtom={formOpenAtom}
+			formCompleteAtom={formCompleteAtom}
 		/>
 	);
 };
