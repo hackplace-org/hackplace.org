@@ -4,7 +4,7 @@ import { Content } from "@/components/content";
 import { Navbar } from "@/components/navbar";
 import { Heading } from "@/components/utils";
 
-import { Tasks } from "@/app/onboarding/tasks";
+import { TaskContainer } from "@/app/onboarding/tasks";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -37,7 +37,7 @@ export default function Onboarding({ searchParams }: OnboardingProps) {
 					</h2>
 				</div>
 
-				<Tasks />
+				<TaskContainer />
 			</Content>
 		</>
 	);

@@ -1,5 +1,18 @@
 "use client";
 
+import { type SetStateAction, type WritableAtom, useAtom } from "jotai";
+import { atomWithStorage } from "jotai/utils";
+import {
+	ArrowRight,
+	Baby,
+	CheckCheck,
+	type LucideIcon,
+	MessagesSquare,
+	Pencil,
+	Unplug,
+} from "lucide-react";
+import Link from "next/link";
+
 import { CardItem } from "@/components/card";
 import { useCards } from "@/components/hooks/useCards";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
@@ -17,17 +30,6 @@ import {
 import { Progress } from "@/components/ui/progress";
 import { links } from "@/lib/siteConfig";
 import { cn } from "@/lib/utils";
-import {
-	ArrowRight,
-	Baby,
-	CheckCheck,
-	type LucideIcon,
-	MessagesSquare,
-	Pencil,
-	Unplug,
-} from "lucide-react";
-import Link from "next/link";
-import { useState } from "react";
 
 interface TaskItemProps {
 	name: string;
@@ -62,12 +64,24 @@ const TaskItem = ({ name, description, complete, Icon }: TaskItemProps) => {
 	);
 };
 
-export const Tasks = () => {
-	const [refs, onMouseMove] = useCards(3);
-	const [progress, setProgress] = useState(0);
+type AtomType<T> = WritableAtom<T, [SetStateAction<T>], void>;
 
-	const [discordOpen, setDiscordOpen] = useState(false);
-	const [discordComplete, setDiscordComplete] = useState(false);
+interface TasksProps {
+	progressAtom: AtomType<number>;
+	discordOpenAtom: AtomType<boolean>;
+	discordCompleteAtom: AtomType<boolean>;
+}
+
+const Tasks = ({
+	progressAtom,
+	discordOpenAtom,
+	discordCompleteAtom,
+}: TasksProps) => {
+	const [refs, onMouseMove] = useCards(3);
+	const [progress, setProgress] = useAtom(progressAtom);
+
+	const [discordOpen, setDiscordOpen] = useAtom(discordOpenAtom);
+	const [discordComplete, setDiscordComplete] = useAtom(discordCompleteAtom);
 
 	return (
 		<>
@@ -97,28 +111,28 @@ export const Tasks = () => {
 					</AlertDialogTrigger>
 
 					<AlertDialogContent>
-						<AlertDialogHeader>
+						<AlertDialogHeader className="text-start">
 							<AlertDialogTitle>Join our Discord server</AlertDialogTitle>
-							<AlertDialogDescription>
+							<AlertDialogDescription className="pb-2">
 								This is where we send important announcements and information.
 								It&apos;s also the easiest way to get in touch with us.{" "}
 								<span className="underline">
 									We highly recommend that you join.
 								</span>
-
-								<Alert className="mb-2 mt-6">
-									<Unplug className="h-4 w-4" />
-									<AlertTitle>Heads up!</AlertTitle>
-									<AlertDescription>
-										Without joining the Discord, you won&apos;t be able to
-										participate in community events.
-									</AlertDescription>
-								</Alert>
 							</AlertDialogDescription>
+
+							<Alert>
+								<Unplug className="h-4 w-4" />
+								<AlertTitle>Heads up!</AlertTitle>
+								<AlertDescription>
+									Without joining the Discord, you won&apos;t be able to
+									participate in community events.
+								</AlertDescription>
+							</Alert>
 						</AlertDialogHeader>
 
-						<AlertDialogFooter>
-							<AlertDialogCancel>Cancel</AlertDialogCancel>
+						<AlertDialogFooter className="flex flex-row justify-end space-x-2">
+							<AlertDialogCancel className="my-auto">Cancel</AlertDialogCancel>
 							<Link href={links[3].href} target="_blank">
 								<AlertDialogAction
 									onClick={() => {
@@ -150,5 +164,19 @@ export const Tasks = () => {
 				</CardItem>
 			</div>
 		</>
+	);
+};
+
+export const TaskContainer = () => {
+	const progressAtom = atomWithStorage("progress", 0);
+	const discordOpenAtom = atomWithStorage("discordOpen", false);
+	const discordCompleteAtom = atomWithStorage("discordComplete", false);
+
+	return (
+		<Tasks
+			progressAtom={progressAtom}
+			discordOpenAtom={discordOpenAtom}
+			discordCompleteAtom={discordCompleteAtom}
+		/>
 	);
 };
