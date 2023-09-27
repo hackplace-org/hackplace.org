@@ -1,5 +1,6 @@
 "use client";
 
+import { Provider } from "jotai";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { type PropsWithChildren } from "react";
 
@@ -26,7 +27,7 @@ export const ThemeProvider = ({
 				`}
 			</style>
 
-			{children}
+			<Provider>{children}</Provider>
 		</NextThemesProvider>
 	);
 };
