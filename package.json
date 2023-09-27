@@ -9,7 +9,7 @@
 		"lint": "next lint && biome check --apply ./",
 		"format": "biome format --write ./",
 		"studio": "drizzle-kit studio --config drizzle.config.ts",
-		"generate": "drizzle-kit generate:sqlite --out ./db/drizzle --breakpoints --schema=./db/schema.ts"
+		"generate": "drizzle-kit generate:sqlite --out ./db/migrations --breakpoints --schema=./db/schema.ts"
 	},
 	"dependencies": {
 		"@clerk/nextjs": "^4.23.5",
@@ -46,7 +46,6 @@
 		"next-themes": "^0.2.1",
 		"postcss": "8.4.29",
 		"react": "18.2.0",
-		"react-day-picker": "^8.8.1",
 		"react-dom": "18.2.0",
 		"react-hook-form": "^7.46.1",
 		"tailwind-merge": "^1.14.0",
@@ -58,6 +57,7 @@
 	"devDependencies": {
 		"@biomejs/biome": "1.2.2",
 		"@swc-jotai/react-refresh": "^0.1.0",
+		"better-sqlite3": "^8.6.0",
 		"drizzle-kit": "^0.19.13",
 		"shadcn-ui": "^0.3.0"
 	}
