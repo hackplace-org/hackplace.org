@@ -16,4 +16,4 @@ export const insertUser = async (user: NewUser) => {
 	return db.insert(users).values(user).all();
 };
 
-migrate(db, { migrationsFolder: "./db/migrations" });
+migrate(db, { migrationsFolder: "db/migrations" });
