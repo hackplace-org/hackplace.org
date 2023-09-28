@@ -1,7 +1,6 @@
 import {
 	Banknote,
 	ClipboardCheck,
-	ClipboardList,
 	Code,
 	Egg,
 	Github,
@@ -13,10 +12,7 @@ import {
 	Mail,
 	MessagesSquare,
 	Mic,
-	Sunrise,
-	Sunset,
 	Trophy,
-	Tv,
 	Twitter,
 } from "lucide-react";
 
@@ -186,32 +182,5 @@ export const people = [
 				Icon: Code,
 			},
 		],
-	},
-] as const;
-
-export const stages = [
-	{
-		id: "sunrise",
-		name: "Opening Ceremony",
-		start: new Date("Fri Sep 22 2023 18:30:00 GMT-0400"),
-		Icon: Sunrise,
-	},
-	{
-		id: "tv",
-		name: "Judging Period",
-		start: new Date("Sun Sep 24 2023 20:00:00 GMT-0400"),
-		Icon: Tv,
-	},
-	{
-		id: "clipboardlist",
-		name: "Public Voting Ends",
-		start: new Date("Mon Sep 25 2023 18:30:00 GMT-0400"),
-		Icon: ClipboardList,
-	},
-	{
-		id: "sunset",
-		name: "Closing Ceremony",
-		start: new Date("Mon Sep 25 2023 20:00:00 GMT-0400"),
-		Icon: Sunset,
 	},
 ] as const;
