@@ -1,6 +1,5 @@
 import { createClient } from "@libsql/client";
 import { drizzle } from "drizzle-orm/libsql";
-import { migrate } from "drizzle-orm/libsql/migrator";
 
 import { type NewUser, users } from "@/db/schema";
 import { env } from "../env.mjs";
@@ -15,5 +14,3 @@ const db = drizzle(client, { logger: true });
 export const insertUser = async (user: NewUser) => {
 	return db.insert(users).values(user).all();
 };
-
-migrate(db, { migrationsFolder: "db/migrations" });
