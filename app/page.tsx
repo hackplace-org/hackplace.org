@@ -12,7 +12,7 @@ import {
 	UserCircle,
 } from "lucide-react";
 import NextLink from "next/link";
-import type { ComponentProps } from "react";
+import Marquee from "react-fast-marquee";
 
 import { Mission } from "@/app/mission";
 import { people } from "@/lib/siteConfig";
@@ -21,8 +21,6 @@ import { cn } from "@/lib/utils";
 import { Content } from "@/components/content";
 import { Link } from "@/components/link";
 import { Navbar } from "@/components/navbar";
-import { Grain, Heading, Hover } from "@/components/utils";
-
 import {
 	Accordion,
 	AccordionContent,
@@ -30,6 +28,7 @@ import {
 	AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import { Grain, Heading, Hover } from "@/components/utils";
 
 import type { Metadata } from "next";
 
@@ -75,27 +74,6 @@ const Person = ({ person }: PersonProps) => (
 	</div>
 );
 
-interface MarqueeProps extends ComponentProps<"ul"> {
-	labels: string[];
-}
-
-const Marquee = ({ labels, ...props }: MarqueeProps) => (
-	<ul
-		className="flex justify-around min-w-full gap-4 text-2xl font-bold animate-marquee shrink-0"
-		{...props}
-	>
-		{labels.map((label) => (
-			<li
-				key={label}
-				className="relative p-4 my-auto transition-colors border border-dotted rounded-lg hover:border-solid hover:bg-brand hover:text-white"
-			>
-				<div className="absolute transition-opacity top-0 left-0 rounded-lg w-full h-full bg-[url(/noise.svg)] opacity-0 hover:opacity-25 brightness-100 contrast-150" />
-				{label}
-			</li>
-		))}
-	</ul>
-);
-
 const channel = cva("rounded-lg", {
 	variants: {
 		round: {
@@ -107,7 +85,6 @@ const channel = cva("rounded-lg", {
 });
 
 interface ChannelProps extends VariantProps<typeof channel> {
-	gridArea: string;
 	name: string;
 	href: string;
 	description: string;
@@ -115,7 +92,6 @@ interface ChannelProps extends VariantProps<typeof channel> {
 }
 
 const Channel = ({
-	gridArea,
 	name,
 	href,
 	description,
@@ -125,7 +101,7 @@ const Channel = ({
 	const selection = channel({ round });
 
 	return (
-		<div className="flex flex-row w-full group gap-x-4" style={{ gridArea }}>
+		<div className="flex flex-row w-full group gap-x-4">
 			<NextLink href={href} passHref legacyBehavior>
 				{/* biome-ignore lint/a11y/useValidAnchor: NextLink passes the href */}
 				<a
@@ -245,20 +221,21 @@ export default function Home() {
 				className="flex flex-col py-16 gap-y-4"
 				border="bottom"
 			>
-				<Heading className="max-w-1/2" style={{ gridArea: "a" }}>
-					A vibrant community of...
-				</Heading>
+				<Heading className="max-w-1/2">A vibrant community of...</Heading>
 
-				<div
-					className="flex gap-4 my-2 overflow-hidden select-none group"
-					style={{ gridArea: "b" }}
-				>
-					<Marquee labels={labels} />
-					<Marquee labels={labels} aria-hidden />
-				</div>
+				<Marquee autoFill speed={25} className="my-2">
+					{labels.map((label) => (
+						<div
+							key={label}
+							className="mx-4 relative p-4 my-auto transition-colors border border-dotted rounded-lg hover:border-solid hover:bg-brand hover:text-white"
+						>
+							<div className="absolute transition-opacity top-0 left-0 rounded-lg w-full h-full bg-[url(/noise.svg)] opacity-0 hover:opacity-25 brightness-100 contrast-150" />
+							<p className="text-2xl font-bold">{label}</p>
+						</div>
+					))}
+				</Marquee>
 
 				<Channel
-					gridArea="c"
 					name="announcements"
 					href="https://discord.gg/PCjKJeU75H"
 					description="View important hack.place() announcements"
@@ -266,14 +243,12 @@ export default function Home() {
 					Icon={Megaphone}
 				/>
 				<Channel
-					gridArea="d"
 					name="questions"
 					href="https://discord.gg/vU6SnRbbrq"
 					description="Get help with any question you may have"
 					Icon={MessagesSquare}
 				/>
 				<Channel
-					gridArea="e"
 					name="lounge"
 					href="https://discord.gg/D9CAbAMspX"
 					description="Socialize with members of our community"
