@@ -63,10 +63,6 @@ export default {
 				sm: "calc(var(--radius) - 4px)",
 			},
 			keyframes: {
-				marquee: {
-					from: { transform: "translateX(0%)" },
-					to: { transform: "translateX(calc(-100% - 1rem))" },
-				},
 				"accordion-down": {
 					from: { height: "0" },
 					to: { height: "var(--radix-accordion-content-height)" },
