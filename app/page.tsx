@@ -293,16 +293,6 @@ export default function Home() {
 								community!
 							</AccordionContent>
 						</AccordionItem>
-
-						<AccordionItem value="item-2">
-							<AccordionTrigger>What are our qualifications?</AccordionTrigger>
-							<AccordionContent>
-								All of our teachers have years of experience in programming and
-								computer science. We have taken related courses at our school,
-								and we have also participated in various hackathons and
-								competitions!
-							</AccordionContent>
-						</AccordionItem>
 					</Accordion>
 
 					<NextLink href="/workshops" className="mt-6">
