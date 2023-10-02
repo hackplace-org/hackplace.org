@@ -8,6 +8,7 @@ import { Content } from "@/components/content";
 import { useCards } from "@/components/hooks/useCards";
 import { Link } from "@/components/link";
 import { Heading } from "@/components/utils";
+import { links } from "@/lib/siteConfig";
 
 interface OpportunityItemProps {
 	title: string;
@@ -60,9 +61,11 @@ export const Opportunity = () => {
 					title="Connect with peers"
 					Icon={Users}
 				>
-					Hackathons are the best place to meet like-minded students.
-					Haven&apos;t found people interested in the same things you are? We
-					have a team-building channel on our Discord for you to find them.
+					Hackathons are the best place to meet like-minded students that are
+					passionate about building the same things you are. Don&apos;t worry if
+					you haven&apos;t found those people beforehand&mdash;we have a
+					team-building channel on our{" "}
+					<Link href={links[3].href} text="Discord" external />.
 				</OpportunityItem>
 
 				<OpportunityItem
@@ -70,10 +73,10 @@ export const Opportunity = () => {
 					title="Learn new things"
 					Icon={GraduationCap}
 				>
-					Hackathons are the perfect place to try out new technologies
-					you&apos;ve never used before. We&apos;re here along the way to help
-					you out, and we&apos;re also running our own workshops for you to
-					learn from!
+					This is a great opportunity to try out technologies you&apos;ve never
+					used before. Our community and staff are both here along the way to
+					help you out. Throughout the hackathon, we&apos;re also running our
+					own workshops for you to learn from!
 				</OpportunityItem>
 			</div>
 		</Content>
