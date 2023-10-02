@@ -23,7 +23,7 @@ interface ListItemProps {
 }
 
 const ListItem = ({ item, target }: ListItemProps) => {
-	const soon: ListItemProps["item"]["title"][] = ["Workshops", "Seminars"];
+	const soon: ListItemProps["item"]["title"][] = ["Seminars"];
 
 	return (
 		<li>
@@ -68,7 +68,7 @@ interface MenuItemsProps extends NavbarProps {
 }
 
 export const MenuItems = ({ currentTitle, className }: MenuItemsProps) => {
-	const HatchIcon = pages[2].Icon;
+	// const HatchIcon = pages[2].Icon;
 
 	return (
 		<NavigationMenu className={className}>
@@ -94,7 +94,7 @@ export const MenuItems = ({ currentTitle, className }: MenuItemsProps) => {
 
 										<div className="flex flex-row justify-between mt-4 mb-2 text-lg font-medium leading-none">
 											<div className="flex flex-row gap-x-1">
-												<HatchIcon className="w-4 h-4 my-auto" />
+												{/* <HatchIcon className="w-4 h-4 my-auto" /> */}
 												<p className="my-auto">{pages[2].title}</p>
 											</div>
 
