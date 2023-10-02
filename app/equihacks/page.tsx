@@ -100,12 +100,8 @@ export default async function EquiHacks() {
 
 				<Accordion type="single" className="w-full" collapsible>
 					<AccordionItem value="item-1">
-						<AccordionTrigger>
-							Placeholder
-						</AccordionTrigger>
-						<AccordionContent>
-							Placeholder
-						</AccordionContent>
+						<AccordionTrigger>Placeholder</AccordionTrigger>
+						<AccordionContent>Placeholder</AccordionContent>
 					</AccordionItem>
 				</Accordion>
 
@@ -113,7 +109,10 @@ export default async function EquiHacks() {
 					<Quote className="w-72 h-72 rotate-[15deg]" strokeWidth={0.75} />
 				</div>
 				<div className="absolute top-0 left-0 hidden translate-x-12 -translate-y-12 md:block text-muted -z-10">
-					<ShieldQuestion className="w-72 h-72 rotate-[-15deg]"strokeWidth={0.75} />
+					<ShieldQuestion
+						className="w-72 h-72 rotate-[-15deg]"
+						strokeWidth={0.75}
+					/>
 				</div>
 			</Content>
 
@@ -122,9 +121,7 @@ export default async function EquiHacks() {
 					Your ticket
 				</h1>
 
-				<p className="text-center">
-					Under construction
-				</p>
+				<p className="text-center">Under construction</p>
 				{/* {user && <UserTicket username={user.username as string} />} */}
 			</Content>
 
@@ -160,7 +157,7 @@ export default async function EquiHacks() {
 							<AccordionContent>
 								Your donations will be used to fund the prizes, venue, and other
 								expenses for EquiHacks. A full list of expenses can be found on
-								the <Link href="/donate" text="donations" /> page.
+								the <Link href="/donate" text="donate" /> page.
 							</AccordionContent>
 						</AccordionItem>
 
@@ -169,7 +166,7 @@ export default async function EquiHacks() {
 								I have further questions. Can I contact you?
 							</AccordionTrigger>
 							<AccordionContent>
-								Yes! Our contact information is available below.
+								Yes! Our contact information is available in the footer below.
 							</AccordionContent>
 						</AccordionItem>
 					</Accordion>

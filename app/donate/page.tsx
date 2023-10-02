@@ -131,7 +131,7 @@ export default function Donate() {
 							I have further questions. Can I contact you?
 						</AccordionTrigger>
 						<AccordionContent>
-							Yes! Our contact information is available below.
+							Yes! Our contact information is available in the footer below.
 						</AccordionContent>
 					</AccordionItem>
 				</Accordion>
