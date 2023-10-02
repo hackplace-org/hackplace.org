@@ -1,5 +1,5 @@
 import { currentUser } from "@clerk/nextjs";
-import { Coins, Rocket } from "lucide-react";
+import { Coins, Quote, ShieldQuestion } from "lucide-react";
 import type { Metadata } from "next";
 import NextLink from "next/link";
 import Marquee from "react-fast-marquee";
@@ -87,11 +87,44 @@ export default async function EquiHacks() {
 
 			<Opportunity />
 
+			<Content
+				as="section"
+				className="py-16"
+				outerClassName="relative"
+				border="bottom"
+			>
+				<Grain />
+				<h1 className="p-4 mb-4 mx-auto text-6xl font-bold text-center w-fit rounded-2xl bg-brand text-sky-900">
+					FAQs
+				</h1>
+
+				<Accordion type="single" className="w-full" collapsible>
+					<AccordionItem value="item-1">
+						<AccordionTrigger>
+							Placeholder
+						</AccordionTrigger>
+						<AccordionContent>
+							Placeholder
+						</AccordionContent>
+					</AccordionItem>
+				</Accordion>
+
+				<div className="absolute top-0 right-0 hidden -translate-x-12 -translate-y-12 md:block text-muted -z-10">
+					<Quote className="w-72 h-72 rotate-[15deg]" strokeWidth={0.75} />
+				</div>
+				<div className="absolute top-0 left-0 hidden translate-x-12 -translate-y-12 md:block text-muted -z-10">
+					<ShieldQuestion className="w-72 h-72 rotate-[-15deg]"strokeWidth={0.75} />
+				</div>
+			</Content>
+
 			<Content as="section" className="py-16" border="bottom">
-				<h1 className="p-4 mx-auto text-6xl font-bold text-center w-fit rounded-2xl bg-brand text-sky-900">
+				<h1 className="p-4 mb-4 mx-auto text-6xl font-bold text-center w-fit rounded-2xl bg-brand text-sky-900">
 					Your ticket
 				</h1>
 
+				<p className="text-center">
+					Under construction
+				</p>
 				{/* {user && <UserTicket username={user.username as string} />} */}
 			</Content>
 
@@ -146,9 +179,6 @@ export default async function EquiHacks() {
 					</NextLink>
 				</div>
 
-				<div className="absolute top-0 right-0 -translate-x-6 -translate-y-20 text-muted -z-10">
-					<Rocket className="w-72 h-72" strokeWidth={0.75} />
-				</div>
 				<div className="absolute bottom-0 right-0 -translate-x-12 translate-y-24 text-muted -z-10">
 					<Coins className="w-72 h-72" strokeWidth={0.75} />
 				</div>
