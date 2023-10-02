@@ -49,7 +49,7 @@ export default function Donate() {
 				<h2 className="w-full mx-auto my-4 text-2xl font-thin text-center md:w-3/4">
 					Here is a breakdown of our expected costs, as outlined in our{" "}
 					<Link
-						href="https://github.com/hackplace-org/documentation/blob/main/Sponsorship%20Proposal.pdf"
+						href="https://drive.google.com/file/d/19foeIdAijQU-w3npaZz7MibnJMTaY_M5/view"
 						text="Sponsorship Proposal"
 						external
 					/>
