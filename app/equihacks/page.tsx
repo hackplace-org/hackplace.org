@@ -1,5 +1,5 @@
 import { currentUser } from "@clerk/nextjs";
-import { Rocket } from "lucide-react";
+import { Coins, Rocket } from "lucide-react";
 import type { Metadata } from "next";
 import NextLink from "next/link";
 import Marquee from "react-fast-marquee";
@@ -148,6 +148,9 @@ export default async function EquiHacks() {
 
 				<div className="absolute top-0 right-0 -translate-x-6 -translate-y-20 text-muted -z-10">
 					<Rocket className="w-72 h-72" strokeWidth={0.75} />
+				</div>
+				<div className="absolute bottom-0 right-0 -translate-x-12 translate-y-24 text-muted -z-10">
+					<Coins className="w-72 h-72" strokeWidth={0.75} />
 				</div>
 			</Content>
 		</>
