@@ -27,17 +27,21 @@ export const Footer = () => {
 							fiscally sponsored nonprofit organization.
 						</p>
 
-						<div className="flex flex-row mt-2 mb-6 lg:mb-0 gap-x-2">
+						<div className="flex flex-row justify-center sm:justify-start mt-2 mb-6 lg:mb-0 gap-x-2">
 							<NextLink href="mailto:support@hackplace.org" target="_blank">
-								<Button>Contact support</Button>
+								<Button className="py-10 sm:py-0">Contact support</Button>
 							</NextLink>
 
 							<NextLink href="https://discord.gg/9u4zzBTjbW" target="_blank">
-								<Button variant="outline">Join our team</Button>
+								<Button className="py-10 sm:py-0" variant="outline">
+									Join our team
+								</Button>
 							</NextLink>
 
 							<NextLink href="https://docs.hackplace.org" target="_blank">
-								<Button variant="outline">Knowledge base</Button>
+								<Button className="py-10 sm:py-0" variant="outline">
+									Knowledge base
+								</Button>
 							</NextLink>
 						</div>
 					</div>
