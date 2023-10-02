@@ -1,9 +1,6 @@
-import { type VariantProps, cva } from "class-variance-authority";
 import {
 	GraduationCap,
-	Hash,
 	ImageIcon,
-	type LucideIcon,
 	Megaphone,
 	MessagesSquare,
 	MousePointerClick,
@@ -11,9 +8,11 @@ import {
 	Ruler,
 	UserCircle,
 } from "lucide-react";
+import type { Metadata } from "next";
 import NextLink from "next/link";
 import Marquee from "react-fast-marquee";
 
+import { Channel } from "@/app/channel";
 import { Mission } from "@/app/mission";
 import { people } from "@/lib/siteConfig";
 import { cn } from "@/lib/utils";
@@ -29,8 +28,6 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Grain, Heading, Hover } from "@/components/utils";
-
-import type { Metadata } from "next";
 
 export const metadata: Metadata = {
 	title: "Home",
@@ -73,64 +70,6 @@ const Person = ({ person }: PersonProps) => (
 		</div>
 	</div>
 );
-
-const channel = cva("rounded-lg", {
-	variants: {
-		round: {
-			default: "",
-			top: "rounded-t-2xl",
-			bottom: "rounded-b-2xl",
-		},
-	},
-});
-
-interface ChannelProps extends VariantProps<typeof channel> {
-	name: string;
-	href: string;
-	description: string;
-	Icon?: LucideIcon;
-}
-
-const Channel = ({
-	name,
-	href,
-	description,
-	round,
-	Icon = Hash,
-}: ChannelProps) => {
-	const selection = channel({ round });
-
-	return (
-		<div className="flex flex-row w-full group gap-x-4">
-			<NextLink href={href} passHref legacyBehavior>
-				{/* biome-ignore lint/a11y/useValidAnchor: NextLink passes the href */}
-				<a
-					target="_blank"
-					className={cn(
-						"relative w-full transition-all group-hover:text-white group-hover:bg-[#5865f2] border flex flex-row justify-between p-4 font-bold",
-						selection,
-					)}
-				>
-					<Grain
-						className={cn(
-							"z-0 transition-opacity top-0 left-0 h-full opacity-0 group-hover:opacity-25",
-							selection,
-						)}
-					/>
-
-					<div className="flex flex-row gap-x-1">
-						<Icon className="w-5 h-5 my-auto" />
-						<p className="my-auto text-xl">{name}</p>
-					</div>
-
-					<p className="items-center hidden w-1/2 h-12 my-auto text-transparent align-middle transition-colors sm:flex group-hover:text-white">
-						{description}
-					</p>
-				</a>
-			</NextLink>
-		</div>
-	);
-};
 
 export default function Home() {
 	const labels = [
@@ -190,8 +129,7 @@ export default function Home() {
 				</h1>
 				<h2 className="w-full mx-auto my-4 text-2xl font-thin text-center md:w-3/4">
 					We are a team of talented high school <Hover>programmers</Hover> and{" "}
-					<Hover>engineers</Hover> that are committed to teaching kids what we
-					know!
+					<Hover>engineers</Hover> committed to teaching kids what we know.
 				</h2>
 
 				<div className="flex flex-col w-full mt-4 sm:flex-row">
