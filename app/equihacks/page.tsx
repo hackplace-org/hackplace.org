@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import NextLink from "next/link";
 import Marquee from "react-fast-marquee";
 
+import { Opportunity } from "@/app/equihacks/opportunity";
 import { UserTicket } from "@/app/equihacks/ticket";
 import { Content } from "@/components/content";
 import { Link } from "@/components/link";
@@ -37,10 +38,10 @@ export default async function EquiHacks() {
 				<div className="absolute blur-[300px] -z-20 bg-gradient-to-r from-[#99d19c] via-[#5aa984] to-[#357677] h-[300px] bottom-1/4 right-1/4 aspect-square rounded-full translate-x-1/2 translate-y-1/2" />
 
 				<hgroup className="mx-auto max-w-4xl flex flex-col gap-6 text-center">
-					<h1 className="text-7xl font-bold">
+					<h1 className="text-5xl md:text-7xl font-bold">
 						EquiHacks is Monmouth County&apos;s premier high school hackathon.
 					</h1>
-					<h2 className="text-2xl text-muted-foreground">
+					<h2 className="text-lg md:text-2xl text-muted-foreground">
 						We&apos;re excited to announce <Hover>EquiHacks S1</Hover>, a
 						48-hour hackathon for middle and high school students in{" "}
 						<Hover>Monmouth County, NJ</Hover>.
@@ -83,6 +84,8 @@ export default async function EquiHacks() {
 					</Marquee>
 				</div>
 			</Content>
+
+			<Opportunity />
 
 			<Content as="section" className="py-16" border="bottom">
 				<h1 className="p-4 mx-auto text-6xl font-bold text-center w-fit rounded-2xl bg-brand text-sky-900">
