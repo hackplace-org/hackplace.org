@@ -6,7 +6,7 @@ import type { ComponentProps, PropsWithChildren } from "react";
 const heading = cva("break-word h-fit border-brand", {
 	variants: {
 		size: {
-			main: "text-6xl border-l-[10px] font-bold pl-4",
+			main: "text-5xl sm:text-6xl border-l-[10px] font-bold pl-4",
 			sub: "text-4xl border-l-[7px] font-semibold pl-4",
 			small: "border-l-[5px] font-bold pl-2",
 		},
