@@ -11,6 +11,20 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
 	title: "Workshops",
+	description: "Learn the skills you need to build the future.",
+	openGraph: {
+		title: "Workshops",
+		description: "Learn the skills you need to build the future.",
+		url: "https://hackplace.org/workshops",
+		images: [
+			{
+				url: "https://hackplace.org/og/workshops.png",
+				width: 1200,
+				height: 600,
+				alt: "Workshops",
+			},
+		],
+	},
 };
 
 export default function Workshop() {

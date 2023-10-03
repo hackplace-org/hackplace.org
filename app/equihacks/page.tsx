@@ -21,6 +21,20 @@ import { Grain, Heading, Hover } from "@/components/utils";
 
 export const metadata: Metadata = {
 	title: "EquiHacks",
+	description: "Monmouth County's premier high school hackathon.",
+	openGraph: {
+		title: "EquiHacks",
+		description: "Monmouth County's premier high school hackathon.",
+		url: "https://hackplace.org/equihacks",
+		images: [
+			{
+				url: "https://hackplace.org/og/equihacks.png",
+				width: 1200,
+				height: 600,
+				alt: "EquiHacks",
+			},
+		],
+	},
 };
 
 export default async function EquiHacks() {
