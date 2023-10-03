@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 		url: "https://hackplace.org/equihacks",
 		images: [
 			{
-				url: "https://hackplace.org/og/equihacks.png",
+				url: "/og/equihacks.png",
 				width: 1200,
 				height: 600,
 				alt: "EquiHacks",

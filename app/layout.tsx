@@ -17,7 +17,7 @@ const satoshi = localFont({
 
 export const metadata: Metadata = {
 	title: "hack.place()",
-	description: "hack.place()",
+	metadataBase: new URL("https://hackplace.org"),
 };
 
 export default function RootLayout({ children }: PropsWithChildren) {

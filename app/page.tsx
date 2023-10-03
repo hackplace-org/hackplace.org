@@ -30,7 +30,9 @@ import { Button } from "@/components/ui/button";
 import { Grain, Heading, Hover } from "@/components/utils";
 
 export const metadata: Metadata = {
-	title: "Home",
+	title: "hack.place()",
+	description:
+		"We train the next generation of programmers in the Monmouth County area.",
 };
 
 interface PersonProps {
