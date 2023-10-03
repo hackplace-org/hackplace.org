@@ -1,6 +1,7 @@
 import { currentUser } from "@clerk/nextjs";
 import { Coins, Quote, ShieldQuestion } from "lucide-react";
 import type { Metadata } from "next";
+import Image from "next/image";
 import NextLink from "next/link";
 import Marquee from "react-fast-marquee";
 
@@ -85,6 +86,30 @@ export default async function EquiHacks() {
 				</div>
 			</Content>
 
+			<Content
+				as="section"
+				className="py-16 flex flex-col sm:flex-row gap-8"
+				outerClassName="relative"
+				border="bottom"
+			>
+				<Grain />
+				<Image
+					src="/equihacks/GS2.webp"
+					alt="Bell Works GS2"
+					width={3024}
+					height={4032}
+					className="rounded-md w-full sm:w-1/2 object-cover sm:object-top h-[252px] sm:h-[504px]"
+				/>
+
+				<div className="w-2/3">
+					<h1 className="p-4 mb-4 mx-auto text-6xl font-bold text-center w-fit rounded-2xl bg-brand text-sky-900">
+						Info
+					</h1>
+
+					<p className="text-center">Under construction</p>
+				</div>
+			</Content>
+
 			<Opportunity />
 
 			<Content
@@ -100,8 +125,8 @@ export default async function EquiHacks() {
 
 				<Accordion type="single" className="w-full" collapsible>
 					<AccordionItem value="item-1">
-						<AccordionTrigger>Placeholder</AccordionTrigger>
-						<AccordionContent>Placeholder</AccordionContent>
+						<AccordionTrigger>Under construction</AccordionTrigger>
+						<AccordionContent>Under construction</AccordionContent>
 					</AccordionItem>
 				</Accordion>
 
@@ -133,7 +158,7 @@ export default async function EquiHacks() {
 			>
 				<Grain />
 				<div className="flex flex-col w-full text-primary">
-					<Heading>Help take EquiHacks further.</Heading>
+					<Heading>Take EquiHacks further.</Heading>
 					<h2 className="my-4 text-2xl font-thin">
 						EquiHacks is made possible by the generous support of our sponsors.
 					</h2>
