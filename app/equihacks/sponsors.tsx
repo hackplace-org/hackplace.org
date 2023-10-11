@@ -9,7 +9,14 @@ export const Sponsors = () => {
 	const { resolvedTheme } = useTheme();
 
 	return (
-		<Marquee autoFill speed={25}>
+		<Marquee
+			autoFill
+			speed={25}
+			style={{
+				maskImage:
+					"linear-gradient(to right, transparent 0%, hsl(var(--background)) 10%, hsl(var(--background)) 90%, transparent 100%)",
+			}}
+		>
 			<Link href="https://www.wolfram.com/" target="_blank">
 				<Image
 					className="w-40 mx-6"
