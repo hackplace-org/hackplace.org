@@ -3,9 +3,9 @@ import { Coins, Quote, ShieldQuestion } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import NextLink from "next/link";
-import Marquee from "react-fast-marquee";
 
 import { Opportunity } from "@/app/equihacks/opportunity";
+import { Sponsors } from "@/app/equihacks/sponsors";
 import { UserTicket } from "@/app/equihacks/ticket";
 import { Content } from "@/components/content";
 import { Link } from "@/components/link";
@@ -75,28 +75,11 @@ export default async function EquiHacks() {
 					</NextLink>
 				</div>
 
-				<div className="mt-24 flex flex-col gap-y-4 items-center">
-					<h3 className="uppercase font-semibold">Thank you to our sponsors</h3>
-					<Marquee autoFill speed={25}>
-						<Button variant="ghost" className="mx-2">
-							None
-						</Button>
-						<Button variant="ghost" className="mx-2">
-							Zero
-						</Button>
-						<Button variant="ghost" className="mx-2">
-							Empty
-						</Button>
-						<Button variant="ghost" className="mx-2">
-							Nothing
-						</Button>
-						<Button variant="ghost" className="mx-2">
-							Wow
-						</Button>
-						<Button variant="ghost" className="mx-2">
-							Missing
-						</Button>
-					</Marquee>
+				<div className="mt-24 flex flex-col gap-y-8 items-center">
+					<h3 className="text-lg uppercase font-semibold">
+						Thank you to our sponsors
+					</h3>
+					<Sponsors />
 				</div>
 			</Content>
 
@@ -108,8 +91,8 @@ export default async function EquiHacks() {
 			>
 				<Grain />
 				<Image
-					src="/equihacks/GS2.webp"
-					alt="Bell Works GS2"
+					src="/equihacks/venue.webp"
+					alt="Mathnasium of Middletown"
 					width={3024}
 					height={4032}
 					className="rounded-md w-full sm:w-1/2 object-cover sm:object-top h-[252px] sm:h-[504px]"
