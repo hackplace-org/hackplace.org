@@ -6,7 +6,9 @@ import {
 	MousePointerClick,
 	Pencil,
 	Ruler,
+	Trophy,
 	UserCircle,
+	X,
 } from "lucide-react";
 import type { Metadata } from "next";
 import NextLink from "next/link";
@@ -20,14 +22,16 @@ import { cn } from "@/lib/utils";
 import { Content } from "@/components/content";
 import { Link } from "@/components/link";
 import { Navbar } from "@/components/navbar";
+import { Grain, Heading, Hover } from "@/components/utils";
+
 import {
 	Accordion,
 	AccordionContent,
 	AccordionItem,
 	AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
-import { Grain, Heading, Hover } from "@/components/utils";
 
 export const metadata: Metadata = {
 	title: "hack.place()",
@@ -89,30 +93,50 @@ export default function Home() {
 			<Navbar currentTitle="Home" />
 			<Content
 				as="main"
-				className="flex flex-col py-16 gap-y-16 md:gap-y-0 md:flex-row"
+				className="pt-8 pb-16 flex flex-col gap-y-12"
 				outerClassName="relative"
 				border="bottom"
 			>
 				<Grain />
-				<hgroup className="flex flex-col w-full md:w-1/2 gap-y-4">
-					<h1 className="text-6xl font-bold">We learned to code.</h1>
-					<Heading className="text-muted-foreground" size="sub">
-						Now it&apos;s <Hover>your turn.</Hover>
-					</Heading>
+				<Alert className="flex flex-row justify-between">
+					<div className="flex flex-row gap-x-4">
+						<Trophy className="w-4 h-4" />
 
-					<h2 className="my-4 text-xl font-thin">
-						hack.place() fully immerses students throughout Monmouth County in
-						the world of programming through{" "}
-						<Link href="/workshops" text="workshops" />,{" "}
-						<Link href="/equihacks" text="hackathons" />, and{" "}
-						<Link href="/seminars" text="seminars" /> that teach them to use the
-						most current technologies.
-					</h2>
-				</hgroup>
+						<div className="flex flex-col">
+							<AlertTitle>Announcing EquiHacks S1</AlertTitle>
+							<AlertDescription>
+								We&apos;re supercharging middle and high school innovation in
+								Monmouth County.
+							</AlertDescription>
+						</div>
+					</div>
 
-				<div className="w-full md:w-1/2 md:relative">
-					<div className="flex w-1/2 h-full mx-auto translate-x-0 md:absolute md:translate-x-1/2 md:mx-0 rounded-2xl bg-brand rotate-6">
-						<ImageIcon className="w-40 h-40 m-auto" />
+					<NextLink href="/equihacks">
+						<Button>Let&apos;s go</Button>
+					</NextLink>
+				</Alert>
+
+				<div className="flex flex-col gap-y-16 md:gap-y-0 md:flex-row">
+					<hgroup className="flex flex-col w-full md:w-1/2 gap-y-4">
+						<h1 className="text-6xl font-bold">We learned to code.</h1>
+						<Heading className="text-muted-foreground" size="sub">
+							Now it&apos;s <Hover>your turn.</Hover>
+						</Heading>
+
+						<h2 className="my-4 text-xl font-thin">
+							hack.place() fully immerses students throughout Monmouth County in
+							the world of programming through{" "}
+							<Link href="/workshops" text="workshops" />,{" "}
+							<Link href="/equihacks" text="hackathons" />, and{" "}
+							<Link href="/seminars" text="seminars" /> that teach them to use
+							the most current technologies.
+						</h2>
+					</hgroup>
+
+					<div className="w-full md:w-1/2 md:relative">
+						<div className="flex w-1/2 h-full mx-auto translate-x-0 md:absolute md:translate-x-1/2 md:mx-0 rounded-2xl bg-brand rotate-6">
+							<ImageIcon className="w-40 h-40 m-auto" />
+						</div>
 					</div>
 				</div>
 			</Content>
