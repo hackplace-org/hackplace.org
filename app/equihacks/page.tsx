@@ -1,5 +1,16 @@
 import { currentUser } from "@clerk/nextjs";
-import { Coins, Quote, ShieldQuestion } from "lucide-react";
+import {
+	BadgeInfo,
+	CalendarClock,
+	Coins,
+	LocateFixed,
+	Map as MapIcon,
+	MapPin,
+	Quote,
+	ShieldQuestion,
+	Timer,
+	Vote,
+} from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import NextLink from "next/link";
@@ -17,6 +28,15 @@ import {
 	AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import {
+	Table,
+	TableBody,
+	TableCaption,
+	TableCell,
+	TableHead,
+	TableHeader,
+	TableRow,
+} from "@/components/ui/table";
 import { Grain, Heading, Hover } from "@/components/utils";
 
 export const metadata: Metadata = {
@@ -85,25 +105,153 @@ export default async function EquiHacks() {
 
 			<Content
 				as="section"
-				className="py-16 flex flex-col sm:flex-row gap-8"
+				className="py-16"
 				outerClassName="relative"
 				border="bottom"
 			>
 				<Grain />
-				<Image
-					src="/equihacks/venue.webp"
-					alt="Mathnasium of Middletown"
-					width={3024}
-					height={4032}
-					className="rounded-md w-full sm:w-1/2 object-cover sm:object-top h-[252px] sm:h-[504px]"
-				/>
+				<h1 className="p-4 mb-4 mx-auto text-6xl font-bold text-center w-fit rounded-2xl bg-brand text-sky-900">
+					Info
+				</h1>
 
-				<div className="w-2/3">
-					<h1 className="p-4 mb-4 mx-auto text-6xl font-bold text-center w-fit rounded-2xl bg-brand text-sky-900">
-						Info
-					</h1>
+				<div className="flex flex-col gap-8">
+					<div className="flex flex-col gap-y-4">
+						<div className="flex flex-row gap-x-2 text-[#e0c1b3]">
+							<div className="shrink-0 w-12 h-12 rounded-full bg-[#d89a9e]/20 flex justify-center items-center">
+								<MapIcon className="w-6 h-6" />
+							</div>
 
-					<p className="text-center">Under construction</p>
+							<div className="flex flex-col w-full">
+								<h2 className="text-xl font-bold">Venue</h2>
+
+								<div className="flex flex-row gap-1">
+									<MapPin className="w-4 h-4 -translate-y-[0.125rem] my-auto" />
+									<Link
+										className="text-[#e0c1b3]"
+										href="https://maps.app.goo.gl/cYxwbzeUdgTRWcLi6"
+										text="500 NJ-35, Red Bank, NJ 07701, USA"
+										external
+									/>
+								</div>
+							</div>
+						</div>
+
+						<div className="flex flex-row gap-x-2 text-[#99d19c]">
+							<div className="shrink-0 w-12 h-12 rounded-full bg-[#5aa984]/20  flex justify-center items-center">
+								<CalendarClock className="w-6 h-6" />
+							</div>
+
+							<div className="flex flex-col gap-2">
+								<div>
+									<h2 className="text-xl font-bold">Date</h2>
+									<p>
+										Oct 20, 2023, 4:30 PM - Oct 23, 2023, 8:00 PM (UTC -04:00)
+									</p>
+								</div>
+
+								<div>
+									<p className="font-extrabold underline">In-person timings</p>
+									<ul className="list-disc list-inside">
+										<li>Friday, Oct 20, 4:30 PM - 8:00 PM (UTC -04:00)</li>
+										<li>Saturday, Oct 21, 11:00 AM - 7:00 PM (UTC -04:00)</li>
+										<li>Sunday, Oct 22, 11:00 AM - 7:00 PM (UTC -04:00)</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div className="flex md:flex-row items-center flex-col gap-8">
+						<Image
+							src="/equihacks/venue.webp"
+							alt="Mathnasium of Middletown"
+							width={3024}
+							height={4032}
+							className="rounded-md w-full md:w-1/2 object-cover md:object-top h-[252px] md:h-[504px]"
+						/>
+
+						<Table>
+							<TableCaption>Hackathon schedule</TableCaption>
+
+							<TableHeader>
+								<TableRow>
+									<TableHead className="w-1/3">Period</TableHead>
+									<TableHead className="w-1/3 text-center">Begins</TableHead>
+									<TableHead className="text-right">Ends</TableHead>
+								</TableRow>
+							</TableHeader>
+
+							<TableBody>
+								<TableRow>
+									<TableCell className="font-medium">Opening Cermony</TableCell>
+									<TableCell className="text-center">Oct 20, 4:30 PM</TableCell>
+									<TableCell className="text-right">Oct 20, 8:00 PM</TableCell>
+								</TableRow>
+
+								<TableRow>
+									<TableCell className="font-medium">Hacking Period</TableCell>
+									<TableCell className="text-center">Oct 20, 6:00 PM</TableCell>
+									<TableCell className="text-right">Oct 22, 6:00 PM</TableCell>
+								</TableRow>
+
+								<TableRow>
+									<TableCell className="font-medium">
+										Submission Period
+									</TableCell>
+									<TableCell className="text-center">Oct 22, 6:00 PM</TableCell>
+									<TableCell className="text-right">Oct 22, 7:00 PM</TableCell>
+								</TableRow>
+
+								<TableRow>
+									<TableCell className="font-medium">Public Voting</TableCell>
+									<TableCell className="text-center">Oct 22, 6:00 PM</TableCell>
+									<TableCell className="text-right">Oct 23, 4:30 PM</TableCell>
+								</TableRow>
+
+								<TableRow>
+									<TableCell className="font-medium">Judging Period</TableCell>
+									<TableCell className="text-center">Oct 22, 6:00 PM</TableCell>
+									<TableCell className="text-right">Oct 23, 4:30 PM</TableCell>
+								</TableRow>
+
+								<TableRow>
+									<TableCell className="font-medium">
+										Closing Ceremony
+									</TableCell>
+									<TableCell className="text-center">Oct 23, 4:30 PM</TableCell>
+									<TableCell className="text-right">Oct 23, 8:00 PM</TableCell>
+								</TableRow>
+							</TableBody>
+						</Table>
+					</div>
+				</div>
+
+				<div className="absolute top-0 right-0 -translate-y-12 text-muted -z-10">
+					<BadgeInfo
+						className="w-[25rem] h-[25rem] rotate-[15deg]"
+						strokeWidth={0.75}
+					/>
+				</div>
+
+				<div className="absolute top-1/2 left-1/2 -translate-x-20 -translate-y-72 hidden md:block text-muted -z-10">
+					<LocateFixed
+						className="w-[25rem] h-[25rem] -rotate-[15deg]"
+						strokeWidth={0.75}
+					/>
+				</div>
+
+				<div className="absolute top-1/2 right-0 -translate-y-20 hidden md:block text-muted -z-10">
+					<Timer
+						className="w-[25rem] h-[25rem] rotate-[15deg]"
+						strokeWidth={0.75}
+					/>
+				</div>
+
+				<div className="absolute bottom-0 left-1/2 -translate-x-20 translate-y-20 text-muted -z-10">
+					<Vote
+						className="w-[25rem] h-[25rem] -rotate-[15deg]"
+						strokeWidth={0.75}
+					/>
 				</div>
 			</Content>
 
@@ -122,8 +270,63 @@ export default async function EquiHacks() {
 
 				<Accordion type="single" className="w-full" collapsible>
 					<AccordionItem value="item-1">
-						<AccordionTrigger>Under construction</AccordionTrigger>
-						<AccordionContent>Under construction</AccordionContent>
+						<AccordionTrigger>
+							Where will the hackathon be located?
+						</AccordionTrigger>
+						<AccordionContent>
+							We&apos;re an in person hackathon, but we obviously don&apos;t
+							have the means to support hackers overnight&mdash;we&apos;ll use
+							the Mathnasium of Middletown building during the day.
+						</AccordionContent>
+					</AccordionItem>
+
+					<AccordionItem value="item-2">
+						<AccordionTrigger>
+							What about the closing ceremony?
+						</AccordionTrigger>
+						<AccordionContent>
+							The location for the closing ceremony is not set in stone yet. For
+							now, expect to travel to the Mathnasium location on Friday,
+							Saturday, and Sunday (Oct 20-22).
+						</AccordionContent>
+					</AccordionItem>
+
+					<AccordionItem value="item-3">
+						<AccordionTrigger>What should I bring?</AccordionTrigger>
+						<AccordionContent>
+							Make sure to bring your laptop, phone, and a charging cable. We
+							recommend using a hotspot connection on your phone during the
+							hacking period as the connection is not very strong at the venue.
+						</AccordionContent>
+					</AccordionItem>
+
+					<AccordionItem value="item-4">
+						<AccordionTrigger>Will there be food?</AccordionTrigger>
+						<AccordionContent>
+							You are not allowed to eat inside the Mathnasium building.
+							However, feel free to bring food inside your bags to enjoy in the
+							hallway outside. There is a communal space where we&apos;ll also
+							provide snacks and refreshments.
+						</AccordionContent>
+					</AccordionItem>
+
+					<AccordionItem value="item-5">
+						<AccordionTrigger>
+							What is the &ldquo;Workshop Project Award&rdquo; prize on the
+							Devpost?
+						</AccordionTrigger>
+						<AccordionContent>
+							After every workshop at EquiHacks, you&apos;ll have the
+							opportunity to create your own mini-project using what you&apos;ve
+							learned. We conduct a mini-hackathon with these projects and award
+							a prize to one winner on the{" "}
+							<Link
+								href="https://equihacks.devpost.com/"
+								text="Devpost"
+								external
+							/>
+							.
+						</AccordionContent>
 					</AccordionItem>
 				</Accordion>
 
