@@ -37,9 +37,9 @@ export const Link = ({
 			{/* biome-ignore lint/a11y/useValidAnchor: NextLink passes the href */}
 			<a
 				className={cn(
-					className,
 					unstyled || "text-brand hover:underline transition-all",
 					"inline-block",
+					className,
 				)}
 			>
 				{text}
