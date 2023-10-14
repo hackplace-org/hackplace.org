@@ -183,7 +183,7 @@ export default async function EquiHacks() {
 
 							<TableBody>
 								<TableRow>
-									<TableCell className="font-medium">Opening Cermony</TableCell>
+									<TableCell className="font-medium">Opening Ceremony</TableCell>
 									<TableCell className="text-center">Oct 20, 4:30 PM</TableCell>
 									<TableCell className="text-right">Oct 20, 8:00 PM</TableCell>
 								</TableRow>
@@ -198,7 +198,7 @@ export default async function EquiHacks() {
 									<TableCell className="font-medium">
 										Submission Period
 									</TableCell>
-									<TableCell className="text-center">Oct 22, 6:00 PM</TableCell>
+									<TableCell className="text-center">Oct 20, 6:00 PM</TableCell>
 									<TableCell className="text-right">Oct 22, 7:00 PM</TableCell>
 								</TableRow>
 
