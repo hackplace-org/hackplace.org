@@ -20,14 +20,14 @@ export const Sponsors = () => {
 			<Link href="https://www.wolfram.com/" target="_blank">
 				<Image
 					className="w-40 mx-6"
-					src="/equihacks/sponsors/wolfram-light.webp"
+					src={`/equihacks/sponsors/wolfram-${resolvedTheme}.webp`}
 					alt="Wolfram"
 					width={768}
 					height={205}
 				/>
 			</Link>
 
-			{/* <Link href="https://hackclub.com/" target="_blank">
+			<Link href="https://hackclub.com/" target="_blank">
 				<Image
 					className="w-40 mx-6"
 					src="/equihacks/sponsors/hackclub.webp"
@@ -35,7 +35,7 @@ export const Sponsors = () => {
 					width={526}
 					height={184}
 				/>
-			</Link> */}
+			</Link>
 
 			<Link href="https://exlprep.com/" target="_blank">
 				<Image
@@ -57,7 +57,7 @@ export const Sponsors = () => {
 				/>
 			</Link>
 
-			{/* <Link href="https://www.firstinspires.org/" target="_blank">
+			<Link href="https://www.firstinspires.org/" target="_blank">
 				<Image
 					className="w-40 mx-6"
 					src={`/equihacks/sponsors/first-${resolvedTheme}.webp`}
@@ -65,7 +65,7 @@ export const Sponsors = () => {
 					width={1692}
 					height={442}
 				/>
-			</Link> */}
+			</Link>
 
 			<Link href="https://www.echo3d.com/" target="_blank">
 				<Image
