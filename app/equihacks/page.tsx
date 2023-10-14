@@ -38,6 +38,7 @@ import {
 	TableRow,
 } from "@/components/ui/table";
 import { Grain, Heading, Hover } from "@/components/utils";
+import { links } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
 	title: "EquiHacks",
@@ -88,9 +89,9 @@ export default async function EquiHacks() {
 						<Button size="lg">Join now</Button>
 					</NextLink>
 
-					<NextLink href="/donate">
+					<NextLink href={links[3].href} target="_blank">
 						<Button size="lg" variant="secondary">
-							Donate
+							Discord
 						</Button>
 					</NextLink>
 				</div>
@@ -115,50 +116,86 @@ export default async function EquiHacks() {
 				</h1>
 
 				<div className="flex flex-col gap-8">
-					<div className="flex flex-col gap-y-4">
-						<div className="flex flex-row gap-x-2 text-[#e0c1b3]">
-							<div className="shrink-0 w-12 h-12 rounded-full bg-[#d89a9e]/20 flex justify-center items-center">
-								<MapIcon className="w-6 h-6" />
-							</div>
+					<div className="flex md:flex-row md:gap-x-24 md:justify-between md:gap-y-0 flex-col gap-x-0 gap-y-8">
+						<div className="flex flex-col gap-y-4">
+							<div className="flex flex-row gap-x-2 text-[#e0c1b3]">
+								<div className="shrink-0 w-12 h-12 rounded-full bg-[#d89a9e]/20 flex justify-center items-center">
+									<MapIcon className="w-6 h-6" />
+								</div>
 
-							<div className="flex flex-col w-full">
-								<h2 className="text-xl font-bold">Venue</h2>
+								<div className="flex flex-col w-full">
+									<h2 className="text-xl font-bold">Venue</h2>
 
-								<div className="flex flex-row gap-1">
-									<MapPin className="w-4 h-4 -translate-y-[0.125rem] my-auto" />
-									<Link
-										className="text-[#e0c1b3]"
-										href="https://maps.app.goo.gl/cYxwbzeUdgTRWcLi6"
-										text="500 NJ-35, Red Bank, NJ 07701, USA"
-										external
-									/>
+									<div>
+										<div className="flex flex-row gap-1">
+											<MapPin className="w-4 h-4 -translate-y-[0.125rem] my-auto" />
+											<Link
+												// className="text-[#e0c1b3]"
+												href="https://maps.app.goo.gl/cYxwbzeUdgTRWcLi6"
+												text="500 NJ-35, Red Bank, NJ 07701, USA"
+												external
+											/>
+										</div>
+										<p>
+											Please keep in mind that our in-person venue isn&apos;t
+											open 24/7&mdash;take a look at our in-person timings to
+											see when you should attend. If you have any doubts, feel
+											free to ask in our{" "}
+											<Link href={links[3].href} text="Discord" external />
+										</p>
+									</div>
 								</div>
 							</div>
-						</div>
 
-						<div className="flex flex-row gap-x-2 text-[#99d19c]">
-							<div className="shrink-0 w-12 h-12 rounded-full bg-[#5aa984]/20  flex justify-center items-center">
-								<CalendarClock className="w-6 h-6" />
-							</div>
+							<div className="flex flex-row gap-x-2 text-[#99d19c]">
+								<div className="shrink-0 w-12 h-12 rounded-full bg-[#5aa984]/20  flex justify-center items-center">
+									<CalendarClock className="w-6 h-6" />
+								</div>
 
-							<div className="flex flex-col gap-2">
 								<div>
 									<h2 className="text-xl font-bold">Date</h2>
 									<p>
 										Oct 20, 2023, 4:30 PM - Oct 23, 2023, 8:00 PM (UTC -04:00)
 									</p>
 								</div>
-
-								<div>
-									<p className="font-extrabold underline">In-person timings</p>
-									<ul className="list-disc list-inside">
-										<li>Friday, Oct 20, 4:30 PM - 8:00 PM (UTC -04:00)</li>
-										<li>Saturday, Oct 21, 11:00 AM - 7:00 PM (UTC -04:00)</li>
-										<li>Sunday, Oct 22, 11:00 AM - 7:00 PM (UTC -04:00)</li>
-									</ul>
-								</div>
 							</div>
 						</div>
+
+						<Table>
+							<TableCaption>In-person timings</TableCaption>
+
+							<TableHeader>
+								<TableRow>
+									<TableHead className="w-1/2">Date</TableHead>
+									<TableHead className="w-1/2 text-right">Time</TableHead>
+								</TableRow>
+							</TableHeader>
+
+							<TableBody>
+								<TableRow>
+									<TableCell className="font-medium">Friday, Oct 20</TableCell>
+									<TableCell className="text-right">
+										4:30 PM - 8:00 PM (UTC -04:00)
+									</TableCell>
+								</TableRow>
+
+								<TableRow>
+									<TableCell className="font-medium">
+										Saturday, Oct 21
+									</TableCell>
+									<TableCell className="text-right">
+										11:00 AM - 7:00 PM (UTC -04:00)
+									</TableCell>
+								</TableRow>
+
+								<TableRow>
+									<TableCell className="font-medium">Sunday, Oct 22</TableCell>
+									<TableCell className="text-right">
+										11:00 AM - 7:00 PM (UTC -04:00)
+									</TableCell>
+								</TableRow>
+							</TableBody>
+						</Table>
 					</div>
 
 					<div className="flex md:flex-row items-center flex-col gap-8">
@@ -183,7 +220,9 @@ export default async function EquiHacks() {
 
 							<TableBody>
 								<TableRow>
-									<TableCell className="font-medium">Opening Ceremony</TableCell>
+									<TableCell className="font-medium">
+										Opening Ceremony
+									</TableCell>
 									<TableCell className="text-center">Oct 20, 4:30 PM</TableCell>
 									<TableCell className="text-right">Oct 20, 8:00 PM</TableCell>
 								</TableRow>
@@ -228,20 +267,6 @@ export default async function EquiHacks() {
 
 				<div className="absolute top-0 right-0 -translate-y-12 text-muted -z-10">
 					<BadgeInfo
-						className="w-[25rem] h-[25rem] rotate-[15deg]"
-						strokeWidth={0.75}
-					/>
-				</div>
-
-				<div className="absolute top-1/2 left-1/2 -translate-x-20 -translate-y-72 hidden md:block text-muted -z-10">
-					<LocateFixed
-						className="w-[25rem] h-[25rem] -rotate-[15deg]"
-						strokeWidth={0.75}
-					/>
-				</div>
-
-				<div className="absolute top-1/2 right-0 -translate-y-20 hidden md:block text-muted -z-10">
-					<Timer
 						className="w-[25rem] h-[25rem] rotate-[15deg]"
 						strokeWidth={0.75}
 					/>
