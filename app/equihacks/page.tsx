@@ -130,7 +130,6 @@ export default async function EquiHacks() {
 										<div className="flex flex-row gap-1">
 											<MapPin className="w-4 h-4 -translate-y-[0.125rem] my-auto" />
 											<Link
-												// className="text-[#e0c1b3]"
 												href="https://maps.app.goo.gl/cYxwbzeUdgTRWcLi6"
 												text="500 NJ-35, Red Bank, NJ 07701, USA"
 												external

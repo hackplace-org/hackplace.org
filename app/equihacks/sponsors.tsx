@@ -70,10 +70,10 @@ export const Sponsors = () => {
 			<Link href="https://www.echo3d.com/" target="_blank">
 				<Image
 					className="w-40 mx-6"
-					src="/equihacks/sponsors/echo3D-dark.webp"
+					src={`/equihacks/sponsors/echo3D-${resolvedTheme}.webp`}
 					alt="echo3D"
-					width={521}
-					height={96}
+					width={609}
+					height={98}
 				/>
 			</Link>
 		</Marquee>
