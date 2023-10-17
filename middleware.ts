@@ -12,6 +12,18 @@ declare global {
 export const fetchCache = "default-no-store";
 
 export default authMiddleware({
+	beforeAuth: async ({ nextUrl }) => {
+		if (!nextUrl.host.startsWith("equihacks")) return NextResponse.next();
+
+		// Redirect equihacks.hackplace.org/X to www.hackplace.org/X, except for the homepage
+		// equihacks.hackplace.org/ -> www.hackplace.org/equihacks
+		const { pathname } = nextUrl;
+
+		const url = new URL("https://www.hackplace.org");
+		url.pathname = pathname === "/" ? "equihacks" : pathname;
+
+		return NextResponse.redirect(url);
+	},
 	afterAuth: async (auth, { nextUrl }) => {
 		if (auth.isApiRoute) return;
 
