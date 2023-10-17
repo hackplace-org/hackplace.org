@@ -67,6 +67,16 @@ export const Sponsors = () => {
 				/>
 			</Link>
 
+			<Link href="https://www.axure.com/" target="_blank">
+				<Image
+					className="w-40 mx-6"
+					src={`/equihacks/sponsors/axure-${resolvedTheme}.webp`}
+					alt="Axure"
+					width={5000}
+					height={1193}
+				/>
+			</Link>
+
 			<Link href="https://www.echo3d.com/" target="_blank">
 				<Image
 					className="w-40 mx-6"
