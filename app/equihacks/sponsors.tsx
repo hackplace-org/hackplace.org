@@ -77,6 +77,16 @@ export const Sponsors = () => {
 				/>
 			</Link>
 
+			<Link href="https://gen.xyz/" target="_blank">
+				<Image
+					className="w-40 mx-6"
+					src={`/equihacks/sponsors/xyz-${resolvedTheme}.webp`}
+					alt="gen.xyz"
+					width={932}
+					height={543}
+				/>
+			</Link>
+
 			<Link href="https://www.echo3d.com/" target="_blank">
 				<Image
 					className="w-40 mx-6"
