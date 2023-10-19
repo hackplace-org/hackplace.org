@@ -13,13 +13,20 @@ export const fetchCache = "default-no-store";
 
 export default authMiddleware({
 	beforeAuth: async ({ nextUrl }) => {
-		if (!nextUrl.host.includes("equihacks")) return NextResponse.next();
-
-		// Redirect equihacks.hackplace.org/X to www.hackplace.org/X, except for the homepage
-		// equihacks.hackplace.org/ -> www.hackplace.org/equihacks
 		const { pathname } = nextUrl;
 
-		const url = new URL("https://www.hackplace.org");
+		let url;
+
+		if (nextUrl.host.startsWith("equihacks")) {
+			// Redirect equihacks.hackplace.org/X to www.hackplace.org/X, except for the homepage
+			// equihacks.hackplace.org/ -> www.hackplace.org/equihacks
+			url = new URL("https://www.hackplace.org");
+		} else if (nextUrl.host.includes("equihacks")) {
+			url = new URL("https://www.equihacks.org");
+		} else {
+			return NextResponse.next();
+		}
+
 		url.pathname = pathname === "/" ? "equihacks" : pathname;
 
 		return NextResponse.redirect(url);
