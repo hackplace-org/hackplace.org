@@ -13,24 +13,13 @@ export const fetchCache = "default-no-store";
 
 export default authMiddleware({
 	beforeAuth: async ({ nextUrl }) => {
-		if (
-			!nextUrl.host.startsWith("www") ||
-			!nextUrl.host.includes("equihacks")
-		) {
-			return NextResponse.next();
-		}
-
-		const { pathname } = nextUrl;
-
-		// Allow equihacks.org as a base domain, but redirect equihacks.hackplace.org to www.hackplace.org
-		const url = new URL(
-			nextUrl.host.startsWith("www.equihacks")
-				? "https://www.equihacks.org"
-				: "https://www.hackplace.org",
-		);
+		if (!nextUrl.host.startsWith("equihacks")) return NextResponse.next();
 
 		// Redirect equihacks.hackplace.org/X to www.hackplace.org/X, except for the homepage
 		// equihacks.hackplace.org/ -> www.hackplace.org/equihacks
+		const { pathname } = nextUrl;
+
+		const url = new URL("https://www.hackplace.org");
 		url.pathname = pathname === "/" ? "equihacks" : pathname;
 
 		return NextResponse.redirect(url);
