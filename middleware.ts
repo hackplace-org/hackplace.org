@@ -25,8 +25,8 @@ export default authMiddleware({
 		// Allow equihacks.org as a base domain, but redirect equihacks.hackplace.org to www.hackplace.org
 		const url = new URL(
 			nextUrl.host.startsWith("www.equihacks")
-				? "https://www.hackplace.org"
-				: "https://www.equihacks.org",
+				? "https://www.equihacks.org"
+				: "https://www.hackplace.org",
 		);
 
 		// Redirect equihacks.hackplace.org/X to www.hackplace.org/X, except for the homepage
