@@ -98,7 +98,7 @@ export default function Home() {
 				border="bottom"
 			>
 				<Grain />
-				<Alert className="flex flex-row justify-between">
+				{/* <Alert className="flex flex-row justify-between">
 					<div className="flex flex-row gap-x-4">
 						<Trophy className="w-4 h-4" />
 
@@ -114,7 +114,7 @@ export default function Home() {
 					<NextLink href="/equihacks">
 						<Button>Let&apos;s go</Button>
 					</NextLink>
-				</Alert>
+				</Alert> */}
 
 				<div className="flex flex-col gap-y-16 md:gap-y-0 md:flex-row">
 					<hgroup className="flex flex-col w-full md:w-1/2 gap-y-4">
