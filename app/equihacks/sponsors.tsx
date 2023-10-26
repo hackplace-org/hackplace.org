@@ -27,16 +27,6 @@ export const Sponsors = () => {
 				/>
 			</Link>
 
-			<Link href="https://hackclub.com/" target="_blank">
-				<Image
-					className="w-40 mx-6"
-					src="/equihacks/sponsors/hackclub.webp"
-					alt="Hack Club"
-					width={526}
-					height={184}
-				/>
-			</Link>
-
 			<Link href="https://exlprep.com/" target="_blank">
 				<Image
 					className="w-40 mx-6"
@@ -54,16 +44,6 @@ export const Sponsors = () => {
 					alt="Mathnasium of Middletown"
 					width={1800}
 					height={455}
-				/>
-			</Link>
-
-			<Link href="https://www.firstinspires.org/" target="_blank">
-				<Image
-					className="w-40 mx-6"
-					src={`/equihacks/sponsors/first-${resolvedTheme}.webp`}
-					alt="FIRST"
-					width={1692}
-					height={442}
 				/>
 			</Link>
 
