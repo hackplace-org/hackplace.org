@@ -8,7 +8,7 @@ This repository contains the website for **hack.place()**, [hackplace.org](https
 bun run dev # Run the development server
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result; though, the website should automatically open on your browser once you run 'bun run dev'
 
 ## Learn More
 
